@@ -11,7 +11,10 @@ const express = require('express')
 var app = express()
 
 module.exports = {
-	entry: path.resolve(__dirname, '../src/index.js'),
+	entry: {
+		main: path.resolve(__dirname, '../src/index.js'),
+		entry2: path.resolve(__dirname, '../src/entry2.js'),
+	},
 	mode: 'production',
 	performance: {
 		hints: 'warning',
