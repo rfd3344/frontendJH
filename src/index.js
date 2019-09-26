@@ -1,17 +1,9 @@
 
 import 'babel-polyfill';
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-
-import Routers from './routers.js'
-import rootReducer from './reducers.js'
-const store = createStore(rootReducer)
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-	<Provider store={store}>
-		<Routers />
-	</Provider>,
+	<h1> title1 </h1>,
 	document.getElementById('root')
 );

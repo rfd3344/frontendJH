@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "webpack-dev-server --config config/webpack.config.js",
-		"dev": "webpack-dev-server --hot --config config/webpack.config.js"
+		"dev": "webpack-dev-server --hot --config config/webpack.config.js",
+		"karma": "webpack-dev-server --hot --config config/webpack.config.js"
 	},
 	"dependencies": {
 		"axios": "^0.18.0",
