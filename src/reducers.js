@@ -1,4 +1,4 @@
-//  All reducers
+//	All reducers
 import { combineReducers } from 'redux'
 
 import Test from 'views_admin/Test/Redux.js'
@@ -6,5 +6,5 @@ import Test from 'views_admin/Test/Redux.js'
 /*********************************/
 
 export default combineReducers({
-  Test
+	Test
 })

@@ -10,8 +10,8 @@ import rootReducer from './reducers.js'
 const store = createStore(rootReducer)
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Routers />
-  </Provider>,
-  document.getElementById('root')
+	<Provider store={store}>
+		<Routers />
+	</Provider>,
+	document.getElementById('root')
 );
