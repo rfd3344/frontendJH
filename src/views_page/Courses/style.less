@@ -1,0 +1,54 @@
+#Page #Courses {
+  #Filter{
+
+  }
+  #Selector{
+    text-align: left;
+    line-height: 50px;
+    border-top: 1px solid var(--my-gray);
+    span {
+      margin-left:80px;
+      margin-right:20px;
+    }
+    hr {
+      margin: 0
+    }
+    a{
+      padding: 5px 16px;
+      margin: 0 7px;
+      background: var(--my-white);
+      border-radius: 15px;
+      color: var(--my-dark);
+      border: 1px solid var(--my-dark);
+      &.active{
+        background: var(--my-dark);
+        color: var(--my-white);
+      }
+    }
+  }
+  .card{
+    .card-img-top {
+      width: 338px;
+      height: auto;
+      overflow: hidden;
+    }
+    .card-title {
+      font-weight: bold;
+    }
+    .card-text{
+      line-height: 20px;
+      height: 40px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .like{
+      color: #dc3545;
+      &:hover {
+        color: #fff;
+      }
+    }
+    .liked{
+      color: #fff;
+    }
+  }
+}

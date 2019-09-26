@@ -1,0 +1,67 @@
+/***************************************
+  this is for all admin pages ( for institution management)
+**************************************/
+
+#Admin {
+  max-height: 100vh;
+}
+#Admin #sidebar {
+  background: #f1d87b;
+  padding-right: 0;
+  padding-left: 0;
+  z-index: 1;
+}
+#Admin #sidebar #Logo {
+  height: 60px;
+  background: white;
+  text-align: center;
+  padding: 10px 10px;
+}
+#Admin #sidebar #Logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#Admin #sidebar ul.nav .nav-link {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #333;
+  white-space: nowrap;
+}
+#Admin #sidebar ul.nav .nav-link i {
+  font-size: 1.4em;
+}
+#Admin #sidebar ul.nav .nav-link.active {
+  background: var(--my-white);
+}
+
+/********************  Right Side Part ******************/
+#Admin #main-panel {
+  padding: 0;
+}
+#Admin #main-panel #Topbar {
+  height: 60px;
+  padding: 10px 0;
+  background: #fff;
+  box-shadow: 10px 0 50px 0 rgba(61, 110, 146, 0.1);
+}
+#Admin #main-panel #Topbar #UserInfo {
+  text-align: right;
+}
+#Admin #main-panel #Topbar #UserInfo button {
+  border: 0;
+  margin-bottom: 2px;
+}
+#Admin #main-panel #Topbar #UserInfo #LogOut {
+  margin: 0 20px;
+}
+#Admin #main-panel main {
+  background: var(--my-white);
+  min-height: calc(100vh - 80px);
+}
+
+/**********************************************
+  Tables in courses, students, teachers pages
+  **********************************************/
+#Admin #AddNew {
+  margin: 15px 30px 5px;
+}

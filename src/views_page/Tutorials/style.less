@@ -1,0 +1,86 @@
+#Page #Tutorials {
+  #Filter{
+    line-height:70px;
+    border-bottom: 1px solid var(--my-gray);
+    .item{
+      padding: 0 20px;
+      min-width:80px;
+      text-align: center;
+      border-right: 1px solid var(--my-gray);
+      transition: all 0.8s ease;
+      &.select{
+        cursor:pointer;
+        &:after{
+          content:'keyboard_arrow_down';
+          font-family: 'Material Icons';
+          position: relative;
+          top: 2px;
+        }
+        &:hover{
+          background:white;
+        }
+      }
+    }
+    .reset{
+      padding: 0 20px;
+      border-left: 1px solid var(--my-gray);
+      cursor:pointer;
+      transition: all 0.8s ease;
+      &:hover{
+        background:white;
+      }
+    }
+    .space{
+      flex:1;
+    }
+  }
+  #Selector{
+    text-align: left;
+    line-height: 50px;
+    border-top: 1px solid var(--my-gray);
+    span {
+      margin-left:80px;
+      margin-right:20px;
+    }
+    hr {
+      margin: 0
+    }
+    a{
+      padding: 5px 16px;
+      margin: 0 7px;
+      background: var(--my-white);
+      border-radius: 15px;
+      color: var(--my-dark);
+      border: 1px solid var(--my-dark);
+      &.active{
+        background: var(--my-dark);
+        color: var(--my-white);
+      }
+    }
+  }
+  .card{
+    .card-img-top {
+      width: 338px;
+      height: auto;
+      overflow: hidden;
+    }
+    .card-title {
+      font-weight: bold;
+    }
+    .card-text{
+      line-height: 20px;
+      height: 40px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .like{
+      color: #dc3545;
+      &:hover {
+        color: #fff;
+      }
+    }
+    .liked{
+      color: #fff;
+    }
+  }
+}
