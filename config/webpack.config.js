@@ -10,8 +10,6 @@ const path = require('path');
 const express = require('express')
 var app = express()
 
-
-
 module.exports = {
 	entry: path.resolve(__dirname, '../src/index.js'),
 	mode: 'production',
@@ -50,11 +48,11 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
+			// Define directory with alias name. usage:
+			// import AxiosMethod from 'utilis/AxiosMethod';
 			'src': path.resolve(__dirname, '../src/'),
-			'components': path.resolve(__dirname, '../src/components'),
-			'views_admin': path.resolve(__dirname, '../src/views_admin'),
-			'views_page': path.resolve(__dirname, '../src/views_page'),
 			'utilis': path.resolve(__dirname, '../src/utilis'),
+			'helper': path.resolve(__dirname, '../src/helper'),
 			'assets': path.resolve(__dirname, '../src/assets')
 		}
 	},
