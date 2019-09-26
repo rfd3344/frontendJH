@@ -15,16 +15,18 @@ module.exports = {
 		main: path.resolve(__dirname, '../src/index.js'),
 		entry2: path.resolve(__dirname, '../src/entry2.js'),
 	},
+	output: {
+		// filename: './dist/[name]bundle.js',
+		// publicPath: '/',
+		// path: path.resolve(__dirname, '../public'),
+		filename: 'bundle.js',
+		path: __dirname + '/build',
+	},
 	mode: 'production',
 	performance: {
 		hints: 'warning',
 		maxEntrypointSize: 4000000,
 		maxAssetSize: 4000000,
-	},
-	output: {
-		filename: '[name]bundle.js',
-		publicPath: '/',
-		path: path.resolve(__dirname, '../public'),
 	},
 	optimization: {
 		splitChunks: {
@@ -33,18 +35,18 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			{ test: /\.js$/,
+			{ 	test: /\.js$/,
 				exclude: /(node_modules|bower_components)/,
 				use: { loader: 'babel-loader' }
 			},
-			{ test: /\.less$/,
+			{	test: /\.less$/,
 				use: [
 					{ loader: 'style-loader' },
 					{ loader: 'css-loader' },
 					{ loader: 'less-loader' }
 				]
 			},
-			{ test: /\.(png|jpg|gif)$/,
+			{	test: /\.(png|jpg|gif)$/,
 				use: [ { loader: 'file-loader' }	]
 			}
 		]
@@ -63,9 +65,12 @@ module.exports = {
 		HtmlWebpackPluginConfig,
 	],
 	devServer:{
-		port: 3000,
-		historyApiFallback: true,
-		contentBase: path.join(__dirname, '../public'),
-		host: '0.0.0.0'
+		port: 8080,
+		// compress: true,
+		// historyApiFallback: true,
+		// contentBase: path.join(__dirname, '../public'),
+		// host: '0.0.0.0',
+		// publicPath: '/assets/',
+	
 	}
 }

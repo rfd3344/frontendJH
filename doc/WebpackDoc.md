@@ -10,11 +10,19 @@ Small CSS file:  inline the stylesheet
 Small Img: base64 encode
 
 # 插件(plugin)
+## html-webpack-plugin
 
 # 模式(mode)
 
 
 # 浏览器兼容性(browser compatibility)
+
+
+# webpack-dev-server
+https://webpack.docschina.org/configuration/dev-server/
+
+## proxy
+
 
 # Others
 
