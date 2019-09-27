@@ -1,4 +1,4 @@
-
+https://webpack.docschina.org/configuration/
 # entry
 
 
@@ -17,20 +17,22 @@ Small Img: base64 encode
 
 # plugin
 
-##  HtmlWebpackPlugin
+## HtmlWebpackPlugin
 自动把js插入模板
+
 ```js
-	var HtmlWebpackPlugin = require('html-webpack-plugin');
-	plugins: [new HtmlWebpackPlugin({
-		filename: 'index.html',
-		template: path.join(__dirname, 'src/index.html')
-	})]
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+plugins: [new HtmlWebpackPlugin({
+	filename: 'index.html',
+	template: path.join(__dirname, 'src/index.html')
+})]
 ```
 
 # dev-server
 https://webpack.docschina.org/configuration/dev-server
+
 ```
-	npm install webpack-dev-server --save-dev
+npm install webpack-dev-server --save-dev
 ```
 
 
@@ -56,12 +58,12 @@ rapid application development without browser refreshes
 React Hot Loader: react
 
 ```
-	npm install --save-dev webpack
-	npm install --save-dev webpack-cli
+npm install --save-dev webpack
+npm install --save-dev webpack-cli
 
-	"scripts": {
-		"start": "webpack --config webpack.config.js"
-	}
+"scripts": {
+	"start": "webpack --config webpack.config.js"
+}
 ```
 
 
