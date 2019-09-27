@@ -1,30 +1,55 @@
 
-# 入口(entry)
+# entry
 
 
-# 输出(output)
+# output
 
-# loader
+# module
+
+## loader
 ## Image
 Small CSS file:  inline the stylesheet
 Small Img: base64 encode
 
-# 插件(plugin)
-## html-webpack-plugin
+# resolve
 
-# 模式(mode)
+# optimization
+
+# plugin
+
+##  HtmlWebpackPlugin
+自动把js插入模板
+```js
+	var HtmlWebpackPlugin = require('html-webpack-plugin');
+	plugins: [new HtmlWebpackPlugin({
+		filename: 'index.html',
+		template: path.join(__dirname, 'src/index.html')
+	})]
+```
+
+# dev-server
+https://webpack.docschina.org/configuration/dev-server
+```
+	npm install webpack-dev-server --save-dev
+```
 
 
-# 浏览器兼容性(browser compatibility)
+# watch
+
+# externals
+
+# performance
+
+# Others
+
+## mode
 
 
-# webpack-dev-server
-https://webpack.docschina.org/configuration/dev-server/
+## node
+
 
 ## proxy
 
-
-# Others
 
 ## Hot Module Replacement
 rapid application development without browser refreshes
@@ -39,18 +64,5 @@ React Hot Loader: react
 	}
 ```
 
-##  webpack-dev-server
-https://webpack.docschina.org/configuration/dev-server
-```
-	npm install webpack-dev-server --save-dev
-```
 
-##  HtmlWebpackPlugin
-自动把js插入模板
-```js
-	var HtmlWebpackPlugin = require('html-webpack-plugin');
-	plugins: [new HtmlWebpackPlugin({
-		filename: 'index.html',
-		template: path.join(__dirname, 'src/index.html')
-	})]
-```
+## 浏览器兼容性(browser compatibility)
