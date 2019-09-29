@@ -7,7 +7,10 @@
 		"start": "webpack-dev-server --config config/webpack.config.js",
 		"dev": "webpack-dev-server --hot --config config/webpack.config.js",
 		"build": "webpack --config config/webpack.config.js",
-		"karma": "webpack-dev-server --hot --config config/webpack.config.js"
+		"karma": "webpack-dev-server --hot --config config/webpack.config.js",
+		"build2": "webpack --optimize-minimize",
+		"dev2": "webpack-dev-server --config webpack.dev.config.js",
+		"start2": "npm run dev"
 	},
 	"dependencies": {
 		"react": "^16.8.1",
@@ -28,6 +31,8 @@
 		"babel-preset-es2015": "^6.18.0",
 		"babel-preset-react": "^6.16.0",
 		"babel-preset-stage-3": "^6.24.1",
+		"clean-webpack-plugin": "^3.0.0",
+		"extract-text-webpack-plugin": "^3.0.2",
 		"css-loader": "^0.28.11",
 		"file-loader": "^1.1.11",
 		"less": "^3.0.4",
