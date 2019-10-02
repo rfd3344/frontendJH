@@ -9,7 +9,7 @@
 		"build": "webpack --config config/webpack.config.js",
 		"karma": "webpack-dev-server --hot --config config/webpack.config.js",
 		"build2": "webpack --optimize-minimize",
-		"dev2": "webpack-dev-server --config webpack.dev.config.js",
+		"dev2": "webpack-dev-server --config  config0/webpack.config.js",
 		"start2": "npm run dev"
 	},
 	"dependencies": {

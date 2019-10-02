@@ -21,7 +21,7 @@ const output = {
 	path: path.resolve(__dirname, '../public'),
 };
 
-// module is already be defined
+// module is Globle variable
 const moduleRules = {
 	rules: [
 		{ 	test: /\.js$/,
@@ -85,7 +85,7 @@ module.exports = {
 	plugins: [
 		HtmlWebpackPluginConfig,
 	],
-	watch: false,
+	watch: true,
 	// watchOptions: {
 	// 	aggregateTimeout: 300,
 	// 	poll: 1000,
