@@ -1,26 +1,21 @@
 
-
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-	template: './public/index.html',
-	filename: 'index.html',
-	inject: 'body',
-})
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const entry = {
+const entryConfig = {
 	main: path.resolve(__dirname, '../src/index.js'),
 	entry2: path.resolve(__dirname, '../src/entry2.js'),
 };
 
-const output = {
+const outputConfig = {
 	filename: './[name].bundle.js',
 	publicPath: '/',
 	path: path.resolve(__dirname, '../public/dist'),
 };
 
 // module is Globle variable
-const moduleRules = {
+const moduleConfig = {
 	rules: [
 		{ 	test: /\.js$/,
 			exclude: /(node_modules|bower_components)/,
@@ -35,11 +30,11 @@ const moduleRules = {
 		},
 		{	test: /\.(png|jpg|gif)$/,
 			use: [{loader: 'file-loader'}]
-		}
+		},
 	],
 };
 
-const resolve = {
+const resolveConfig = {
 	alias: {
 		// Define directory with alias name. usage:
 		// import AxiosMethod from 'utilis/AxiosMethod';
@@ -50,13 +45,14 @@ const resolve = {
 	}
 };
 
-const optimization = {
+const optimizationConfig = {
+	runtimeChunk: true,
 	splitChunks: {
 		chunks: 'all'
-	}
+	},
 };
 
-const devServer = {
+const devServerConfig = {
 	port: 8000,
 	historyApiFallback: true,
 	contentBase: path.join(__dirname, '../public'),
@@ -64,21 +60,30 @@ const devServer = {
 	publicPath: '/',
 };
 
-const performance = {
+const performanceConfig = {
 	hints: 'warning',
 	maxEntrypointSize: 4000000,
 	maxAssetSize: 4000000,
 };
+
+const pluginsConfig = [
+	new HtmlWebpackPlugin({
+		template: './public/index.html',
+		filename: 'index.html',
+		inject: 'body',
+	}),
+	new webpack.HotModuleReplacementPlugin(),
+	new webpack.NamedModulesPlugin(),
+];
+
+
 module.exports = {
 	mode: 'production',
-	entry: entry,
-	output: output,
-	module: moduleRules,
-	resolve: resolve,
-	optimization: optimization,
-	performance: performance,
-	plugins: [
-		HtmlWebpackPluginConfig,
-	],
-
-}
+	entry: entryConfig,
+	output: outputConfig,
+	module: moduleConfig,
+	resolve: resolveConfig,
+	optimization: optimizationConfig,
+	performance: performanceConfig,
+	plugins: pluginsConfig,
+};

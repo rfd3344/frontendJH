@@ -5,6 +5,8 @@ const path = require('path');
 
 const devServer = {
 	port: 8000,
+	open: true,
+	hot: true,
 	historyApiFallback: true,
 	contentBase: path.join(__dirname, '../public'),
 	host: '0.0.0.0',
