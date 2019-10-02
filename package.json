@@ -4,15 +4,15 @@
 	"main": "index.js",
 	"license": "MIT",
 	"scripts": {
-		"start": "webpack-dev-server --config config/webpack.config.js",
-		"dev": "webpack-dev-server --hot --config config/webpack.config.js",
-		"build": "webpack --config config/webpack.config.js",
-		"karma": "webpack-dev-server --hot --config config/webpack.config.js",
+		"dev": "webpack-dev-server --hot --config config/webpack.dev.config.js",
+		"karma": "soon",
+		"start": "npm run build && npm run server",
+		"build": "npm run clean && npm run build1",
+		"build1": "webpack --config config/webpack.config.prod.js",
 		"build2": "webpack --optimize-minimize",
-		"dev2": "webpack-dev-server --config config0/webpack.config.js",
-		"start2": "npm run dev",
 		"clean": "rimraf public/dist/*",
-		"server": "npx http-server ./public -p 8155"
+		"server": "npx http-server ./public -p 3000",
+		"dev2": "webpack-dev-server --config config0/webpack.config.js"
 	},
 	"dependencies": {
 		"react": "^16.8.1",
@@ -43,6 +43,7 @@
 		"webpack": "^4.12.2",
 		"webpack-cli": "^3.0.8",
 		"webpack-dev-server": "^3.8.1",
+		"webpack-merge": "^4.2.2",
 		"html-webpack-plugin": "^3.2.0"
 	}
 }
