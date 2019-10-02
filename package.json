@@ -10,7 +10,7 @@
 		"build": "npm run clean && npm run build1",
 		"build1": "webpack --config config/webpack.config.prod.js --optimize-minimize",
 		"clean": "rimraf public/dist/*",
-		"server": "npx http-server ./public -p 3000",
+		"server": "npx http-server ./public -p 3000"
 	},
 	"dependencies": {
 		"react": "^16.8.1",

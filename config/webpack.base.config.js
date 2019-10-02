@@ -14,7 +14,7 @@ const entry = {
 };
 
 const output = {
-	filename: './[name]1bundle.js',
+	filename: './[name].bundle.js',
 	publicPath: '/',
 	path: path.resolve(__dirname, '../public/dist'),
 };
