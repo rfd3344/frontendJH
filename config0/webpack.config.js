@@ -16,7 +16,7 @@ const entry = {
 };
 
 const output = {
-	filename: '../dist/[name].[hash]bundle.js',
+	filename: './[name]1bundle.js',
 	publicPath: '/',
 	path: path.resolve(__dirname, '../public'),
 };
@@ -57,35 +57,34 @@ const optimization = {
 		chunks: 'all'
 	}
 };
+
 const devServer = {
-	port: 8080,
-	compress: true,
-	// historyApiFallback: true,
+	port: 8000,
+	historyApiFallback: true,
 	contentBase: path.join(__dirname, '../public'),
 	host: '0.0.0.0',
-	// publicPath: '/assets/',
+	publicPath: '/',
 
 };
-
-
 
 const performance = {
 	hints: 'warning',
 	maxEntrypointSize: 4000000,
 	maxAssetSize: 4000000,
 };
-
 module.exports = {
 	mode: 'production',
-	entry,
-	output,
+	entry: entry,
+	output: output,
 	module: moduleRules,
-	resolve,
-	optimization,
+	devServer: devServer,
+	resolve: resolve,
+	optimization: optimization,
+	performance: performance,
 	plugins: [
 		HtmlWebpackPluginConfig,
 	],
-	watch: true,
+	// watch: true,
 	// watchOptions: {
 	// 	aggregateTimeout: 300,
 	// 	poll: 1000,

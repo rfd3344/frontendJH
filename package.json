@@ -9,8 +9,10 @@
 		"build": "webpack --config config/webpack.config.js",
 		"karma": "webpack-dev-server --hot --config config/webpack.config.js",
 		"build2": "webpack --optimize-minimize",
-		"dev2": "webpack-dev-server --config  config0/webpack.config.js",
-		"start2": "npm run dev"
+		"dev2": "webpack-dev-server --config config0/webpack.config.js",
+		"start2": "npm run dev",
+		"clean": "rimraf public/dist/*",
+		"server": "npx http-server ./public -p 8155"
 	},
 	"dependencies": {
 		"react": "^16.8.1",
