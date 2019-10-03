@@ -11,12 +11,18 @@ const devServer = {
 	contentBase: path.join(__dirname, '../public'),
 	host: '0.0.0.0',
 	publicPath: '/',
-
+	lazy: true,
+	filename: 'bundle.js',
+	overlay: {
+		warnings: true,
+		errors: true,
+	}
 };
 
 module.exports = merge(webpackBaseConfig, {
 	mode: 'development',
 	devServer: devServer,
+
 
 	// watch: true,
 	// watchOptions: {
