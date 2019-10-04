@@ -3,7 +3,7 @@ const merge = require('webpack-merge');
 const webpackBaseConfig = require('./webpack.base.config.js');
 const path = require('path');
 
-const devServer = {
+const devServerConfig = {
 	port: 8000,
 	open: true,
 	hot: true,
@@ -11,12 +11,18 @@ const devServer = {
 	contentBase: path.join(__dirname, '../public'),
 	host: '0.0.0.0',
 	publicPath: '/',
-
+	lazy: true,
+	filename: 'bundle.js',
+	overlay: {
+		warnings: true,
+		errors: true,
+	}
 };
 
 module.exports = merge(webpackBaseConfig, {
 	mode: 'development',
-	devServer: devServer,
+	devServer: devServerConfig,
+
 
 	// watch: true,
 	// watchOptions: {
