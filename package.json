@@ -10,18 +10,23 @@
 	},
 	"main": "./dist/index.js",
 	"scripts": {
+		"dev": "webpack-dev-server --hot --config config/webpack.dev.config.js",
+		"karma": "soon",
+		"start": "npm run build && npm run server",
+		"build": "npm run clean && npm run build1",
+		"build1": "webpack --config config/webpack.config.prod.js --optimize-minimize",
 		"clean": "rimraf public/dist/*",
 		"server": "npx http-server ./public -p 3000"
 	},
 	"dependencies": {
-		"http-server": "^0.11.1"
 		"react": "^16.8.1",
 		"react-bootstrap": "^0.32.4",
 		"react-cropper": "^1.0.1",
 		"react-dom": "^16.8.1",
 		"react-redux": "^5.0.7",
 		"react-router-dom": "^4.3.1",
-		"redux": "^4.0.0"
+		"redux": "^4.0.0",
+		"http-server": "^0.11.1"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.3",
