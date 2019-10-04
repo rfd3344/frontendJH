@@ -11,7 +11,7 @@ const devServerConfig = {
 	contentBase: path.join(__dirname, '../public'),
 	host: '0.0.0.0',
 	publicPath: '/',
-	lazy: true,
+	// lazy: true,
 	filename: 'bundle.js',
 	overlay: {
 		warnings: true,
