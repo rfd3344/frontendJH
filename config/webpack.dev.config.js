@@ -3,7 +3,7 @@ const merge = require('webpack-merge');
 const webpackBaseConfig = require('./webpack.base.config.js');
 const path = require('path');
 
-const devServer = {
+const devServerConfig = {
 	port: 8000,
 	open: true,
 	hot: true,
@@ -21,7 +21,7 @@ const devServer = {
 
 module.exports = merge(webpackBaseConfig, {
 	mode: 'development',
-	devServer: devServer,
+	devServer: devServerConfig,
 
 
 	// watch: true,
