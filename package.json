@@ -1,47 +1,22 @@
 {
-	"name": "jh-project",
+	"name": "jh-frontend",
 	"version": "1.0.0",
-	"main": "index.js",
-	"license": "MIT",
+	"license": "UNLICENSED",
+	"description": "Template for frontend",
+	"author": "Eric Li <rfd3344@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rfd3344/jh-frontend.git"
+	},
+	"main": "./dist/index.js",
 	"scripts": {
-		"dev": "webpack-dev-server --hot --config config/webpack.dev.config.js",
-		"karma": "soon",
-		"start": "npm run build && npm run server",
-		"build": "npm run clean && npm run build1",
-		"build1": "webpack --config config/webpack.config.prod.js --optimize-minimize",
 		"clean": "rimraf public/dist/*",
 		"server": "npx http-server ./public -p 3000"
 	},
 	"dependencies": {
-		"react": "^16.8.1",
-		"react-bootstrap": "^0.32.4",
-		"react-cropper": "^1.0.1",
-		"react-dom": "^16.8.1",
-		"react-redux": "^5.0.7",
-		"react-router-dom": "^4.3.1",
-		"redux": "^4.0.0"
+		"http-server": "^0.11.1"
 	},
 	"devDependencies": {
-		"babel-core": "^6.26.3",
-		"babel-preset-env": "^1.7.0",
-		"babel-eslint": "^8.2.2",
-		"babel-loader": "^7.1.4",
-		"babel-polyfill": "^6.26.0",
-		"babel-plugin-transform-class-properties": "^6.24.1",
-		"babel-preset-es2015": "^6.18.0",
-		"babel-preset-react": "^6.16.0",
-		"babel-preset-stage-3": "^6.24.1",
-		"clean-webpack-plugin": "^3.0.0",
-		"extract-text-webpack-plugin": "^3.0.2",
-		"css-loader": "^0.28.11",
-		"file-loader": "^1.1.11",
-		"less": "^3.0.4",
-		"less-loader": "^4.1.0",
-		"style-loader": "^0.21.0",
-		"webpack": "^4.12.2",
-		"webpack-cli": "^3.0.8",
-		"webpack-dev-server": "^3.8.1",
-		"webpack-merge": "^4.2.2",
-		"html-webpack-plugin": "^3.2.0"
+
 	}
 }
