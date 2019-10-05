@@ -1,7 +1,8 @@
-
-const merge = require('webpack-merge');
-const webpackBaseConfig = require('./webpack.base.config.js');
 const path = require('path');
+const merge = require('webpack-merge');
+const webpack = require('webpack');
+const webpackBaseConfig = require('./webpack.base.config.js');
+
 
 const devServerConfig = {
 	port: 8000,
@@ -13,17 +14,24 @@ const devServerConfig = {
 	publicPath: '/',
 	// lazy: true,
 	filename: 'bundle.js',
-	overlay: {
-		warnings: true,
-		errors: true,
-	}
+	// overlay: {
+	// 	warnings: true,
+	// 	errors: true,
+	// }
 };
+
+
+
+const pluginsConfig = [
+
+];
+
 
 module.exports = merge(webpackBaseConfig, {
 	mode: 'development',
 	devServer: devServerConfig,
-
-
+	devtool: 'source-map',
+	plugins: pluginsConfig,
 	// watch: true,
 	// watchOptions: {
 	// 	aggregateTimeout: 300,
