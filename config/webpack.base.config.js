@@ -26,6 +26,7 @@ const moduleConfig = {
 						plugins: ["@babel/plugin-transform-runtime"],
 					},
 				},
+				{ loader:	'eslint-loader'},
 			],
 		},
 		{	test: /\.less$/,
