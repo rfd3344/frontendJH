@@ -17,9 +17,16 @@ const outputConfig = {
 // module is Globle variable
 const moduleConfig = {
 	rules: [
-		{ 	test: /\.js$/,
+		{ test: /\.js$/,
 			exclude: /(node_modules|bower_components)/,
-			use: [{loader: 'babel-loader'}],
+			use: [
+				{ loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env', '@babel/preset-react'],
+						plugins: ["@babel/plugin-transform-runtime"],
+					},
+				},
+			],
 		},
 		{	test: /\.less$/,
 			use: [

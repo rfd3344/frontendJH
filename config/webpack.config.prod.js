@@ -3,7 +3,6 @@ const webpackBaseConfig = require('./webpack.base.config.js');
 
 
 
-
 module.exports = merge(webpackBaseConfig, {
 	mode: 'production',
 
