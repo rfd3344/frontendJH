@@ -1,15 +1,12 @@
 
 import '@babel/polyfill';
-import './env.js'
+import './env.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var a= function(){
-	console.warn(a)
-}
-console.warn( process)
+console.warn( process); // eslint-disable-line
 
 ReactDOM.render(
-	<h1> title 1111 </h1>,
-	document.getElementById('root')
+	<h1>title 1111</h1>,
+	document.getElementById('root'),
 );
