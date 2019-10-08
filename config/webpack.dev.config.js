@@ -1,8 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const webpackBaseConfig = require('./webpack.base.config.js');
-
 
 const devServerConfig = {
 	port: 8000,
@@ -20,8 +19,6 @@ const devServerConfig = {
 	// }
 };
 
-
-
 const pluginsConfig = [
 
 ];
@@ -38,7 +35,5 @@ module.exports = merge(webpackBaseConfig, {
 	// 	poll: 1000,
 	// 	ignored: ['node_modules'],
 	// },
-
-
 
 });
