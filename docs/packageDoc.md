@@ -3,7 +3,7 @@
 check outdated package
 ## npm list
 Show installed package version
-npm list --depth 0 
+npm list --depth 0
 
 
 
@@ -35,6 +35,13 @@ eslint-config-airbnb
 }
 ```
 ## Tools
+Tools auto check eslint in `Atom`:
+`linter`
+`linter-eslint`
+`linter-ui-default`
+
+
+
 
 ## disable line
 ```js
