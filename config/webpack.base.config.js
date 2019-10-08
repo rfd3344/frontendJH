@@ -4,8 +4,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const entryConfig = {
-	main: path.resolve(__dirname, '../src/index.js'),
-	entry2: path.resolve(__dirname, '../src/entry2.js'),
+	main: path.resolve(__dirname, '../src/index.jsx'),
+	entry2: path.resolve(__dirname, '../src/entry2.jsx'),
 };
 
 const outputConfig = {
@@ -17,19 +17,31 @@ const outputConfig = {
 // module is Globle variable
 const moduleConfig = {
 	rules: [
-		{ 	test: /\.js$/,
+		{
+			test: /\.(js|jsx)$/,
 			exclude: /(node_modules|bower_components)/,
-			use: [{ loader: 'babel-loader' }],
+			use: [
+				{
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env', '@babel/preset-react'],
+						plugins: ['@babel/plugin-transform-runtime'],
+					},
+				},
+				{ loader:	'eslint-loader' },
+			],
 		},
-		{	test: /\.less$/,
+		{
+			test: /\.less$/,
 			use: [
 				{ loader: 'style-loader' },
 				{ loader: 'css-loader' },
 				{ loader: 'less-loader' },
-			]
+			],
 		},
-		{	test: /\.(png|jpg|gif)$/,
-			use: [{loader: 'file-loader'}]
+		{
+			test: /\.(png|jpg|gif)$/,
+			use: [{ loader: 'file-loader' }],
 		},
 	],
 };
@@ -38,26 +50,18 @@ const resolveConfig = {
 	alias: {
 		// Define directory with alias name. usage:
 		// import AxiosMethod from 'utilis/AxiosMethod';
-		'src': path.resolve(__dirname, '../src/'),
-		'utilis': path.resolve(__dirname, '../src/utilis'),
-		'helper': path.resolve(__dirname, '../src/helper'),
-		'assets': path.resolve(__dirname, '../src/assets'),
-	}
+		src: path.resolve(__dirname, '../src/'),
+		utilis: path.resolve(__dirname, '../src/utilis'),
+		helper: path.resolve(__dirname, '../src/helper'),
+		assets: path.resolve(__dirname, '../src/assets'),
+	},
 };
 
 const optimizationConfig = {
 	runtimeChunk: true,
 	splitChunks: {
-		chunks: 'all'
+		chunks: 'all',
 	},
-};
-
-const devServerConfig = {
-	port: 8000,
-	historyApiFallback: true,
-	contentBase: path.join(__dirname, '../public'),
-	host: '0.0.0.0',
-	publicPath: '/',
 };
 
 const performanceConfig = {

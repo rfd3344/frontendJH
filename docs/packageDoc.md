@@ -1,2 +1,0 @@
-# babel
-babel-preset-env: 

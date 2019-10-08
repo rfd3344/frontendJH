@@ -6,7 +6,7 @@ class ArrayHelper {
 	 * Will only make a change for an ArrayBuffer, otherwise
 	 * the return value is unmodified
 	 */
-	static makeUint8Array( array ) {
+	static makeUint8Array(array) {
 		let result = array;
 		let arrayType = type(result);
 
