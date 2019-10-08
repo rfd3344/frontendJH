@@ -1,5 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [jh-frontend](#jh-frontend)
+- [Branches](#branches)
+  - [master](#master)
+  - [jh-webpack](#jh-webpack)
+  - [jh-firebase](#jh-firebase)
+  - [jh-react](#jh-react)
+- [Installation](#installation)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # jh-frontend
-This is a template for frontend page: 
+This is a template for frontend page:
 https://github.com/rfd3344/jh-frontend
 
 # Branches
@@ -11,9 +25,9 @@ including:
 - docs/
 
 ## jh-webpack
-Webpack + Babel + Less +
-Karma + Mocha + Eslint
-
+Environment: Webpack + Babel + Eslint </br>
+Test: Karma + Mocha + Chai	</br>
+Tools: React + Less </br>
 
 ## jh-firebase
 

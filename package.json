@@ -10,15 +10,17 @@
 	},
 	"main": "./dist/index.js",
 	"scripts": {
-		"dev": "webpack-dev-server --hot --config config/webpack.dev.config.js",
+		"dev": "npm run dev1 && npm run docs",
+		"dev1": "webpack-dev-server --hot --config config/webpack.dev.config.js",
 		"karma": "karma start config/karma.conf.js",
 		"start": "npm run inup && npm run build && npm run server",
-		"build": "npm run clean && npm run build1",
+		"build": "npm run lint && npm run clean && npm run build1",
 		"build1": "webpack --config config/webpack.config.prod.js --optimize-minimize",
 		"inup": "npm install && npm update",
 		"clean": "rimraf public/dist/*",
 		"lint": "eslint src/ && eslint tests/",
-		"server": "npx http-server ./public -p 3000"
+		"server": "npx http-server ./public -p 3000",
+		"docs": "doctoc README.md docs/."
 	},
 	"dependencies": {
 		"@babel/core": "^7.6.2",
@@ -47,6 +49,7 @@
 		"babel-eslint": "^10.0.3",
 		"chai": "^4.2.0",
 		"clean-webpack-plugin": "^3.0.0",
+		"doctoc": "^1.4.0",
 		"eslint": "^6.5.1",
 		"eslint-config-airbnb": "^18.0.1",
 		"eslint-loader": "^3.0.2",

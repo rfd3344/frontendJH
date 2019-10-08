@@ -1,3 +1,29 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [entry](#entry)
+- [output](#output)
+- [module](#module)
+  - [loader](#loader)
+  - [Image](#image)
+- [resolve](#resolve)
+- [optimization](#optimization)
+- [plugin](#plugin)
+  - [HtmlWebpackPlugin](#htmlwebpackplugin)
+- [dev-server](#dev-server)
+- [watch](#watch)
+- [externals](#externals)
+- [performance](#performance)
+- [Others](#others)
+  - [mode](#mode)
+  - [node](#node)
+  - [proxy](#proxy)
+  - [Hot Module Replacement](#hot-module-replacement)
+  - [浏览器兼容性(browser compatibility)](#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7browser-compatibility)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 https://webpack.docschina.org/configuration/
 

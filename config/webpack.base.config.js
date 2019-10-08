@@ -14,7 +14,6 @@ const outputConfig = {
 	path: path.resolve(__dirname, '../public/dist'),
 };
 
-// module is Globle variable
 const moduleConfig = {
 	rules: [
 		{
@@ -28,7 +27,8 @@ const moduleConfig = {
 						plugins: ['@babel/plugin-transform-runtime'],
 					},
 				},
-				{ loader:	'eslint-loader' },
+				// close eslint check, reduce info generate in Terminal
+				// { loader: 'eslint-loader' },
 			],
 		},
 		{
@@ -72,7 +72,7 @@ const performanceConfig = {
 
 const pluginsConfig = [
 	new HtmlWebpackPlugin({
-		template: './public/index.html',
+		template: './public/entry.html',
 		filename: 'index.html',
 		inject: 'body',
 	}),
