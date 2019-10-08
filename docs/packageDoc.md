@@ -28,7 +28,6 @@ Show installed package version
 npm list --depth 0
 
 
-
 # babel
 ## babel7
 @babel/core - always required
@@ -44,9 +43,17 @@ define most transform: es5
 
 @babel/plugin-transform-runtime
 
+```
+"@babel/core": "^7.6.2",
+"@babel/plugin-transform-runtime": "^7.6.2",
+"@babel/polyfill": "^7.6.0",
+"@babel/preset-env": "^7.6.2",
+"@babel/preset-react": "^7.0.0",
+"@babel/runtime": "^7.6.2",
+"babel-loader": "^8.0.6",
+```
 
-
-# Eslint
+# eslint
 eslint
 eslint-config-airbnb
 
@@ -56,7 +63,7 @@ eslint-config-airbnb
 	"extends": "airbnb"
 }
 ```
-## Tools
+## Atom Tools
 Tools auto check eslint in `Atom`:
 `linter`
 `linter-eslint`
@@ -67,5 +74,30 @@ Tools auto check eslint in `Atom`:
 
 ## disable line
 ```js
-	'fail line' // eslint-disable-line
+	console.log('fail line'); // eslint-disable-line
 ```
+
+
+# unit test
+```
+"chai": "^4.2.0",
+"karma": "^4.3.0",
+"karma-chai": "^0.1.0",
+"karma-detect-browsers": "^2.3.3",
+"karma-mocha": "^1.3.0",
+"karma-mocha-reporter": "^2.2.5",
+"karma-webpack": "^4.0.2",
+"mocha": "^6.2.1",
+```
+
+## karma
+
+## mocha
+
+## chai
+
+# Other Packages
+
+## lodash
+
+## doctoc

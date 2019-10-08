@@ -27,6 +27,13 @@
 
 
 https://webpack.docschina.org/configuration/
+# packages
+```
+"webpack": "^4.41.0",
+"webpack-merge": "^4.2.2"
+"webpack-cli": "^3.3.9",
+"webpack-dev-server": "^3.8.2"
+```
 
 # entry
 
@@ -37,6 +44,15 @@ https://webpack.docschina.org/configuration/
 
 ## loader
 
+```
+"babel-loader": "^8.0.6",
+"css-loader": "^3.2.0",
+"file-loader": "^4.2.0",
+"less-loader": "^5.0.0",
+"style-loader": "^1.0.0",
+```
+
+
 ## Image
 Small CSS file:  inline the stylesheet
 Small Img: base64 encode
@@ -46,7 +62,9 @@ Small Img: base64 encode
 # optimization
 
 # plugin
-
+```
+html-webpack-plugin
+```
 ## HtmlWebpackPlugin
 自动把js插入模板
 
