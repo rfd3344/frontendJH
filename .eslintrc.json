@@ -3,12 +3,21 @@
 	"parser": "babel-eslint",
 	"env": {
 		"browser": true,
-		"jasmine": true,
-		"jest": true
+		"commonjs": true,
+		"shared-node-browser": true,
+		"mocha": true,
+		"es6":true,
+		"worker":true,
+		"phantomjs":true
 	},
+	"plugins": [
+		"chai-expect"
+	],
 	"rules": {
 		"indent": ["error", "tab"],
 		"react/jsx-indent": ["error", "tab"],
-		"no-tabs": 0
+		"no-tabs": 0,
+		"prefer-arrow-callback": 0,
+		"func-names": 0
   }
 }

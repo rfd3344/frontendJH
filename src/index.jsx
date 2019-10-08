@@ -7,6 +7,6 @@ import ReactDOM from 'react-dom';
 console.warn(process); // eslint-disable-line
 
 ReactDOM.render(
-	<h1>title 11111</h1>,
+	<h1>title 222</h1>,
 	document.getElementById('root'),
 );
