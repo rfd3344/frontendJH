@@ -1,3 +1,12 @@
+# npm
+## npm outdated
+check outdated package
+## npm list
+Show installed package version
+npm list --depth 0 
+
+
+
 # babel
 ## babel7
 @babel/core - always required
@@ -29,5 +38,5 @@ eslint-config-airbnb
 
 ## disable line
 ```js
-	'fail line' // eslint-disable-line 
+	'fail line' // eslint-disable-line
 ```
