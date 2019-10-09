@@ -10,7 +10,7 @@
 	},
 	"main": "./dist/index.js",
 	"scripts": {
-		"dev": "npm run docs && npm run dev1 ",
+		"dev": "npm run docs && npm run dev1",
 		"dev1": "webpack-dev-server --hot --config config/webpack.dev.config.js",
 		"karma": "karma start config/karma.conf.js",
 		"start": "npm run inup && npm run build && npm run server",
