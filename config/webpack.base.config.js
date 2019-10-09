@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const entryConfig = {
 	main: path.resolve(__dirname, '../src/index.jsx'),
-	entry2: path.resolve(__dirname, '../src/entry2.jsx'),
+	entry2: path.resolve(__dirname, '../src/entry2.js'),
 };
 
 const outputConfig = {
