@@ -3,7 +3,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Karma](#karma)
+  - [Karma](#karma)
 - [Mocha](#mocha)
 - [Chai](#chai)
   - [assert](#assert)
@@ -11,7 +11,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-## Karma
+# Karma
 
 # Mocha
 

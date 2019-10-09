@@ -12,10 +12,17 @@
     - [@babel/preset-react](#babelpreset-react)
     - [@babel/polyfill](#babelpolyfill)
     - [@babel/runtime](#babelruntime)
-- [Eslint](#eslint)
+- [eslint](#eslint)
   - [.eslintrc.json](#eslintrcjson)
-  - [Tools](#tools)
+  - [Atom Tools](#atom-tools)
   - [disable line](#disable-line)
+- [unit test](#unit-test)
+  - [karma](#karma)
+  - [mocha](#mocha)
+  - [chai](#chai)
+- [Other Packages](#other-packages)
+  - [lodash](#lodash)
+  - [doctoc](#doctoc)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

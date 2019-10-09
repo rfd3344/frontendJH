@@ -3,6 +3,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
+- [packages](#packages)
 - [entry](#entry)
 - [output](#output)
 - [module](#module)
@@ -115,4 +116,5 @@ npm install --save-dev webpack-cli
 ```
 
 
-## 浏览器兼容性(browser compatibility)
+## browser compatibility
+浏览器兼容性
