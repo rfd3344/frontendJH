@@ -15,6 +15,7 @@ module.exports = function (config) {
 			'../tests/integration/**/*.js',
 		],
 
+
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
@@ -37,6 +38,7 @@ module.exports = function (config) {
 
 		// web server port
 		port: 9876,
+
 
 		// colors in the output (reporters and logs)
 		colors: true,
