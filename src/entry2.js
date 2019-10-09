@@ -1,2 +1,2 @@
 
-console.warn( 'entry 2 ');  // eslint-disable-line
+document.write('<h1>entry2.js is loaded</h1>');
