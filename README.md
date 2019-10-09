@@ -28,13 +28,12 @@ including:
 ## jh-webpack
 Environment: Webpack + Babel + Eslint </br>
 Test: Karma + Mocha + Chai	</br>
-Tools: React + Less </br>
+
 
 ## jh-firebase
 
-
 ## jh-react
-
+React + Redux + Less </br>
 
 # Installation
 - npm install
