@@ -4,8 +4,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const entryConfig = {
-	main: path.resolve(__dirname, '../src/index.jsx'),
-	entry2: path.resolve(__dirname, '../src/entry2.jsx'),
+	main: path.resolve(__dirname, '../src/index.js'),
+	entry2: path.resolve(__dirname, '../src/entry2.js'),
 };
 
 const outputConfig = {
@@ -79,7 +79,6 @@ const pluginsConfig = [
 	new webpack.HotModuleReplacementPlugin(),
 	new webpack.NamedModulesPlugin(),
 ];
-
 
 module.exports = {
 	mode: 'production',

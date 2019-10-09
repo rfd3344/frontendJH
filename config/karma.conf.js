@@ -3,36 +3,17 @@ const webpackConfig = require('./webpack.dev.config.js');
 
 module.exports = function (config) {
 	config.set({
-		// base path that will be used to resolve all patterns (eg. files, exclude)
-		basePath: '',
-
-		browserNoActivityTimeout: 5 * 60 * 1000,	// 5 mins
-
-
-		// frameworks to use
-		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-		frameworks: [
-			'mocha',			// mocha support
-			'detectBrowsers',	// detect's all browsers
-			'chai',				// chai support. no need to import.
-		],
-
 		// Change this to go HTTPS. The crt needs to be installed as trusted root...
 		protocol: 'http',
 
 		webpack: webpackConfig,
+
 		// list of files / patterns to load in the browser
 		files: [
 			'../src/index.js',
 			'../tests/unit/**/*.js',
-			'..//tests/integration/**/*.js',
+			'../tests/integration/**/*.js',
 		],
-
-
-		// list of files to exclude
-		exclude: [
-		],
-
 
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
@@ -45,6 +26,9 @@ module.exports = function (config) {
 			variableName: '__json__',
 		},
 
+		// list of files to exclude
+		exclude: [],
+
 		// test result displayed in Terminal
 		// possible values: 'dots', 'progress', 'mocha'
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
@@ -54,10 +38,8 @@ module.exports = function (config) {
 		// web server port
 		port: 9876,
 
-
-		// enable / disable colors in the output (reporters and logs)
+		// colors in the output (reporters and logs)
 		colors: true,
-
 
 		// level of logging
 		// possible values: config.LOG_DISABLE || config.LOG_ERROR ||
@@ -124,5 +106,19 @@ module.exports = function (config) {
 		// Concurrency level
 		// how many browser should be started simultaneous
 		concurrency: Infinity,
+
+		// base path that will be used to resolve all patterns (eg. files, exclude)
+		basePath: '',
+
+		// 5 mins
+		browserNoActivityTimeout: 5 * 60 * 1000,
+
+		// frameworks to use
+		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+		frameworks: [
+			'mocha',			// mocha support
+			'detectBrowsers',	// detect's all browsers
+			'chai',				// chai support. no need to import.
+		],
 	});
 };
