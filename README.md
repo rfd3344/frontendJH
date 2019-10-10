@@ -1,3 +1,7 @@
+# Temp Notes
+https://www.yiibai.com/firebase/firebase_write_list_data.html
+
+
 # jh-frontend
 This is a template for frontend page: 
 https://github.com/rfd3344/jh-frontend
