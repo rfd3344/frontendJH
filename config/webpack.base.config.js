@@ -76,7 +76,6 @@ const pluginsConfig = [
 		filename: 'index.html',
 		inject: 'body',
 	}),
-	new webpack.HotModuleReplacementPlugin(),
 	new webpack.NamedModulesPlugin(),
 ];
 

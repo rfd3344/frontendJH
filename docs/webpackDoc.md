@@ -22,7 +22,7 @@
   - [node](#node)
   - [proxy](#proxy)
   - [Hot Module Replacement](#hot-module-replacement)
-  - [浏览器兼容性(browser compatibility)](#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7browser-compatibility)
+  - [browser compatibility](#browser-compatibility)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

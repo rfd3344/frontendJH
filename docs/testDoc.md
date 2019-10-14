@@ -3,7 +3,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-  - [Karma](#karma)
+- [Karma](#karma)
 - [Mocha](#mocha)
 - [Chai](#chai)
   - [assert](#assert)
