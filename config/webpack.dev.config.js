@@ -21,6 +21,10 @@ const devServerConfig = {
 
 const pluginsConfig = [
 	new webpack.HotModuleReplacementPlugin(),
+	// new webpack.EnvironmentPlugin({
+	// 	NODE_ENV: 'development',
+	// 	debug: false,
+	// }),
 ];
 
 module.exports = merge(webpackBaseConfig, {
