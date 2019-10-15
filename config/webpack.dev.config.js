@@ -1,6 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackBaseConfig = require('./webpack.base.config.js');
 
@@ -27,7 +28,9 @@ const pluginsConfig = [
 		filename: 'index.html',
 		inject: 'body',
 	}),
-
+	new webpack.DefinePlugin({
+		debug: true,
+	}),
 ];
 
 module.exports = merge(webpackBaseConfig, {
