@@ -1,10 +1,16 @@
 import { assert } from 'chai';
 
-describe('Package test', function () {
+describe.only('Package test', function () {
 	describe('karma, mocha, chai', function () {
-		it('should skip for mocha skip', function () {
-			// mocha
-			this.skip();
+		let instanceNum = 0;
+		beforeEach(function () {
+			assert.strictEqual(instanceNum, 0);
+			instanceNum++;
+		});
+
+		afterEach(function () {
+			assert.strictEqual(instanceNum, 1);
+			instanceNum--;
 		});
 
 		it('should pass for all chai methods', function () {
@@ -14,5 +20,16 @@ describe('Package test', function () {
 			assert.isAtMost(9999, 10000, 1);
 			assert.isAbove(1000, 1);
 		});
+
+		it('should skip for mocha skip', function () {
+			this.skip();
+		});
+
+		it('mocha skip correctly', function (done) {
+			// fail since skip not work
+			done();
+		});
+
+
 	});
 });

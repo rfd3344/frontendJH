@@ -17,7 +17,7 @@
 		"build": "npm run lint && npm run clean && npm run build1",
 		"build1": "webpack --config config/webpack.config.prod.js --optimize-minimize",
 		"inup": "npm install && npm update",
-		"clean": "rimraf public/dist/*",
+		"clean": "rimraf public/dist/* && rimraf public/index.html",
 		"lint": "eslint src/ && eslint tests/",
 		"server": "npx http-server ./public -p 3000",
 		"docs": "doctoc README.md docs/."

@@ -1,6 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackBaseConfig = require('./webpack.base.config.js');
 
 const devServerConfig = {
@@ -21,10 +22,12 @@ const devServerConfig = {
 
 const pluginsConfig = [
 	new webpack.HotModuleReplacementPlugin(),
-	// new webpack.EnvironmentPlugin({
-	// 	NODE_ENV: 'development',
-	// 	debug: false,
-	// }),
+	new HtmlWebpackPlugin({
+		template: './public/entry.html',
+		filename: 'index.html',
+		inject: 'body',
+	}),
+
 ];
 
 module.exports = merge(webpackBaseConfig, {

@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const entryConfig = {
 	main: path.resolve(__dirname, '../src/index.js'),
@@ -9,9 +8,8 @@ const entryConfig = {
 };
 
 const outputConfig = {
-	path: path.resolve(__dirname, '../public/dist'),
 	filename: '[name].bundle.js',
-	publicPath: './dist',
+	path: path.resolve(__dirname, '../public/dist'),
 };
 
 const moduleConfig = {
@@ -76,15 +74,6 @@ const performanceConfig = {
 
 const pluginsConfig = [
 	new webpack.NamedModulesPlugin(),
-	new HtmlWebpackPlugin({
-		template: './public/entry.html',
-		filename: '../index.html',
-		inject: 'body',
-	}),
-	// new webpack.EnvironmentPlugin({
-	// 	// processed by JSON.stringify
-	// 	testEnv: 'test enviroment plugin',
-	// }),
 ];
 
 module.exports = {
