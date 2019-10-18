@@ -1,7 +1,6 @@
-
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 const entryConfig = {
 	main: path.resolve(__dirname, '../src/index.jsx'),
@@ -9,8 +8,7 @@ const entryConfig = {
 };
 
 const outputConfig = {
-	filename: './[name].bundle.js',
-	publicPath: '/',
+	filename: '[name].bundle.js',
 	path: path.resolve(__dirname, '../public/dist'),
 };
 
@@ -23,11 +21,11 @@ const moduleConfig = {
 				{
 					loader: 'babel-loader',
 					options: {
-						presets: ['@babel/preset-env', '@babel/preset-react'],
+						presets: ['@babel/preset-env'],
 						plugins: ['@babel/plugin-transform-runtime'],
 					},
 				},
-				// close eslint check, reduce info generate in Terminal
+				// closed eslint check, reduce info generate in Terminal
 				// { loader: 'eslint-loader' },
 			],
 		},
@@ -54,6 +52,10 @@ const resolveConfig = {
 		utilis: path.resolve(__dirname, '../src/utilis'),
 		helper: path.resolve(__dirname, '../src/helper'),
 		assets: path.resolve(__dirname, '../src/assets'),
+
+		tests: path.resolve(__dirname, '../tests'),
+		testData: path.resolve(__dirname, '../tests/testData'),
+		testHelper: path.resolve(__dirname, '../tests/testHelper'),
 	},
 };
 
@@ -71,15 +73,8 @@ const performanceConfig = {
 };
 
 const pluginsConfig = [
-	new HtmlWebpackPlugin({
-		template: './public/entry.html',
-		filename: 'index.html',
-		inject: 'body',
-	}),
-	new webpack.HotModuleReplacementPlugin(),
 	new webpack.NamedModulesPlugin(),
 ];
-
 
 module.exports = {
 	mode: 'production',

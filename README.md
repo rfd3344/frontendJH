@@ -18,22 +18,30 @@ This is a template for frontend page:
 https://github.com/rfd3344/jh-frontend
 
 # Branches
-## master
-Only document all branches description. </br>
-including:
-- Readme.md
-- .gitignore
-- docs/
-
 ## jh-webpack
+<<<<<<< ours
 Environment: Webpack + Babel + Eslint </br>
 Test: Karma + Mocha + Chai	</br>
+=======
+This is a template used webpack as frontend config
+Tech used:
+- webpack
+- babel
+- Karma, Mocha, Chai
+- Eslint and airbnb
+>>>>>>> theirs
 
 
 ## jh-firebase
 
+<<<<<<< ours
 ## jh-react
 React + Redux + Less </br>
+=======
+
+# Chang log
+details see: [ChangeLog](./docs/ChangeLog.md#)
+>>>>>>> theirs
 
 # Installation
 - npm install

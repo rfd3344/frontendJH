@@ -18,6 +18,7 @@
 		"react/jsx-indent": ["error", "tab"],
 		"no-tabs": 0,
 		"prefer-arrow-callback": 0,
-		"func-names": 0
+		"func-names": 0,
+		"no-plusplus": 0
   }
 }
