@@ -25,7 +25,7 @@ const moduleConfig = {
 						plugins: ['@babel/plugin-transform-runtime'],
 					},
 				},
-				// close eslint check, reduce info generate in Terminal
+				// closed eslint check, reduce info generate in Terminal
 				// { loader: 'eslint-loader' },
 			],
 		},

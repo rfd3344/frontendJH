@@ -3,8 +3,6 @@ import '@babel/polyfill';
 
 import './env.js'; // eslint-disable-line
 
-var session = require('express-session');
-session('aa', 11);
 
 console.warn('Global variable debug:', debug); // eslint-disable-line
 

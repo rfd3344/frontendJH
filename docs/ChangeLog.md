@@ -11,6 +11,15 @@
 
 # jh-webpack
 
+## 0.1.0
+- Added Eslint and airbnb
+- Added Karma, Mocha, Chai
+- Added Webpack config
+- Added babel config
+- Imported `doctoc` and `lodash` libary
+
+
 # jh-react
+
 
 # jh-firebase
