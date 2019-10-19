@@ -20,6 +20,9 @@
 
 
 # jh-react
+- Merged jh-webpack@0.1.0 into
+
+
 
 
 # jh-firebase
