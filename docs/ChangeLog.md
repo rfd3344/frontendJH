@@ -11,6 +11,9 @@
 
 # jh-webpack
 
+## 0.2.0
+
+
 ## 0.1.0
 - Added Eslint and airbnb
 - Added Karma, Mocha, Chai
