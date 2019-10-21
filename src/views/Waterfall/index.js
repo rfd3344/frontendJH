@@ -15,8 +15,9 @@ export default class Waterfall extends React.Component {
 	componentDidMount() {
 		this.setState({ ImageURL: setImageURL(this.state.ImageURL) });
 		window.addEventListener('scroll', this.handleScroll);
-	}
-	handleScroll= () =>{
+	};
+
+	handleScroll() {
 		/********** scroll to bottom	************/
 		if( this.state.HideLoad &&
 		window.innerHeight + window.scrollY > document.body.scrollHeight-20 ){
@@ -33,7 +34,7 @@ export default class Waterfall extends React.Component {
 	render() {
 			return (
 					<section id="waterfall" >
-						<div class="images">
+						<div className="images">
 						{
 							this.state.ImageURL.map( item=>(
 								<img src={item} />

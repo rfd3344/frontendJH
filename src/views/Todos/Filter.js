@@ -4,9 +4,9 @@ import { filterTodo } from './Redux.js'
 
 const TodosFilter = ({filterTodo}) =>(
 	<div>
-		<button class="btn btn-info" onClick={() => filterTodo('All')}> All </button>
-		<button class="btn btn-info" onClick={() => filterTodo('Unfinished')}> Unfinished </button>
-		<button class="btn btn-success" onClick={() => filterTodo('Done')}> Done </button>
+		<button className="btn btn-info" onClick={() => filterTodo('All')}> All </button>
+		<button className="btn btn-info" onClick={() => filterTodo('Unfinished')}> Unfinished </button>
+		<button className="btn btn-success" onClick={() => filterTodo('Done')}> Done </button>
 	</div>
 )
 

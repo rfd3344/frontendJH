@@ -9,30 +9,30 @@ const ProductsFilter =	({ catagories, dispatch }) => {
 	}
 	return (
 		<div id="filters">
-			<div class="row ">
-				<div class="col">
-					<input id="Search" type="text" class="form-control"
+			<div className="row ">
+				<div className="col">
+					<input id="Search" type="text" className="form-control"
 						placeholder="Search..." onChange={handleChange}/>
 				</div>
-				<div class="col-4">
-					<div class="input-group ">
-						<div class="input-group-prepend">
-							<span class="input-group-text">Date:</span>
-							<span class="input-group-text">From</span>
+				<div className="col-4">
+					<div className="input-group ">
+						<div className="input-group-prepend">
+							<span className="input-group-text">Date:</span>
+							<span className="input-group-text">From</span>
 						</div>
-						<input id="DateFrom" type="text" class="form-control"
+						<input id="DateFrom" type="text" className="form-control"
 							onChange={handleChange} />
-						<div class="input-group-prepend">
-							<span class="input-group-text">-</span>
+						<div className="input-group-prepend">
+							<span className="input-group-text">-</span>
 						</div>
-						<input id="DateTo" type="text" class="form-control"
+						<input id="DateTo" type="text" className="form-control"
 							onChange={handleChange} />
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col">
-					<select id="CategoryFilter" class="custom-select"
+			<div className="row">
+				<div className="col">
+					<select id="CategoryFilter" className="custom-select"
 						onChange={handleChange} >
 						<option value="ALL" selected>Filter By Category...</option>
 						{ catagories.map( catagory =>(
@@ -41,8 +41,8 @@ const ProductsFilter =	({ catagories, dispatch }) => {
 						}
 					</select>
 				</div>
-				<div class="col">
-					<select id="SortBy" class="SortBy custom-select"
+				<div className="col">
+					<select id="SortBy" className="SortBy custom-select"
 						onChange={handleChange} >
 						<option value="Newness" selected>Sort By Newness</option>
 						<option value="Rating">Sort by Rating</option>
@@ -51,18 +51,18 @@ const ProductsFilter =	({ catagories, dispatch }) => {
 						<option value="HighPrice">Price: High to Low</option>
 					</select>
 				</div>
-				<div class="col">
-					<div class="input-group ">
-						<div class="input-group-prepend">
-							<span class="input-group-text">$</span>
+				<div className="col">
+					<div className="input-group ">
+						<div className="input-group-prepend">
+							<span className="input-group-text">$</span>
 						</div>
-						<input id="PriceFrom" type="text" class="form-control"
+						<input id="PriceFrom" type="text" className="form-control"
 							onChange={handleChange} />
-						<div class="input-group-prepend">
-							<span class="input-group-text">-</span>
-							<span class="input-group-text">$</span>
+						<div className="input-group-prepend">
+							<span className="input-group-text">-</span>
+							<span className="input-group-text">$</span>
 						</div>
-						<input id="PriceTo" type="text" class="form-control"
+						<input id="PriceTo" type="text" className="form-control"
 							onChange={handleChange} />
 					</div>
 				</div>

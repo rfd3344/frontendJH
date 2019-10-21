@@ -26,6 +26,7 @@
 	"rules": {
 		"indent": ["error", "tab"],
 		"react/jsx-indent": ["error", "tab"],
+		"react/jsx-indent-props": 0,
 		"no-tabs": 0,
 		"prefer-arrow-callback": 0,
 		"func-names": 0,

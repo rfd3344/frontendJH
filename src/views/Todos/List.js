@@ -4,11 +4,11 @@ import { toggleTodo } from './Redux.js'
 
 
 const TodosList = ({todosData , toggleTodo }) =>(
-	<ul class="list-group">
+	<ul className="list-group">
 		{todosData.map(item =>
 			<li key={item.id} className={item.completed ? 'list-group-item done': 'list-group-item unfinished'}
 				onClick={() => toggleTodo(item.id)}>
-				<i class="material-icons">{item.completed ? 'check_box': ''}</i> {item.text}
+				<i className="material-icons">{item.completed ? 'check_box': ''}</i> {item.text}
 			</li>
 		)}
 	</ul>

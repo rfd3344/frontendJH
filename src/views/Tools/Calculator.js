@@ -8,10 +8,8 @@ export default class Calculator extends React.Component {
 		super(props);
 		this.state = { res1: 0 , res2: 0 }
 	}
-	handleChange = value =>{
-		let res = calculate( value, this.state.res1, this.state.res2)
-		this.setState( res )
-	}
+
+
 	componentDidMount(){
 		window.addEventListener("keypress", keyListener.bind(this) );
 		function keyListener(e){
@@ -30,25 +28,29 @@ export default class Calculator extends React.Component {
 		}
 	}
 
+	handleChange(value) {
+		let res = calculate( value, this.state.res1, this.state.res2)
+		this.setState( res )
+	};
 
 	render() {
 		return (
-			<hgroup id="Calculator" class="alert alert-success">
+			<hgroup id="Calculator" className="alert alert-success">
 				<h2> Calculator </h2> <br/>
-				<div class="row">
-					<div class="result alert alert-dark">
+				<div className="row">
+					<div className="result alert alert-dark">
 						<strong> {this.state.res2} </strong>
 					</div>
 				</div>
-				<div class="row">
-					<div id="ButtonsLeft" class="col-9">
+				<div className="row">
+					<div id="ButtonsLeft" className="col-9">
 						{
 							this.props.ButtonsName.map( value=>(
 								<Button_Calc value={value} clickHandler={this.handleChange}/>
 							))
 						}
 					</div>
-					<div id="ButtonsRight" class="col-3">
+					<div id="ButtonsRight" className="col-3">
 						{
 							this.props.ButtonsName2.map( value=>(
 								<Button_Calc value={value} clickHandler={this.handleChange}/>
@@ -67,7 +69,7 @@ Calculator.defaultProps = {
 }
 
 const Button_Calc = ( {value,clickHandler} ) =>(
-	<button type="button" class="btn" onClick={()=>clickHandler(value)}>
+	<button type="button" className="btn" onClick={()=>clickHandler(value)}>
 		 {value}
 	</button>
 )

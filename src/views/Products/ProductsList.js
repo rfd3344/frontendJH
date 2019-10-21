@@ -12,7 +12,7 @@ const ProductsList = ({ products, ProductFilter, dispatch }) =>{
 	}
 	return (
 		<div>
-			<table class="table table-striped">
+			<table className="table table-striped">
 				<thead>
 					<tr>
 						<th scope="col">Img </th>
@@ -39,21 +39,21 @@ const ProductsList = ({ products, ProductFilter, dispatch }) =>{
 				</tbody>
 			</table>
 			<nav aria-label="navigation">
-				<ul class="pagination justify-content-end">
-					<li class="page-item"><a class="page-link">Previous</a></li>
+				<ul className="pagination justify-content-end">
+					<li className="page-item"><a className="page-link">Previous</a></li>
 					{ function(){
 						let rows = [];
 						for (let i=1; i<=totalpages; i++) {
 							rows.push(
-								<li class="page-item">
-									<a class="page-link" onClick={ (e)=>handleChange(i,e) }>{i}</a>
+								<li className="page-item">
+									<a className="page-link" onClick={ (e)=>handleChange(i,e) }>{i}</a>
 								</li>
 							);
 						}
 						return rows;
 						}()
 					}
-					<li class="page-item"><a class="page-link">Next</a></li>
+					<li className="page-item"><a className="page-link">Next</a></li>
 				</ul>
 			</nav>
 		</div>

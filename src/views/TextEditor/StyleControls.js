@@ -10,7 +10,7 @@ const StyleControls = (props) => {
 	return (
 		<div id="StyleControls">
 			{INLINE_STYLES.map(type =>
-				<span id={type.label} class={currentStyle.has(type.style)? 'active': '' }
+				<span id={type.label} className={currentStyle.has(type.style)? 'active': '' }
 					onMouseDown={ e=>onToggle(type, e)}>
 					{type.label}
 				</span>

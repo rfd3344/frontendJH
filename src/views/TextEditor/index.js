@@ -26,7 +26,7 @@ export default class TextEditor extends React.Component {
 		return (
 			<section>
 				<h1> TextEditor </h1> <br/>
-				<div id="TextEditor" class="RichEditor-editor">
+				<div id="TextEditor" className="RichEditor-editor">
 					<div id="Cotroller">
 							<ContentBlock	editorState={editorState} onChange={this.TagsChange.bind(this)} />
 							<StyleControls	editorState={editorState} onToggle={this.StyleChange.bind(this)} />

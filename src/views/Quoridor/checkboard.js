@@ -10,13 +10,13 @@ const CheckBoard = ({Hori_Gaps,Ver_Gaps, AddBoard }) => {
 		<div id="CheckBoard"	class="alert alert-secondary">
 			{
 				index.map( (row) =>(
-					<div class="row">
+					<div className="row">
 						{
 							index.map( (col) =>(
-								<div class="col badge badge-dark">
-									<div class={ Hori_Gaps[row][col]?'bottom active':'bottom'}
+								<div className="col badge badge-dark">
+									<div className={ Hori_Gaps[row][col]?'bottom active':'bottom'}
 										onClick={()=>AddBoard(row,col,'Hor')} ></div>
-									<div class={ Ver_Gaps[row][col]?'right active':'right'}
+									<div className={ Ver_Gaps[row][col]?'right active':'right'}
 										onClick={()=>AddBoard(row,col,'Ver')}	 ></div>
 								</div>
 							))

@@ -9,7 +9,8 @@ const Sidebar = () =>(
 					activeClassName="active"> Admin </NavLink>
 			</li>
 			<li className="nav-item">
-				<NavLink className="nav-link" to="/admin/dashboard2"
+				<NavLink
+					className="nav-link" to="/admin/dashboard2"
 					activeClassName="active"> Dashboard2 </NavLink>
 			</li>
 			<li className="nav-item">

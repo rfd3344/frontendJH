@@ -28,7 +28,7 @@ export default class Header extends React.Component {
 						<div id="Logo">
 							<img src={Logo} height="80px"/>
 						</div>
-						<ul class="nav justify-content-center">
+						<ul className="nav justify-content-center">
 							<li><NavLink to="/" exact className="nav-link" activeClassName="active"
 									onMouseEnter={this.hoverOn.bind(this)} onMouseLeave={this.hoverOff.bind(this)}
 									> Home </NavLink>
@@ -36,8 +36,8 @@ export default class Header extends React.Component {
 							<li>
 								<NavLink className="nav-link" to="/page1" activeClassName="active"
 									onMouseEnter={this.hoverOn.bind(this)} onMouseLeave={this.hoverOff.bind(this)}
-									> Page 1	 <i class="material-icons">keyboard_arrow_down</i> </NavLink>
-								<div class="submenu">
+									> Page 1	 <i className="material-icons">keyboard_arrow_down</i> </NavLink>
+								<div className="submenu">
 									<NavLink to="/page11" className="nav-link" activeClassName="active">Page 11</NavLink>
 									<NavLink to="/page12" className="nav-link" activeClassName="active">Page 12</NavLink>
 									<NavLink to="/page31" className="nav-link" activeClassName="active">Page 13</NavLink>
@@ -49,8 +49,8 @@ export default class Header extends React.Component {
 							<li>
 								<NavLink to="/page2" className="nav-link" activeClassName="active"
 									onMouseEnter={this.hoverOn.bind(this)} onMouseLeave={this.hoverOff.bind(this)}
-									> Page 2	 <i class="material-icons">keyboard_arrow_down</i> </NavLink>
-								<div class="submenu">
+									> Page 2	 <i className="material-icons">keyboard_arrow_down</i> </NavLink>
+								<div className="submenu">
 									<NavLink to="/page21" className="nav-link" activeClassName="active">Page 21</NavLink>
 									<NavLink to="/page22" className="nav-link" activeClassName="active">Page 22</NavLink>
 									<NavLink to="/page31" className="nav-link" activeClassName="active">Page 23</NavLink>
@@ -62,8 +62,8 @@ export default class Header extends React.Component {
 							<li>
 								<NavLink to="/page3" className="nav-link" activeClassName="active"
 									onMouseEnter={this.hoverOn.bind(this)} onMouseLeave={this.hoverOff.bind(this)}
-									> Page 3 <i class="material-icons">keyboard_arrow_down</i> </NavLink>
-								<div class="submenu">
+									> Page 3 <i className="material-icons">keyboard_arrow_down</i> </NavLink>
+								<div className="submenu">
 									<NavLink to="/page31" className="nav-link" activeClassName="active">Page 31</NavLink>
 									<NavLink to="/page32" className="nav-link" activeClassName="active">Page 32</NavLink>
 									<NavLink to="/page31" className="nav-link" activeClassName="active">Page 33</NavLink>

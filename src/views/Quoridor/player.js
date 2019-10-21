@@ -14,7 +14,7 @@ const Player = ({ PlayerID, data, AddBoard, dispatch }) => {
 	let drop = (e) => { dispatch( MovePiece( PlayerID, e.target.id ) ) }
 
 	return(
-		<div id={PlayerID} class="players">
+		<div id={PlayerID} className="players">
 			<span id="main" draggable="true" onDragStart={drag} ></span>
 			<span id="top" onDrop={drop} onDragOver={allowDrop}></span>
 			<span id="right" onDrop={drop} onDragOver={allowDrop}></span>

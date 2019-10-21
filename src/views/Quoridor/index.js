@@ -10,9 +10,9 @@ const Quoridor = ( {Player1,Player2} ) => (
 	<div id="quoridor">
 		<h1 > Quoridor </h1>
 		<br/>
-		<div class="row justify-content-center">
-			<div class="col-9"> <CheckBoard /> </div>
-			<div class="col-2 align-self-center"> <DispayBoard /> </div>
+		<div className="row justify-content-center">
+			<div className="col-9"> <CheckBoard /> </div>
+			<div className="col-2 align-self-center"> <DispayBoard /> </div>
 		</div>
 		<br/>
 		<Player PlayerID="Player1" data={Player1} />

@@ -13,7 +13,7 @@ export default class Template1 extends React.Component {
 		return (
 			<div id="page">
 				<Header />
-				<main class="alert-info">
+				<main className="alert-info">
 						<h1> Template1 </h1>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/page1" component={Page1} />

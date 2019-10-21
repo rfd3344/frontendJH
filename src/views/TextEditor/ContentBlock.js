@@ -15,7 +15,7 @@ const ContentBlock = (props) => {
 		props.onChange(found.style)
 	}
 	return (
-		<select id="ContentBlock" class="custom-select" onChange={handleChange} >
+		<select id="ContentBlock" className="custom-select" onChange={handleChange} >
 			{TagsName.map((type) =>
 				<option value={type.label}	selected={type.style === blockType}>{type.label}</option>
 			)}

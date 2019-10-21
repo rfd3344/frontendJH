@@ -14,9 +14,9 @@ const AddForm = ({ dispatch }) =>{
 	return(
 		<div>
 			<form onSubmit={SubmitHandler} >
-				<div class="input-group mb-3">
-					<input type="text" class="form-control"	ref={node => input = node} />
-					<button class="btn btn-primary"> Add To List </button>
+				<div className="input-group mb-3">
+					<input type="text" className="form-control"	ref={node => input = node} />
+					<button className="btn btn-primary"> Add To List </button>
 				</div>
 			</form>
 		</div>
