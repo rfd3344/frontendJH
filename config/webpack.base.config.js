@@ -21,7 +21,7 @@ const moduleConfig = {
 				{
 					loader: 'babel-loader',
 					options: {
-						presets: ['@babel/preset-env'],
+						presets: ['@babel/preset-env', '@babel/preset-react'],
 						plugins: ['@babel/plugin-transform-runtime'],
 					},
 				},
@@ -49,6 +49,7 @@ const resolveConfig = {
 		// Define directory with alias name. usage:
 		// import AxiosMethod from 'utilis/AxiosMethod';
 		src: path.resolve(__dirname, '../src/'),
+		views: path.resolve(__dirname, '../src/views'),
 		utilis: path.resolve(__dirname, '../src/utilis'),
 		helper: path.resolve(__dirname, '../src/helper'),
 		assets: path.resolve(__dirname, '../src/assets'),
