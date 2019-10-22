@@ -4,10 +4,7 @@
 
 
 - [jh-webpack](#jh-webpack)
-<<<<<<< ours
-=======
   - [0.2.0](#020)
->>>>>>> theirs
   - [0.1.0](#010)
 - [jh-react](#jh-react)
 - [jh-firebase](#jh-firebase)
