@@ -26,9 +26,8 @@ import Template1 from './layout/Page';
 const Routers = () => (
 	<Router>
 		<Switch>
-			<Route path="/admin" component={Admin} />
 			<Route path="/login" component={Login} />
-			<Route path="/" component={Template1} />
+			<Route exact path="/" component={Template1} />
 
 			<Route exact path="/admin" component={Admin} />
 			<Route path="/admin/dashboard2" component={Dashboard2} />
