@@ -1,9 +1,16 @@
-'use strict';
-import StringHelper from '../../helpers/StringHelper';
-
 import _ from 'lodash';
 
 function noop() {}
+
+function flattenString(str) {
+	let result = str;
+
+	if (typeof str === 'string') {
+		result = (`${str}`).slice(1);
+	}
+
+	return result;
+}
 
 const fakeLogger = {
 	trace: noop,
@@ -15,11 +22,9 @@ const fakeLogger = {
 };
 
 let builtLogger = _.clone(fakeLogger);
-export var logger = builtLogger;
+export let logger = builtLogger;
 
-/*globals self: false */
-
-//let lastCallTime;
+// let lastCallTime;
 // function formatMsgWithTimeInfo(type, msg) {
 //   const now = Date.now();
 //   const diff = lastCallTime ? '+' + (now - lastCallTime) : '0';
@@ -29,18 +34,17 @@ export var logger = builtLogger;
 // }
 
 function formatMsg(type, msg) {
-	let myMsg = '[' + type + '] > ' + msg;
-
-	return StringHelper.flattenString(myMsg);
+	const myMsg = `[${type}] > + ${msg}`;
+	return flattenString(myMsg);
 }
 
 function consolePrintFn(type) {
 	const func = self.console[type];
 	if (func) {
 		return function (...args) {
-			if(args[0]) {
-				args[0] = formatMsg(type, args[0]);
-			}
+			if (args[0]) {
+				args[0] = formatMsg(type, args[0]); // eslint-disable-line
+
 			func.apply(self.console, args);
 		};
 	}
@@ -49,33 +53,31 @@ function consolePrintFn(type) {
 
 function exportLoggerFunctions(debugConfig, ...functions) {
 	functions.forEach(function (type) {
-		builtLogger[type] = debugConfig[type] ? debugConfig[type].bind(debugConfig) : consolePrintFn(type);
+		builtLogger[type] = debugConfig[type] ?
+			debugConfig[type].bind(debugConfig) : consolePrintFn(type);
 	});
 }
 
-export var enableLogs = function (debugConfig) {
-
+export const enableLogs = function (debugConfig) {
 	// reset builtLogger to a new copy of fakeLogger
 	builtLogger = _.clone(fakeLogger);
 
 	// build the new logger
 	if (debugConfig === true || typeof debugConfig === 'object') {
+		// Remove out from list here to hard-disable a log-level
 		exportLoggerFunctions(debugConfig,
-			// Remove out from list here to hard-disable a log-level
-			//'trace',
+			// 'trace',
 			'debug',
 			'log',
 			'info',
 			'warn',
-			'error'
-		);
+			'error');
 
 		// Some browsers don't allow to use bind on console object anyway
 		// fallback to default if needed
 		try {
 			builtLogger.log();
-		}
-		catch (e) {
+		} catch (e) {
 			// reset if there's a failure
 			builtLogger = _.clone(fakeLogger);
 		}
@@ -84,5 +86,3 @@ export var enableLogs = function (debugConfig) {
 	// set the actual global logger to the new built logger.
 	logger = builtLogger;
 };
-
-
