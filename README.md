@@ -5,10 +5,8 @@
 
 - [jh-frontend](#jh-frontend)
 - [Branches](#branches)
-  - [master](#master)
   - [jh-webpack](#jh-webpack)
-  - [jh-firebase](#jh-firebase)
-  - [jh-react](#jh-react)
+- [Chang log](#chang-log)
 - [Installation](#installation)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -30,7 +28,7 @@ Tech used:
 
 
 # Chang log
-details see: [ChangeLog](./docs/ChangeLog.md#)
+Details see: [ChangeLog](./docs/ChangeLog.md#)
 
 # Installation
 - npm install
