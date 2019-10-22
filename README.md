@@ -34,8 +34,8 @@ Tech used:
 React + Redux + Less </br>
 
 
-# Chang log
-details see: [ChangeLog](./docs/ChangeLog.md#)
+# Changlog
+Details see: [ChangeLog](./docs/ChangeLog.md#)
 
 
 # Installation
