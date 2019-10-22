@@ -1,7 +1,6 @@
 
 import '@babel/polyfill';
-
-import './env.js'; // eslint-disable-line
+import './static/css/common.css';
 
 
 console.warn('Global variable debug:', debug); // eslint-disable-line

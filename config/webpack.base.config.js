@@ -10,6 +10,7 @@ const entryConfig = {
 const outputConfig = {
 	filename: '[name].bundle.js',
 	path: path.resolve(__dirname, '../public/dist'),
+	publicPath: '/',
 };
 
 const moduleConfig = {
@@ -30,7 +31,7 @@ const moduleConfig = {
 			],
 		},
 		{
-			test: /\.less$/,
+			test: /\.(less|css)$/,
 			use: [
 				{ loader: 'style-loader' },
 				{ loader: 'css-loader' },
@@ -51,7 +52,7 @@ const resolveConfig = {
 		src: path.resolve(__dirname, '../src/'),
 		utilis: path.resolve(__dirname, '../src/utilis'),
 		helper: path.resolve(__dirname, '../src/helper'),
-		assets: path.resolve(__dirname, '../src/assets'),
+		static: path.resolve(__dirname, '../src/static'),
 
 		tests: path.resolve(__dirname, '../tests'),
 		testData: path.resolve(__dirname, '../tests/testData'),
