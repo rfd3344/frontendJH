@@ -33,6 +33,7 @@
 		"no-plusplus": 0,
 		"no-restricted-globals": 0,
 		"import/no-unresolved": 0,
+		"no-multiple-empty-lines": 0,
 		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
 
 	}
