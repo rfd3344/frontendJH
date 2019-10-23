@@ -8,7 +8,7 @@
   - [jh-webpack](#jh-webpack)
   - [jh-firebase](#jh-firebase)
   - [jh-react](#jh-react)
-- [Chang log](#chang-log)
+- [Changlog](#changlog)
 - [Installation](#installation)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
