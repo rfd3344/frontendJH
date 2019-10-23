@@ -17,7 +17,7 @@ export default function Home() {
 
 			<div className="row justify-content-around">
 				<div className="col-md-5">
-					<h2> slider1 </h2>
+					<h2>slider1</h2>
 					<Slider id="slider1" />
 				</div>
 			</div>

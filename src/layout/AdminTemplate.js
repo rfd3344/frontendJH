@@ -5,6 +5,7 @@ import './admin.less';
 import Sidebar from './Admin_Sidebar';
 
 export default function AdminTemplate() {
+	const { children } = this.props;
 	return (
 		<div id="admin">
 			{	// <Topbar />
@@ -15,7 +16,7 @@ export default function AdminTemplate() {
 						<Sidebar />
 					</nav>
 					<main className="col-sm-9 col-lg-10">
-						<br />
+						{children}
 					</main>
 				</div>
 			</div>
