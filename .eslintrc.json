@@ -32,11 +32,8 @@
 		"func-names": 0,
 		"no-plusplus": 0,
 		"no-restricted-globals": 0,
-<<<<<<< ours
 		"import/no-unresolved": 0,
 		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
-=======
-		"no-multiple-empty-lines": 0
->>>>>>> theirs
+
 	}
 }
