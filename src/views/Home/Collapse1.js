@@ -1,5 +1,5 @@
 import React from 'react';
-const Collapse1 = ( ) =>(
+const Collapse1 = () =>(
 	<div>
 		<p >
 			<a className="btn btn-primary" data-toggle="collapse" href="#Collapse1" role="button" aria-expanded="false">	Link with href </a>

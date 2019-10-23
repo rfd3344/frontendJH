@@ -1,8 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './admin.less';
-import Topbar from './Admin_Topbar';
+// import Topbar from './Admin_Topbar';
 import Sidebar from './Admin_Sidebar';
 
 export default function AdminTemplate() {
@@ -17,7 +16,6 @@ export default function AdminTemplate() {
 					</nav>
 					<main className="col-sm-9 col-lg-10">
 						<br />
-
 					</main>
 				</div>
 			</div>

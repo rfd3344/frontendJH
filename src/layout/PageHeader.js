@@ -36,7 +36,7 @@ export default class Header extends React.Component {
 							<li>
 								<NavLink className="nav-link" to="/page1" activeClassName="active"
 									onMouseEnter={this.hoverOn.bind(this)} onMouseLeave={this.hoverOff.bind(this)}
-									> Page 1	 <i className="material-icons">keyboard_arrow_down</i> </NavLink>
+									> Page 1 <i className="material-icons">keyboard_arrow_down</i> </NavLink>
 								<div className="submenu">
 									<NavLink to="/page11" className="nav-link" activeClassName="active">Page 11</NavLink>
 									<NavLink to="/page12" className="nav-link" activeClassName="active">Page 12</NavLink>
