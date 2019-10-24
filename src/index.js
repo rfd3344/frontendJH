@@ -10,11 +10,6 @@ function Index1() {
 	document.write('<h1> second line 222  </h1>');
 }
 
-
-
-
-
-
 Index1();
 
 export default Index1;
