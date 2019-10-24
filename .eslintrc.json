@@ -28,7 +28,7 @@
 		"no-tabs": 0,
 		"prefer-arrow-callback": 0,
 		"func-names": 0,
-		"max-len": ["warn", { "code": 200  }],
+		"max-len": ["warn", {"code": 200}],
 		"linebreak-style": 0,
 		"import/no-unresolved": 0,
 		"no-plusplus": 0,
