@@ -1,16 +1,15 @@
 
 import React from 'react';
+import AdminTemplate from 'layout/AdminTemplate';
 
+export default function Dashboard2() {
+	return (
+		<AdminTemplate>
+			<section>
+				<h1> Dashboard 2 </h1>
 
-export default class Home extends React.Component {
-		render() {
-				return (
-						<section>
-							<h1> Dashboard 2 </h1>
-
-
-							111
-						</section>
-				);
-		}
+				<p>111</p>
+			</section>
+		</AdminTemplate>
+	);
 }

@@ -1,29 +1,34 @@
 
 // Action
-export const filter_action = ( id, value ) => {
-	return ( { type: 'FILTER', id, value	} )
-}
+export const reduxDemoAction = (id, value) => {
+	return {
+		type: 'FILTER',
+		id,
+		value,
+	};
+};
 
 // Reducer
-let InitialState = {
+const initialState = {
 	products: [],
 	filters: {
 		Search: '',
-		CategoryFilter:'ALL',
+		CategoryFilter: 'ALL',
 		SortBy: null,
 		DateFrom: null,
-		DateTo:null,
-		PriceFrom:null,
-		PriceTo:null,
-		page: 1
-	}
-}
-const ProductFilter = (state = InitialState, action) => {
+		DateTo: null,
+		PriceFrom: null,
+		PriceTo: null,
+		page: 1,
+	},
+};
+
+const ProductFilter = (state = initialState, action) => {
 	switch (action.type) {
-		case 'FILTER':
-			state.filters[action.id] = action.value
-			return { ...state }
-		default: return state
+	case 'FILTER':
+		state.filters[action.id] = action.value;
+		return { ...state };
+	default: return state;
 	}
 }
 

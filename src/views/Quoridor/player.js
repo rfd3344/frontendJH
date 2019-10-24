@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { dispatch,connect } from 'react-redux'
+import { dispatch,connect } from 'react-redux';
 
-import { MovePiece } from './Redux.js'
+import { MovePiece } from './Redux.js';
 
 const Player = ({ PlayerID, data, AddBoard, dispatch }) => {
 	$(document).ready(function(){
@@ -25,7 +25,7 @@ const Player = ({ PlayerID, data, AddBoard, dispatch }) => {
 }
 
 const mapStateToProps = (state) => ({
-	completed: state.Quoridor.completed
+	completed: state.Quoridor.completed,
 })
 
-export default connect( mapStateToProps )(Player)
+export default connect( mapStateToProps )(Player);

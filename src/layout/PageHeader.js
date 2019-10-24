@@ -26,12 +26,13 @@ export default class Header extends React.Component {
 
 					<div className="row">
 						<div id="Logo">
-							<img src={Logo} height="80px"/>
+							<img src={Logo} height="80px" />
 						</div>
 						<ul className="nav justify-content-center">
-							<li><NavLink to="/" exact className="nav-link" activeClassName="active"
-									onMouseEnter={this.hoverOn.bind(this)} onMouseLeave={this.hoverOff.bind(this)}
-									> Home </NavLink>
+							<li>
+								<NavLink to="/" exact className="nav-link" activeClassName="active"
+								onMouseEnter={this.hoverOn.bind(this)} onMouseLeave={this.hoverOff.bind(this)}
+								> Home </NavLink>
 							</li>
 							<li>
 								<NavLink className="nav-link" to="/page1" activeClassName="active"

@@ -1,7 +1,8 @@
 
 import React from 'react';
-import Chart from 'chart.js'
+import Chart from 'chart.js';
 
+// export default function BarChart() {
 export default class LineChart extends React.Component {
 	constructor(props){
 		super(props);

@@ -1,11 +1,12 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import './admin.less';
 // import Topbar from './Admin_Topbar';
-import Sidebar from './Admin_Sidebar';
+import Sidebar from './AdminSidebar';
 
-export default function AdminTemplate() {
-	const { children } = this.props;
+function AdminTemplate(props) {
+	const { children } = props;
+
 	return (
 		<div id="admin">
 			{	// <Topbar />
@@ -23,3 +24,9 @@ export default function AdminTemplate() {
 		</div>
 	);
 }
+
+AdminTemplate.propTypes = {
+	children: PropTypes.element.isRequired,
+};
+
+export default AdminTemplate;
