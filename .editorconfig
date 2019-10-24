@@ -10,8 +10,3 @@ insert_final_newline     = true
 
 [*.md]
 trim_trailing_whitespace = false
-
-# hlsjs uses a different tab
-[src/hlsjs/**.js,tests/unit/hlsjs/**.js]
-indent_style             = space
-indent_size              = 2
