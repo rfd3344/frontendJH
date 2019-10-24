@@ -5,12 +5,12 @@ import	'./waterfall.less';
 import Loading from './Loading.js'
 
 export default class Waterfall extends React.Component {
-	constructor(props){
+	constructor(props) {
 		super(props)
 		this.state = {
 			HideLoad: true,
 			ImageURL : Array(0)
-		}
+		};
 	}
 	componentDidMount() {
 		this.setState({ ImageURL: setImageURL(this.state.ImageURL) });
@@ -18,7 +18,7 @@ export default class Waterfall extends React.Component {
 	};
 
 	handleScroll() {
-		/********** scroll to bottom	************/
+		// scroll to bottom
 		if( this.state.HideLoad &&
 		window.innerHeight + window.scrollY > document.body.scrollHeight-20 ){
 			this.setState({ HideLoad: false });

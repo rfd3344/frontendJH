@@ -1,11 +1,4 @@
 
-export const setImageURL = (preImage) =>{
-	for( let i of imgUrlList){
-		preImage.push( i )
-	}
-	return preImage
-}
-
 
 
 
@@ -31,4 +24,10 @@ const imgUrlList = [
 	'https://rfd3344.github.io/image/19.jpg',
 	'https://rfd3344.github.io/image/20.jpg',
 	'https://rfd3344.github.io/image/21.jpg',
-]
+];
+
+const setImageURL = (preImage) => imgUrlList.concat(preImage);
+
+export {
+	setImageURL, // eslint-disable-line
+};
