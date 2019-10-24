@@ -14,7 +14,6 @@ export default function Home() {
 		<section id="Home">
 			<h1>Home Page</h1>
 			<br />
-
 			<div className="row justify-content-around">
 				<div className="col-md-5">
 					<h2>slider1</h2>
