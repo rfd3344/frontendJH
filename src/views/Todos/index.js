@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Input from './Input.js'
-import List from './List.js'
-import Filter from './Filter.js'
+import Input from './Input';
+import List from './List';
+import Filter from './Filter';
 
 const Todos = () => (
 	<div id="Todos" className="container">
