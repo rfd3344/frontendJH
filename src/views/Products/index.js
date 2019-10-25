@@ -1,25 +1,23 @@
-import React from 'react'
+import React from 'react';
 import axios from 'axios';
-
-import Loading from './Loading.js'
-import ProductsList from './ProductsList.js'
-import ProductsFilter from './ProductsFilter.js'
+import AdminTemplate from 'layout/AdminTemplate';
+import Loading from './Loading';
+import ProductsList from './ProductsList';
+import ProductsFilter from './ProductsFilter';
 
 
 
 export default class Products extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
 			error: null,
 			Loading: true,
 			items: [],
-			catagories: []
+			catagories: [],
 		};
 	}
 	componentDidMount() {
-
 		// console.log( a )
 		axios.get('/api/products').then( res =>{
 			if( res.data.success ){
@@ -44,13 +42,14 @@ export default class Products extends React.Component {
 	}
 	render() {
 		return (
-			<div id="Products">
-
-				<h1> Products </h1>
-				<ProductsFilter catagories={this.state.catagories} />
-				{ this.state.Loading ? <Loading /> :
-					<ProductsList products={this.state.items} /> }
-			</div>
+			<AdminTemplate>
+				<div id="Products">
+					<h1> Products </h1>
+					<ProductsFilter catagories={this.state.catagories} />
+					{ this.state.Loading ? <Loading /> :
+						<ProductsList products={this.state.items} /> }
+				</div>
+			</AdminTemplate>
 		)
 	}
 }

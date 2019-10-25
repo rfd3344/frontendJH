@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Logo from 'static/img/Logo.png';
+// import Logo from 'static/img/Logo.png';
 
 export default class Header extends React.Component {
 	constructor(props) {
@@ -26,7 +26,7 @@ export default class Header extends React.Component {
 
 					<div className="row">
 						<div id="Logo">
-							<img src={Logo} height="80px" />
+							<img src={'Logo'} height="42" alt="logo" />
 						</div>
 						<ul className="nav justify-content-center">
 							<li>

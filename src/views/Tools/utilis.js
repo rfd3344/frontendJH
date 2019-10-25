@@ -1,6 +1,7 @@
+import _ from 'lodash';
 
-export const calculate = ( inputValue, res1, res2 ) =>{
-	if( Number.isInteger(inputValue) ) {
+export default function calculate(inputValue, res1, res2) {
+	if (_.isSafeInteger(inputValue)) {
 		res2 = res2.toString() + inputValue
 		res2 = parseFloat(res2);
 	}else{

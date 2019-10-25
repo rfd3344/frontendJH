@@ -2,7 +2,8 @@
 import React from 'react';
 import { setImageURL } from './utilis';
 import	'./waterfall.less';
-import Loading from './Loading.js'
+import AdminTemplate from 'layout/AdminTemplate';
+import Loading from './Loading';
 
 export default class Waterfall extends React.Component {
 	constructor(props) {
@@ -33,6 +34,7 @@ export default class Waterfall extends React.Component {
 	};
 	render() {
 			return (
+				<AdminTemplate>
 					<section id="waterfall" >
 						<div className="images">
 						{
@@ -44,6 +46,7 @@ export default class Waterfall extends React.Component {
 						<div hidden={this.state.HideLoad1}> <Loading /> </div>
 						<br/><br/>
 					</section>
+				</AdminTemplate>
 			);
 	}
 }

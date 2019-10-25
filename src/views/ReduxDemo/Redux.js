@@ -1,12 +1,10 @@
 
 // Action
-export const reduxDemoAction = (id, value) => {
-	return {
-		type: 'FILTER',
-		id,
-		value,
-	};
-};
+export const reduxDemoAction = (id, value) => ({
+	type: 'FILTER',
+	id,
+	value,
+});
 
 // Reducer
 const initialState = {
@@ -30,6 +28,6 @@ const ProductFilter = (state = initialState, action) => {
 		return { ...state };
 	default: return state;
 	}
-}
+};
 
-export default ProductFilter
+export default ProductFilter;
