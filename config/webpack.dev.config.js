@@ -11,7 +11,7 @@ const devServerConfig = {
 	hot: true,
 	historyApiFallback: true,
 	contentBase: path.join(__dirname, '../public'),
-	host: '0.0.0.0',
+	host: 'localhost',
 	publicPath: '/',
 	// lazy: true,
 	filename: 'bundle.js',
@@ -29,7 +29,7 @@ const pluginsConfig = [
 		inject: 'body',
 	}),
 	new webpack.DefinePlugin({
-		debug: true,
+		jhDebug: true,
 	}),
 ];
 
