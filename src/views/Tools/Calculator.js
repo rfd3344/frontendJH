@@ -1,5 +1,22 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { calculate } from './utilis';
+
+const buttons = {
+	ButtonsName: ['A/C', '+/-', '%', 7, 8, 9, 4, 5, 6, 1, 2, 3, 0, '.'],
+	ButtonsName2: ['+', '-', 'x', '/', '='],
+};
+
+const ButtonCalculator = ({ value, clickHandler }) => (
+	<button type="button" className="btn" onClick={() => clickHandler(value)}>
+		{value}
+	</button>
+);
+
+ButtonCalculator.propTypes = {
+	value: PropTypes.string.isRequired,
+	clickHandler: PropTypes.func.isRequired,
+};
 
 export default function Calculator() {
 	const [val1, setVal1] = useState(0);
@@ -44,30 +61,19 @@ export default function Calculator() {
 			<div className="row">
 				<div id="ButtonsLeft" className="col-9">
 					{
-						// this.props.ButtonsName.map( value=>(
-						// 	<Button_Calc value={value} clickHandler={handleChange}/>
-						// ))
+						buttons.ButtonsName.map((value) => (
+							<ButtonCalculator value={value} clickHandler={handleChange} />
+						))
 					}
 				</div>
 				<div id="ButtonsRight" className="col-3">
 					{
-						// this.props.ButtonsName2.map( value=>(
-						// 	<Button_Calc value={value} clickHandler={handleChange}/>
-						// ))
+						buttons.ButtonsName2.map((value) => (
+							<ButtonCalculator value={value} clickHandler={handleChange} />
+						))
 					}
 				</div>
 			</div>
 		</hgroup>
 	);
 }
-//
-// Calculator.defaultProps = {
-// 	ButtonsName: ['A/C', '+/-', '%', 7, 8, 9, 4, 5, 6, 1, 2, 3, 0, '.'],
-// 	ButtonsName2: ['+', '-', 'x', '/', '='],
-// };
-//
-// const Button_Calc = ({ value, clickHandler }) =>(
-// 	<button type="button" className="btn" onClick={() => clickHandler(value)}>
-// 		{value}
-// 	</button>
-// );
