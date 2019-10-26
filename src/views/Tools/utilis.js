@@ -1,50 +1,58 @@
 import _ from 'lodash';
 
-export default function calculate(inputValue, res1, res2) {
-	if (_.isSafeInteger(inputValue)) {
-		res2 = res2.toString() + inputValue;
-		res2 = parseFloat(res2);
-	} else {
-		switch (inputValue) {
-		case 'A/C':
-			res1 = res2 = 0;
-			break;
-		case '+/-':
-			res2 = -res2;
-			break;
-		case '%':
+function calculate(operator = '', previousNum = 0, calculatedResult = 0) {
+	const convertedOperator = parseFloat(operator);
+	if (_.isSafeInteger(convertedOperator)) {
+		return {
+			previousNum,
+			calculatedResult: parseFloat(calculatedResult.toString() + convertedOperator),
+		};
+	}
 
-			break;
-		case '.':
-			res2 += '.';
-			break;
-		case '+':
-			res1 = res2 + '+';
-			res2 = 0;
-			break;
-		case '-':
-			res1 = res2 + '-';
-			res2 = 0;
-			break;
-		case 'x':
-			res1 = res2 + '*';
-			res2 = 0;
-			break;
-		case '/':
-			res1 = res2 + '/';
-			res2 = 0;
-			break;
-		case '=':
-			res2 = eval(res1 + res2);
-			res1 = 0;
-			break;
-		default:
-			res2 = 'Error Occurs';
-			break;
-		}
+	let newPreviousNum = previousNum;
+	let newCalculatedResult = calculatedResult;
+	switch (operator) {
+	case 'A/C': // clear
+		newPreviousNum = 0;
+		newCalculatedResult = 0;
+		break;
+	case '+/-':
+		newCalculatedResult = -calculatedResult;
+		break;
+	case '%':
+		break;
+	case '.':
+		newCalculatedResult += '.';
+		break;
+	case '+':
+		newPreviousNum = `${calculatedResult}+`;
+		newCalculatedResult = 0;
+		break;
+	case '-':
+		newPreviousNum = `${calculatedResult}-`;
+		newCalculatedResult = 0;
+		break;
+	case 'x':
+		newPreviousNum = `${calculatedResult}*`;
+		newCalculatedResult = 0;
+		break;
+	case '/':
+		newPreviousNum = `${calculatedResult}/`;
+		newCalculatedResult = 0;
+		break;
+	case '=':
+		newPreviousNum = 0;
+		newCalculatedResult = eval(previousNum + calculatedResult); // eslint-disable-line
+		break;
+	default:
+		throw new Error(`Errors: invalid operator typed: ${operator} in views/Tools/utilis`);
 	}
 	return {
-		res1,
-		res2,
+		previousNum: newPreviousNum,
+		calculatedResult: newCalculatedResult,
 	};
 }
+
+export {
+	calculate,  // eslint-disable-line
+};
