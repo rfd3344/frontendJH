@@ -42,9 +42,6 @@ Tech used:
 - Eslint and Airbnb
 
 
-
-
-
 ## jh-react
 React + Redux + Less
 
@@ -61,3 +58,6 @@ https://www.yiibai.com/firebase/firebase_write_list_data.html
 # Installation
 - npm install
 - npm start
+
+### install Atom package
+- apm install --compatible --packages-file .atom-packages
