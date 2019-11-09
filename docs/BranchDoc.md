@@ -1,3 +1,0 @@
-# jh-webpack
-
-# jh-react
