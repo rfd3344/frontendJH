@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 
 import { filterTodo } from './Redux';
 
-function TodosFilter({filterTodo}) {
+function TodosFilter() {
 	return (
 		<div>
-			<button className="btn btn-info" onClick={() => filterTodo('All')}> All </button>
-			<button className="btn btn-info" onClick={() => filterTodo('Unfinished')}> Unfinished </button>
-			<button className="btn btn-success" onClick={() => filterTodo('Done')}> Done </button>
+			<input type="button" className="btn btn-info" onClick={() => filterTodo('all')} value="All" />
+			<input type="button" className="btn btn-info" onClick={() => filterTodo('unfinished')} value="Unfinished" />
+			<input type="button" className="btn btn-success" onClick={() => filterTodo('done')} value="done" />
 		</div>
 	);
 }

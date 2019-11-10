@@ -1,4 +1,5 @@
 import { logger } from 'utilis/logger';
+
 // Action
 let nextTodoId = 2;
 export const addTodo = (text) => ({
@@ -21,7 +22,7 @@ const InitialState = {
 		{ id: 0, text: 1111, completed: true },
 		{ id: 1, text: 2222, completed: false },
 	],
-	filter: 'All',
+	filter: 'all',
 };
 
 const Todos = (state = InitialState, action) => {

@@ -5,13 +5,15 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [jh-frontend](#jh-frontend)
+- [Project Dscription](#project-dscription)
 - [Branches](#branches)
+  - [master](#master)
   - [jh-webpack](#jh-webpack)
-  - [jh-firebase](#jh-firebase)
   - [jh-react](#jh-react)
 - [Changlog](#changlog)
+- [Temp Notes](#temp-notes)
 - [Installation](#installation)
+    - [install Atom package](#install-atom-package)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
