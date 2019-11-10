@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
 import { toggleTodo } from './Redux';
 
-function TodosList({ todosData, toggleTodo }) {
+function TodosList({ todosData }) {
 	return (
 		<ul className="list-group">
 			{todosData.map((item) =>
@@ -28,7 +27,7 @@ const Visiablefilter = (todosData) => {
 		throw new Error(`Unknown filter: ${todosData.filter}`);
 	}
 };
-
+// store listenner
 const mapStateToProps = (state) => ({
 	todosData: Visiablefilter(state.Todos),
 });
