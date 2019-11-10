@@ -1,23 +1,6 @@
-import { logger } from '_utilis/logger';
+import { logger } from 'utilis/logger';
 
-// Action
-let nextTodoId = 2;
-export const addTodo = (text) => ({
-	type: 'ADD_TODO',
-	id: nextTodoId++,
-	text,
-});
-export const toggleTodo = (id) => ({
-	type: 'TOGGLE_TODO',
-	id,
-});
-export const filterTodo = (value) => ({
-	type: 'FILTER_TODO',
-	value,
-});
-
-// Reducer
-const InitialState = {
+const initialState = {
 	list: [
 		{ id: 0, text: 1111, completed: true },
 		{ id: 1, text: 2222, completed: false },
@@ -25,11 +8,11 @@ const InitialState = {
 	filter: 'all',
 };
 
-const Todos = (state = InitialState, action) => {
+
+export default function todos(state = initialState, action) {
 	logger.log(`action: ${action.type}`);
 	switch (action.type) {
 	case 'ADD_TODO':
-		console.warn('111', state )
 		return {
 			...state,
 			list: [
@@ -42,7 +25,6 @@ const Todos = (state = InitialState, action) => {
 			],
 		};
 	case 'TOGGLE_TODO':
-		console.warn('111', state )
 		return {
 			...state,
 			list: state.list.map((item) => {
@@ -57,6 +39,4 @@ const Todos = (state = InitialState, action) => {
 		};
 	default: return state;
 	}
-};
-
-export default Todos;
+}

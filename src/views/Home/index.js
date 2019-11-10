@@ -3,7 +3,7 @@ import React from 'react';
 
 import './style.less';
 
-import PageTemplate from 'layout/PageTemplate';
+import PageTemplate from '_layout/PageTemplate';
 import Slider from './Slider';
 import Collapse1 from './Collapse1';
 import CollapseMulti from './CollapseMulti';

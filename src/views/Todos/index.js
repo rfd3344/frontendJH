@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AdminTemplate from 'layout/AdminTemplate';
+import AdminTemplate from '_layout/AdminTemplate';
 import TodosInput from './TodosInput';
 import TodosList from './TodosList';
 import TodosFilter from './TodosFilter';

@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTodo } from './Redux';
+import { addTodo } from '_actions/todos';
 
 
-const AddForm = ({ dispatch }) => {
-	console.warn('dispatch', dispatch );
+const TodosInput = ({ dispatch }) => {
 	const textInput = React.createRef();
 	const clickHandler = (e) => {
 		e.preventDefault();
@@ -25,8 +24,8 @@ const AddForm = ({ dispatch }) => {
 	);
 };
 
-AddForm.propTypes = {
+TodosInput.propTypes = {
 	dispatch: PropTypes.func.isRequired,
 };
 
-export default connect()(AddForm);
+export default connect()(TodosInput);

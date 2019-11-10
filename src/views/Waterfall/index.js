@@ -2,7 +2,7 @@
 import React from 'react';
 import { setImageURL } from './utilis';
 import	'./waterfall.less';
-import AdminTemplate from 'layout/AdminTemplate';
+import AdminTemplate from '_layout/AdminTemplate';
 import Loading from './Loading';
 
 export default class Waterfall extends React.Component {

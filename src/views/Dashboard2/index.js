@@ -1,6 +1,6 @@
 
 import React from 'react';
-import AdminTemplate from 'layout/AdminTemplate';
+import AdminTemplate from '_layout/AdminTemplate';
 
 export default function Dashboard2() {
 	return (

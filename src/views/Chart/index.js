@@ -1,6 +1,6 @@
 
 import React from 'react';
-import AdminTemplate from 'layout/AdminTemplate';
+import AdminTemplate from '_layout/AdminTemplate';
 import BarChart from './BarChart';
 import LineChart from './LineChart';
 import MixedChart from './MixedChart';

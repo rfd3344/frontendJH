@@ -1,7 +1,7 @@
 
 import React from 'react';
 import './style.less';
-import AdminTemplate from 'layout/AdminTemplate';
+import AdminTemplate from '_layout/AdminTemplate';
 import Sexagenary from './Sexagenary';
 import Calculator from './Calculator';
 

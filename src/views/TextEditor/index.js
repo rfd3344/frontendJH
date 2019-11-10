@@ -4,7 +4,7 @@ import { Editor, EditorState, RichUtils } from 'draft-js';
 
 import './style.less';
 
-import AdminTemplate from 'layout/AdminTemplate';
+import AdminTemplate from '_layout/AdminTemplate';
 import ContentBlock from './ContentBlock';
 import StyleControls from './StyleControls';
 import ColorfulEditorExample from './index0';

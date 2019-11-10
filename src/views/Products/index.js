@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import AdminTemplate from 'layout/AdminTemplate';
+import AdminTemplate from '_layout/AdminTemplate';
 import Loading from './Loading';
 import ProductsList from './ProductsList';
 import ProductsFilter from './ProductsFilter';

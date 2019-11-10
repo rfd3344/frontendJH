@@ -2,21 +2,21 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 // Auth Pages
-import Login from 'views/Login';
+import Login from '_views/Login';
 
 // Front Pages
-import Home from 'views/Home';
-import Page1 from 'views/Page1';
+import Home from '_views/Home';
+import Page1 from '_views/Page1';
 
 // Admin Pages
-import Dashboard2 from 'views/Dashboard2';
-import Todos from 'views/Todos';
-import Products from 'views/Products';
-import Waterfall from 'views/Waterfall';
-import Chart from 'views/Chart';
-import Quoridor from 'views/Quoridor';
-import TextEditor from 'views/TextEditor';
-import Tools from 'views/Tools';
+import Dashboard2 from '_views/Dashboard2';
+import Todos from '_views/Todos';
+import Products from '_views/Products';
+import Waterfall from '_views/Waterfall';
+import Chart from '_views/Chart';
+import Quoridor from '_views/Quoridor';
+import TextEditor from '_views/TextEditor';
+import Tools from '_views/Tools';
 
 const Routers = () => (
 	<Router>

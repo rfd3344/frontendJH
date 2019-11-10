@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './style.less';
-import AdminTemplate from 'layout/AdminTemplate';
+import AdminTemplate from '_layout/AdminTemplate';
 import CheckBoard from './checkboard';
 import DispayBoard from './dispayboard';
 import Player from './player';

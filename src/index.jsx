@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import { logger, enableLogs } from 'utilis/logger';
-import 'static/css/common.css';
+import { logger, enableLogs } from '_utilis/logger';
+import '_static/css/common.css';
 
 import './style.less';
 import Routers from './routers';

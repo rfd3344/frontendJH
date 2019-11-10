@@ -1,9 +1,9 @@
 //	All reducers
 import { combineReducers } from 'redux';
 
-import Todos from 'views/Todos/Redux';
-import ProductFilter from 'views/Products/Redux';
-import Quoridor from 'views/Quoridor/Redux';
+import Todos from '_views/Todos/Redux';
+import ProductFilter from '_views/Products/Redux';
+import Quoridor from '_views/Quoridor/Redux';
 
 
 // Action reducer Example
