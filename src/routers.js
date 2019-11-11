@@ -17,6 +17,7 @@ import Chart from '_views/Chart';
 import Quoridor from '_views/Quoridor';
 import TextEditor from '_views/TextEditor';
 import Tools from '_views/Tools';
+import NotFound from '_views/NotFound';
 
 const Routers = () => (
 	<Router>
@@ -35,6 +36,7 @@ const Routers = () => (
 			<Route exact path="/admin/quoridor" component={Quoridor} />
 			<Route exact path="/admin/text-editor" component={TextEditor} />
 			<Route exact path="/admin/tools" component={Tools} />
+			<Route path="*" component={NotFound} />
 		</Switch>
 	</Router>
 );

@@ -23,6 +23,7 @@ if (typeof jhDebug !== 'undefined' && jhDebug === true) { // eslint-disable-line
 const store = createStore(rootReducer);
 
 
+
 ReactDOM.render(
 	<Provider store={store}>
 		<Routers />
