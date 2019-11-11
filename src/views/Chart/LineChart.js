@@ -1,50 +1,40 @@
-
 import React from 'react';
-import Chart from 'chart.js';
+import { Line } from 'react-chartjs-2';
 
-// export default function BarChart() {
-export default class LineChart extends React.Component {
-	constructor(props){
-		super(props);
-		let chart;
-	}
-	componentDidMount(){
-		let myChart = new Chart(this.chart, {
-			type: 'line',
-			data: {
-				labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-				datasets: [{
-						label: 'Label1',
-						data:[10, 13, 11, 15, 12, 8],
-						backgroundColor: 'rgba(54, 162, 235, 0.2)' ,
-						borderColor: 'rgba(54, 162, 235, 1)'	,
-						borderWidth: 1
-					},{
-						label: 'Label2',
-						data:[12, 19, 3, 5, 2, 3],
-						backgroundColor: 'rgba(255, 99, 132, 0.2)',
-						borderColor: 'rgba(255,99,132,1)',
-						borderWidth: 1
-					},
-				]
-			},
-			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero:true
-						}
-					}]
-				}
-			}
-		});
-	}
-	render() {
-			return (
-				<div>
-					<h2> LineChart </h2>
-					<canvas ref={ node=>this.chart=node } width="400" height="300"></canvas>
-				</div>
-			);
-	}
+export default function BarChart() {
+	const data = {
+		labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+		datasets: [{
+			label: 'My First dataset',
+			fill: false,
+			lineTension: 0.1,
+			backgroundColor: 'rgba(75,192,192,0.4)',
+			borderColor: 'rgba(75,192,192,1)',
+			borderCapStyle: 'butt',
+			borderDash: [],
+			borderDashOffset: 0.0,
+			borderJoinStyle: 'miter',
+			pointBorderColor: 'rgba(75,192,192,1)',
+			pointBackgroundColor: '#fff',
+			pointBorderWidth: 1,
+			pointHoverRadius: 5,
+			pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+			pointHoverBorderColor: 'rgba(220,220,220,1)',
+			pointHoverBorderWidth: 2,
+			pointRadius: 1,
+			pointHitRadius: 10,
+			data: [65, 59, 80, 81, 56, 55, 40],
+		}],
+	};
+
+	return (
+		<div>
+			<h2> Line Chart </h2>
+			<Line
+				data={data}
+				width={400}
+				height={300}
+			/>
+		</div>
+	);
 }

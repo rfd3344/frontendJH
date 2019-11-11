@@ -7,7 +7,6 @@ export default function Dashboard2() {
 		<AdminTemplate>
 			<section>
 				<h1> Dashboard 2 </h1>
-
 				<p>111</p>
 			</section>
 		</AdminTemplate>
