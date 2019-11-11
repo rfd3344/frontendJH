@@ -15,7 +15,7 @@ function TodosFilter({ clickHandler }) {
 }
 
 const mapStateToProps = (state) => ({
-	todosData: state.Todos.list,
+	todosData: state.todos.list,
 });
 
 const mapDispatchToProps = (dispatch) => ({

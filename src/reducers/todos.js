@@ -1,9 +1,9 @@
-import { logger } from 'utilis/logger';
+import { logger } from '_utilis/logger';
 
 const initialState = {
 	list: [
-		{ id: 0, text: 1111, completed: true },
-		{ id: 1, text: 2222, completed: false },
+		{ id: 0, text: '1111', completed: true },
+		{ id: 1, text: '2222', completed: false },
 	],
 	filter: 'all',
 };

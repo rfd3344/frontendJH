@@ -11,9 +11,7 @@ import './style.less';
 import Routers from './routers';
 import rootReducer from './reducers';
 
-/**
- * Initialization
- */
+// Initialization
 
 // Check logger
 if (typeof jhDebug !== 'undefined' && jhDebug === true) { // eslint-disable-line no-undef
@@ -23,7 +21,6 @@ if (typeof jhDebug !== 'undefined' && jhDebug === true) { // eslint-disable-line
 
 // Redux initialze
 const store = createStore(rootReducer);
-
 
 
 ReactDOM.render(

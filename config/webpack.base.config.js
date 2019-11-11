@@ -8,8 +8,8 @@ const entryConfig = {
 };
 
 const outputConfig = {
-	filename: '[name].bundle.js',
-	path: path.resolve(__dirname, '../public/dist'),
+	filename: './dist/[name].bundle.js',
+	path: path.resolve(__dirname, '../public/'),
 	publicPath: '/',
 };
 
@@ -82,7 +82,6 @@ const pluginsConfig = [
 ];
 
 module.exports = {
-	mode: 'production',
 	entry: entryConfig,
 	output: outputConfig,
 	module: moduleConfig,

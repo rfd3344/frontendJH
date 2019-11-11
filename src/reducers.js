@@ -1,13 +1,12 @@
 //	All reducers
 import { combineReducers } from 'redux';
 
-import Todos from '_views/Todos/Redux';
+import todos from '_reducers/todos';
 import ProductFilter from '_views/Products/Redux';
 import Quoridor from '_views/Quoridor/Redux';
 
 
 // Action reducer Example
-
 export const addTodo = (text) => ({
 	type: 'ADD_TODO',
 	text,
@@ -28,7 +27,7 @@ const reducer1 = (state = [], action) => {
 
 export default combineReducers({
 	reducer1,
-	Todos,
+	todos,
 	ProductFilter,
 	Quoridor,
 });

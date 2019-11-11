@@ -6,7 +6,7 @@ const webpackBaseConfig = require('./webpack.base.config.js');
 const pluginsConfig = [
 	new HtmlWebpackPlugin({
 		template: './public/entry.html',
-		filename: '../index.html',
+		filename: './index.html',
 		inject: 'body',
 	}),
 
