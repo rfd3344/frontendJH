@@ -15,7 +15,7 @@ function TodosList({ todosData, clickHandler }) {
 		</ul>
 	);
 }
-const Visiablefilter = (todosData) => {
+const visiablefilter = (todosData) => {
 	switch (todosData.filter) {
 	case 'all':
 		return todosData.list;
@@ -29,7 +29,7 @@ const Visiablefilter = (todosData) => {
 };
 // store listenner
 const mapStateToProps = (state) => ({
-	todosData: Visiablefilter(state.todos),
+	todosData: visiablefilter(state.todos),
 });
 
 const mapDispatchToProps = (dispatch) => ({

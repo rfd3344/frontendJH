@@ -10,7 +10,7 @@ const initialState = {
 
 
 export default function todos(state = initialState, action) {
-	logger.log(`action: ${action.type}`);
+	logger.log(`action: ${action.type}`, state);
 	switch (action.type) {
 	case 'ADD_TODO':
 		return {

@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import { addTodo } from '_actions/todos';
 
 
-const TodosInput = ({ dispatch }) => {
+const TodosInput = ({ triggerAdd }) => {
 	const textInput = React.createRef();
 	const clickHandler = (e) => {
 		e.preventDefault();
 		const inputValue = textInput.current.value.trim();
 		if (!inputValue) return;
-		dispatch(addTodo(inputValue));
+		triggerAdd(inputValue);
 		textInput.current.value = '';
 	};
 
@@ -24,8 +24,12 @@ const TodosInput = ({ dispatch }) => {
 	);
 };
 
+const mapDispatchToProps = (dispatch) => ({
+	triggerAdd: (value) => dispatch(addTodo(value)),
+});
+
 TodosInput.propTypes = {
-	dispatch: PropTypes.func.isRequired,
+	triggerAdd: PropTypes.func.isRequired,
 };
 
-export default connect()(TodosInput);
+export default connect(null, mapDispatchToProps)(TodosInput);

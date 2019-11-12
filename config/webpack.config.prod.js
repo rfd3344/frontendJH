@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackBaseConfig = require('./webpack.base.config.js');
 const packageJson = require('../package.json');
@@ -16,8 +16,34 @@ const pluginsConfig = [
 	}),
 ];
 
+const optimizationConfig = {
+	minimizer: [
+		new UglifyJSPlugin({
+			sourceMap: true,
+			uglifyOptions: {
+				compress: {
+					inline: false,
+				},
+			},
+		}),
+	],
+	runtimeChunk: true,
+	splitChunks: {
+		cacheGroups: {
+			default: false,
+			commons: {
+				test: /[\\/]node_modules[\\/]/,
+				name: 'vendor_app',
+				chunks: 'all',
+				minChunks: 2,
+			},
+		},
+	},
+};
+
 
 module.exports = merge(webpackBaseConfig, {
 	mode: 'production',
 	plugins: pluginsConfig,
+	optimization: optimizationConfig,
 });

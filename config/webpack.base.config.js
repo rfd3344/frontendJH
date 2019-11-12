@@ -64,13 +64,6 @@ const resolveConfig = {
 	},
 };
 
-const optimizationConfig = {
-	runtimeChunk: true,
-	splitChunks: {
-		chunks: 'all',
-	},
-};
-
 const performanceConfig = {
 	hints: 'warning',
 	maxEntrypointSize: 4000000,
@@ -86,7 +79,6 @@ module.exports = {
 	output: outputConfig,
 	module: moduleConfig,
 	resolve: resolveConfig,
-	optimization: optimizationConfig,
 	performance: performanceConfig,
 	plugins: pluginsConfig,
 };
