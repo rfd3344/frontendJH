@@ -13,12 +13,16 @@ import Routers from './routers';
 import rootReducer from './reducers';
 
 // Initialization
-dotenv.config();
+const env = dotenv.config();
 // Check logger
 if (typeof jhDebug !== 'undefined' && jhDebug === true) { // eslint-disable-line no-undef
 	enableLogs(true);
 	logger.log('logger is enabled');
 }
+
+console.warn('process.env', process.env )
+console.warn('process.env',  env )
+
 
 // Redux initialze
 const store = createStore(rootReducer);

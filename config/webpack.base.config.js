@@ -74,6 +74,10 @@ const pluginsConfig = [
 	new webpack.NamedModulesPlugin(),
 ];
 
+const nodeConfig = {
+	fs: 'empty',
+};
+
 module.exports = {
 	entry: entryConfig,
 	output: outputConfig,
@@ -81,4 +85,5 @@ module.exports = {
 	resolve: resolveConfig,
 	performance: performanceConfig,
 	plugins: pluginsConfig,
+	node: nodeConfig,
 };
