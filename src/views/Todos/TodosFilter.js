@@ -14,6 +14,11 @@ function TodosFilter({ clickHandler }) {
 	);
 }
 
+
+TodosFilter.propTypes = {
+	clickHandler: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = (state) => ({
 	todosData: state.todos.list,
 });
@@ -21,9 +26,5 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
 	clickHandler: (value) => dispatch(filterTodo(value)),
 });
-
-TodosFilter.propTypes = {
-	clickHandler: PropTypes.func.isRequired,
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodosFilter);

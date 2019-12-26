@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
 // Auth Pages
 import Login from '_views/Login';
@@ -10,7 +10,7 @@ import Page1 from '_views/Page1';
 
 // Admin Pages
 import Dashboard2 from '_views/Dashboard2';
-import Todos from '_views/Todos';
+import Todos from '_views/Todos/index.jsx';
 import Products from '_views/Products';
 import Waterfall from '_views/Waterfall';
 import Chart from '_views/Chart';
@@ -20,7 +20,7 @@ import Tools from '_views/Tools';
 import NotFound from '_views/NotFound';
 
 const Routers = () => (
-	<Router>
+	<BrowserRouter>
 		<Switch>
 			<Route exact path="/login" component={Login} />
 
@@ -38,6 +38,6 @@ const Routers = () => (
 			<Route exact path="/admin/tools" component={Tools} />
 			<Route path="*" component={NotFound} />
 		</Switch>
-	</Router>
+	</BrowserRouter>
 );
 export default Routers;

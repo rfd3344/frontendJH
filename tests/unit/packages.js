@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-describe.only('Package test', function () {
+describe('Package test', function () {
 	describe('karma, mocha, chai', function () {
 		let instanceNum = 0;
 		beforeEach(function () {

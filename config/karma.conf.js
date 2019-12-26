@@ -11,8 +11,8 @@ module.exports = function (config) {
 		// list of files / patterns to load in the browser
 		files: [
 			'../src/index.jsx',
-			'../tests/unit/**/*.js',
-			'../tests/integration/**/*.js',
+			'../tests/unit/*.js',
+			'../tests/integration/*.js',
 		],
 
 
@@ -56,13 +56,13 @@ module.exports = function (config) {
 		// start these browsers -- use `--browsers all` to use all browsers
 		// available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
 		browsers: [
-		//	'Chrome',
-		//	'IE',
-		//	'Edge',
-		//	'Firefox',
-		//	'Safari',
-		//	'Electron',
-		//	'PhantomJS'
+			// 'Chrome',
+			// 'IE',
+			// 'Edge',
+			// 'Firefox',
+			// 'Safari',
+			// 'Electron',
+			// 'PhantomJS'
 		],
 
 		detectBrowsers: {
