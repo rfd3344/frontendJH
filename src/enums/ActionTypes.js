@@ -1,9 +1,10 @@
+import { arrayToEnum } from '_helper/arrayHelper';
 
-const ActionTypes = {
-	SUCCESS: 'SUCCESS', // 200 - 299
-	CLIENT_ERROR: 'CLIENT_ERROR', // 400 - 499
-	SERVER_ERROR: 'SERVER_ERROR', // 500 - 599
-	OTHER_ERROR: 'OTHER_ERROR',
-};
+const ActionTypes = [
+	'ADD_TODO',
+	'TOGGLE_TODO',
+	'FILTER_TODO',
+	'OTHER_ACTION',
+];
 
-export default ActionTypes;
+export default arrayToEnum(ActionTypes);

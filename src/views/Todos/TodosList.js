@@ -31,7 +31,13 @@ const visiablefilter = (todosData) => {
 };
 // store listenner
 TodosList.propTypes = {
-	todosData: PropTypes.arrayOf(),
+	todosData: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.number.isRequired,
+			text: PropTypes.string.isRequired,
+			completed: PropTypes.bool.isRequired,
+		}),
+	).isRequired,
 };
 
 const mapStateToProps = (state) => ({

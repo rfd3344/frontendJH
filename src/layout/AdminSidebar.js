@@ -27,6 +27,12 @@ export default function Sidebar() {
 					Products </NavLink>
 				</li>
 				<li className="nav-item">
+					<NavLink className="nav-link" to="/admin/photos-search"
+					activeClassName="active">
+					PhotoSearch </NavLink>
+				</li>
+
+				<li className="nav-item">
 					<NavLink className="nav-link" to="/admin/waterfall"
 					activeClassName="active">
 					Waterfall </NavLink>

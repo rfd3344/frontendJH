@@ -1,7 +1,7 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
-import { loadedSuccess, loadedFail } from '_actions/photosSearch';
-import { setUrlPara } from '_utilis/urlPara';
+import { loadedSuccess, loadedFail } from '../actions/photosSearch';
+import setUrlPara from '../utilis/setUrlPara';
 
 function* getPhotos(action) {
 	try {

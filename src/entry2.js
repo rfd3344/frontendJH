@@ -1,2 +1,2 @@
 
-document.write('<h1>entry2.js is loaded</h1>');
+document.write('<h5>entry2.js is loaded</h5>');

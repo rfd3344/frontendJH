@@ -50,13 +50,14 @@ const resolveConfig = {
 		// Define directory with alias name. usage:
 		// import AxiosMethod from 'utilis/AxiosMethod';
 		_src: path.resolve(__dirname, '../src/'),
-		_layout: path.resolve(__dirname, '../src/layout'),
-		_views: path.resolve(__dirname, '../src/views'),
 		_utilis: path.resolve(__dirname, '../src/utilis'),
 		_helper: path.resolve(__dirname, '../src/helper'),
 		_static: path.resolve(__dirname, '../src/static'),
+		_enums: path.resolve(__dirname, '../src/enums'),
 		_actions: path.resolve(__dirname, '../src/actions'),
 		_reducers: path.resolve(__dirname, '../src/reducers'),
+		_layout: path.resolve(__dirname, '../src/layout'),
+		_views: path.resolve(__dirname, '../src/views'),
 
 		_tests: path.resolve(__dirname, '../tests'),
 		_testData: path.resolve(__dirname, '../tests/testData'),

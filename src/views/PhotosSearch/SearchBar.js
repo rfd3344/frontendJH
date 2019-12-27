@@ -39,14 +39,6 @@ function SearchBar({ shownPhotos, changeHandler, clearState }) {
 	);
 }
 
-const mapStateToProps = (state) => ({
-	shownPhotos: state.photosSearch.shownPhotos,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-	changeHandler: (e) => dispatch(searchText(e.target.value)),
-	clearState: () => dispatch(cancelSearch()),
-});
 
 SearchBar.propTypes = {
 	shownPhotos: PropTypes.arrayOf(
@@ -61,5 +53,14 @@ SearchBar.propTypes = {
 	changeHandler: PropTypes.func.isRequired,
 	clearState: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = (state) => ({
+	shownPhotos: state.photosSearch.shownPhotos,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	changeHandler: (e) => dispatch(searchText(e.target.value)),
+	clearState: () => dispatch(cancelSearch()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

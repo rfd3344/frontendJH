@@ -1,7 +1,8 @@
+import { arrayToEnum } from '_helper/arrayHelper';
 
-const ErrorTypes = {
-	REFERENCE_ERROR: 'REFERENCE_ERROR',
-	OTHER_ERROR: 'OTHER_ERROR',
-};
+const ErrorTypes = [
+	'REFERENCE_ERROR',
+	'OTHER_ERROR',
+];
 
-export default ErrorTypes;
+export default arrayToEnum(ErrorTypes);

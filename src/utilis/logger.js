@@ -25,7 +25,7 @@ let logger = builtLogger; // eslint-disable-line
 // }
 
 function formatMsg(type, msg) {
-	return `[${type}] > + ${msg}`;
+	return `[${type}]: ${msg}`;
 }
 
 function consolePrintFn(type) {

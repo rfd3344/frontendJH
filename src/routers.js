@@ -12,6 +12,7 @@ import Page1 from '_views/Page1';
 import Dashboard2 from '_views/Dashboard2';
 import Todos from '_views/Todos/index.jsx';
 import Products from '_views/Products';
+import PhotosSearch from '_views/PhotosSearch';
 import Waterfall from '_views/Waterfall';
 import Chart from '_views/Chart';
 import Quoridor from '_views/Quoridor';
@@ -31,6 +32,7 @@ const Routers = () => (
 			<Route exact path="/admin/dashboard2" component={Dashboard2} />
 			<Route exact path="/admin/todos" component={Todos} />
 			<Route exact path="/admin/products" component={Products} />
+			<Route exact path="/admin/photos-search" component={PhotosSearch} />
 			<Route exact path="/admin/waterfall" component={Waterfall} />
 			<Route exact path="/admin/chart" component={Chart} />
 			<Route exact path="/admin/quoridor" component={Quoridor} />
