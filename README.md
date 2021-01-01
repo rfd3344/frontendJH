@@ -25,35 +25,29 @@ https://github.com/rfd3344/jh-frontend
 
 # Branches
 
+
 ## master
 This is a frontend template. <br/>
 Tech used:
-- webpack
-- babel
-- Karma, Mocha, Chai
-- Eslint and airbnb
-- Less
-- React and Redux
-
-## jh-webpack
-This is a template used Webpack as frontend config
-Tech used:
-- Webpack
-- Babel
-- Karma, Mocha, Chai
-- Eslint and Airbnb
-
-
-## jh-react
-React + Redux + Less
 
 
 # Changlog
 Details see: [ChangeLog](./docs/ChangeLog.md#)
 
 
-# Temp Notes
-https://www.yiibai.com/firebase/firebase_write_list_data.html
+# packages
+- webpack
+- babel
+- Karma, Mocha, Chai
+- Eslint and airbnb
+- Less
+- React and
+- Redux
+- material UI
+
+
+
+
 
 
 
@@ -61,5 +55,5 @@ https://www.yiibai.com/firebase/firebase_write_list_data.html
 - npm install
 - npm start
 
-### install Atom package
+## install Atom package
 - apm install --compatible --packages-file .atom-packages
