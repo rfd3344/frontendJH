@@ -1,86 +1,14 @@
 
-#page header {
-	position: fixed;
-	top: 0;
-	width: 100%;
-	justify-content: flex-start;
-	flex-flow: row wrap;
-	border-bottom: 1px solid rgba(255,255,255,.3);
-	transition: 0.8s all ease;
-	transition-delay: 0.2s;
-	background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,0) 100%);
-	z-index: 1;
-}
-#page header .nav{
-	flex:1;
-}
-#page header .nav li a{
-	font-size: 20px;
-	color:white;
-	padding: 20px 10px;
-	font-weight:500;
-}
-#page header .nav li a i{
-	position: relative;
-	top: 6px;
-	transition: all 0.4s ease;
-}
-#page header .nav li > a{
-	height: 100%;
-}
-#page header .nav li > a.active{
-	border-bottom: 8px solid #007bff;
-}
-#page header .nav .submenu{
-	height: 0;
-	width: 100%;
-	position: absolute;
-	left: 0;
-	margin-top:1px;
-	background-color: #009cde;
-	background-image: radial-gradient(circle farthest-side at center bottom,#009cde,#003087 125%);
-	transition:0.3s all ease;
-	overflow: hidden;
-}
-#page header .nav .submenu a{
-	display:inline-block;
-	width:50%;
-	text-align:center;
-}
-
-#page header:hover{
-	// background: radial-gradient(circle farthest-side at center bottom,#009cde,#003087 125%);
-	background: linear-gradient(#003087 ,#009cde 100%);
-}
-#page header .nav li:hover .material-icons{
-	transform: rotate(-180deg);
-}
-#page header .nav li:hover .submenu{
-	transition-delay: 0.2s;
-	height: 200px;
-}
-
-
-
-
-
-
 
 
 #page main{
 	min-height:80vh;
-	min-height:800px;
-	padding-top:100px;
 }
 
 
 
-
-
-
-
 #page footer{
-	min-height:200px;
+	min-height:20vh;
 	background:#2a3740;
 	color: white;
 }
