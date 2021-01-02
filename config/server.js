@@ -1,17 +1,19 @@
 const path = require('path');
 const express = require('express');
+const ENV = require('../env.js');
 
-const DIST_DIR = path.join(__dirname, '../public');
+const PUBLIC_DIR = path.join(__dirname, '../public');
+
 const app = express();
 
 // Serving the files on the dist folder
-app.use(express.static(DIST_DIR));
+app.use(express.static(PUBLIC_DIR));
 
 // Send index.html when the user access the web
 app.get('*', function (req, res) {
-	res.sendFile(path.join(DIST_DIR, 'index.html'));
+	res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
-app.listen(3000, function () {
-	console.log('Server is listening http://localhost:3000'); // eslint-disable-line
+app.listen(ENV.PORT, function () {
+	console.log('Server is listening http://localhost:' + ENV.PORT); // eslint-disable-line
 });

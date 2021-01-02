@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import AdminTemplate from '_layout/AdminTemplate';
 import Loading from './Loading';
 import ProductsList from './ProductsList';
 import ProductsFilter from './ProductsFilter';
@@ -42,14 +41,12 @@ export default class Products extends React.Component {
 	}
 	render() {
 		return (
-			<AdminTemplate>
-				<div id="Products">
-					<h1> Products </h1>
-					<ProductsFilter catagories={this.state.catagories} />
-					{ this.state.Loading ? <Loading /> :
-						<ProductsList products={this.state.items} /> }
-				</div>
-			</AdminTemplate>
+			<div id="Products">
+				<h1> Products </h1>
+				<ProductsFilter catagories={this.state.catagories} />
+				{ this.state.Loading ? <Loading /> :
+					<ProductsList products={this.state.items} /> }
+			</div>
 		)
 	}
 }

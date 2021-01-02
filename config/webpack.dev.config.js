@@ -1,12 +1,13 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const webpackBaseConfig = require('./webpack.base.config.js');
+const ENV = require('../env.js');
 
 const devServerConfig = {
-	port: 8000,
+	port: ENV.PORT,
 	open: true,
 	hot: true,
 	historyApiFallback: true,

@@ -1,24 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './page.less';
 
+import Routers from './Routers';
 import Header from './PageHeader';
 import Footer from './PageFooter';
 
-export default function PageTemplate(props) {
-	const { children } = props;
-
+export default function PageTemplate() {
 	return (
 		<div id="page" className="alert-info">
 			<Header />
-			<main>
-				{children}
+			<main className="container">
+				<Routers />
 			</main>
 			<Footer />
 		</div>
 	);
 }
-
-PageTemplate.propTypes = {
-	children: PropTypes.element.isRequired,
-};

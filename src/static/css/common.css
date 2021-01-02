@@ -21,11 +21,11 @@ h1 {
 	text-align: center;
 }
 
- body a {
+body a {
 	color: inherit;
 }
 
- body a:hover {
+body a:hover {
 	color: unset;
 	text-decoration: none;
 	cursor: pointer;
