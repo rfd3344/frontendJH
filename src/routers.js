@@ -6,7 +6,7 @@ import Login from '_views/Login';
 
 // Front Pages
 import Home from '_views/Home';
-import Page1 from '_views/Page1';
+import MaterialUI from '_views/MaterialUI';
 
 // Admin Pages
 import Dashboard2 from '_views/Dashboard2';
@@ -26,7 +26,7 @@ const Routers = () => (
 			<Route exact path="/login" component={Login} />
 
 			<Route exact path="/" component={Home} />
-			<Route exact path="/page1" component={Page1} />
+			<Route exact path="/material-ui" component={MaterialUI} />
 
 			<Route exact path="/admin" component={Dashboard2} />
 			<Route exact path="/admin/dashboard2" component={Dashboard2} />

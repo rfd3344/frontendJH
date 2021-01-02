@@ -47,6 +47,10 @@ Details see: [ChangeLog](./docs/ChangeLog.md#)
 
 
 
+## other packages
+
+### doctoc
+create documents
 
 
 
