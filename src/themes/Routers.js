@@ -6,6 +6,7 @@ import Login from '_views/Login';
 
 import Home from '_views/Home';
 import MaterialUI from '_views/MaterialUI';
+import HooksTest from '_views/HooksTest';
 import Todos from '_views/Todos/index.jsx';
 import Products from '_views/Products';
 import PhotosSearch from '_views/PhotosSearch';
@@ -21,6 +22,7 @@ const Routers = () => (
 
 		<Route exact path="/" component={Home} />
 		<Route exact path="/material-ui" component={MaterialUI} />
+		<Route exact path="/HooksTest" component={HooksTest} />
 
 		<Route exact path="/admin/todos" component={Todos} />
 		<Route exact path="/admin/products" component={Products} />

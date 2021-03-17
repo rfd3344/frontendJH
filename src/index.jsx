@@ -10,7 +10,7 @@ import ENV from '_src/../env.js';
 import { logger, enableLogs } from '_utilis/logger';
 import '_static/css/common.css';
 import './style.less';
-import PageTheme from '_src/components/themes/PageTheme';
+import PageTheme from '_src/themes/PageTheme';
 import rootReducer from './reducers';
 import rootSaga from './sagas';
 
