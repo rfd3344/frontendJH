@@ -7,7 +7,7 @@ import Routers from './Routers';
 
 export default function PageTemplate() {
 	return (
-		<div id="page" className="alert-info">
+		<div id="page">
 
 			<main className="container">
 				<Routers />
