@@ -1,2 +1,2 @@
 
-document.write('<h5>entry2.js is loaded</h5>');
+console.warn('./src/entry2.js is loaded');

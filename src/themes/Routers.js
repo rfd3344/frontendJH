@@ -2,19 +2,19 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // Auth Pages
-import Login from '_views/Login';
+import Login from '_pages/Login';
 
-import Home from '_views/Home';
-import MaterialUI from '_views/MaterialUI';
-import HooksTest from '_views/HooksTest';
-import Todos from '_views/Todos/index.jsx';
-import Products from '_views/Products';
-import PhotosSearch from '_views/PhotosSearch';
-import Chart from '_views/Chart';
-import Quoridor from '_views/Quoridor';
-import TextEditor from '_views/TextEditor';
-import Tools from '_views/Tools';
-import NotFound from '_views/NotFound';
+import Home from '_pages/Home';
+import MaterialUI from '_pages/MaterialUI';
+import Test from '_pages/Test';
+import Todos from '_pages/Todos/index.jsx';
+import Products from '_pages/Products';
+import PhotosSearch from '_pages/PhotosSearch';
+import Chart from '_pages/Chart';
+import Quoridor from '_pages/Quoridor';
+import TextEditor from '_pages/TextEditor';
+import Tools from '_pages/Tools';
+import NotFound from '_pages/NotFound';
 
 const Routers = () => (
 	<Switch>
@@ -22,7 +22,7 @@ const Routers = () => (
 
 		<Route exact path="/" component={Home} />
 		<Route exact path="/material-ui" component={MaterialUI} />
-		<Route exact path="/HooksTest" component={HooksTest} />
+		<Route exact path="/test" component={Test} />
 
 		<Route exact path="/admin/todos" component={Todos} />
 		<Route exact path="/admin/products" component={Products} />

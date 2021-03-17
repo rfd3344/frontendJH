@@ -57,7 +57,7 @@ const resolveConfig = {
 		_actions: path.resolve(__dirname, '../src/actions'),
 		_reducers: path.resolve(__dirname, '../src/reducers'),
 		_layout: path.resolve(__dirname, '../src/layout'),
-		_views: path.resolve(__dirname, '../src/views'),
+		_pages: path.resolve(__dirname, '../src/pages'),
 
 		_tests: path.resolve(__dirname, '../tests'),
 		_testData: path.resolve(__dirname, '../tests/testData'),
