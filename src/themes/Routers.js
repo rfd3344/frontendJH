@@ -7,7 +7,9 @@ import Login from '_pages/Login';
 import Home from '_pages/Home';
 import MaterialUI from '_pages/MaterialUI';
 import Test from '_pages/Test';
-import Todos from '_pages/Todos/index.jsx';
+import SagaTest from '_pages/SagaTest';
+
+import Todos from '_pages/Todos/index';
 import Products from '_pages/Products';
 import PhotosSearch from '_pages/PhotosSearch';
 import Chart from '_pages/Chart';
@@ -23,6 +25,7 @@ const Routers = () => (
 		<Route exact path="/" component={Home} />
 		<Route exact path="/material-ui" component={MaterialUI} />
 		<Route exact path="/test" component={Test} />
+		<Route exact path="/saga-test" component={SagaTest} />
 
 		<Route exact path="/admin/todos" component={Todos} />
 		<Route exact path="/admin/products" component={Products} />

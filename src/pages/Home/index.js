@@ -7,7 +7,6 @@ export default function Home() {
 		<section id="home">
 			<NavLink to="/"> Home </NavLink>
 			<NavLink to="/material-ui"> MaterialUI </NavLink>
-			<NavLink to="/HooksTest"> HooksTest </NavLink>
 
 			<NavLink to="/admin/todos"> Todos </NavLink>
 			<NavLink to="/admin/photos-search"> PhotoSearch </NavLink>
@@ -16,6 +15,9 @@ export default function Home() {
 			<NavLink to="/admin/tools"> Tools </NavLink>
 			<NavLink to="/admin/text-editor"> Text Editor </NavLink>
 
+			<NavLink to="/test"> test </NavLink>
+
+			<NavLink to="/saga-test"> saga test </NavLink>
 		</section>
 	);
 }
