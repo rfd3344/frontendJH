@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 const entryConfig = {
 	main: path.resolve(__dirname, '../src/index.jsx'),
-	entry2: path.resolve(__dirname, '../src/entry2.js'),
+	// entry2: path.resolve(__dirname, '../src/entry2.js'),
 };
 
 const outputConfig = {
@@ -23,7 +23,7 @@ const moduleConfig = {
 					loader: 'babel-loader',
 					options: {
 						presets: ['@babel/preset-env', '@babel/preset-react'],
-						plugins: ['@babel/plugin-transform-runtime'],
+						plugins: ['@babel/plugin-transform-runtime', 'babel-plugin-react-scoped-css'],
 					},
 				},
 				// closed eslint check, reduce info generate in Terminal
@@ -35,6 +35,7 @@ const moduleConfig = {
 			use: [
 				{ loader: 'style-loader' },
 				{ loader: 'css-loader' },
+				{ loader: 'scoped-css-loader' },
 				{ loader: 'less-loader' },
 			],
 		},

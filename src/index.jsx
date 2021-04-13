@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import ENV from '_src/../env.js';
 import { logger, enableLogs } from '_utilis/logger';
 import '_static/css/common.css';
-import './style.less';
+import './style.scoped.css';
 import PageTheme from '_src/themes/PageTheme';
 import rootReducer from './reducers';
 import rootSaga from './sagas';

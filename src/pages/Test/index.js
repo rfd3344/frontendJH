@@ -1,4 +1,3 @@
-
 /* eslint-disable */
 
 import React, {
@@ -7,6 +6,9 @@ import React, {
 	useReducer,
 	useContext,
 } from 'react';
+
+import './s.scoped.css';
+import Button from './Button';
 
 const MyContext = React.createContext(null);
 
@@ -45,7 +47,14 @@ export default (props = {}) => {
 
     return (
         <MyContext.Provider value={{ dispatch }}>
-            <Child step={step} number={number} count={count} />
+
+						<div> <div>
+								<p> yellow </p>
+								1111
+								</div>
+							<Button />
+							</div>
+
         </MyContext.Provider>
     );
 }
