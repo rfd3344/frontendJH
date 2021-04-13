@@ -1,7 +1,7 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 import { loadedSuccess, loadedFail } from '_actions/photosSearch';
-import { setUrlPara } from '_utilis/urlPara';
+// import { setUrlPara } from '_utilis/urlPara';
 
 function* getPhotos(action) {
 	try {
@@ -12,7 +12,8 @@ function* getPhotos(action) {
 			nojsoncallback: 1,
 			text: action.text,
 		};
-		const url = setUrlPara('https://www.flickr.com/services/rest/', para);
+		// const url = setUrlPara('https://www.flickr.com/services/rest/', para);
+		const url = 'https://www.flickr.com/services/rest/';
 		const products = yield axios(url).then((res) => {
 			if (res.status < 200 && res.status > 299) {
 				throw new Error(`status: ${res.status}`);

@@ -1,5 +1,4 @@
 import React from 'react';
-// import './page.less';
 
 import Routers from './Routers';
 // import Header from './PageHeader';
@@ -8,7 +7,6 @@ import Routers from './Routers';
 export default function PageTemplate() {
 	return (
 		<div id="page">
-
 			<main className="container">
 				<Routers />
 			</main>

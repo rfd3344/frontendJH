@@ -5,23 +5,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
-
-import ENV from '_src/../env.js';
-import { logger, enableLogs } from '_utilis/logger';
 import '_static/css/common.css';
-import './style.less';
-import PageTheme from '_src/themes/PageTheme';
+import Theme from '_src/themes/Theme';
 import rootReducer from './reducers';
 import rootSaga from './sagas';
-
-// setup env.js
-global.ENV = ENV;
-
-// Check logger
-if (ENV.DEBUG === true) {
-	enableLogs(true);
-	logger.log('logger is enabled');
-}
 
 // Redux initialze
 const sagaMiddleware = createSagaMiddleware();
@@ -31,7 +18,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
 	<Provider store={store}>
 		<BrowserRouter>
-			<PageTheme />
+			<Theme />
 		</BrowserRouter>
 	</Provider>,
 	document.getElementById('root'),

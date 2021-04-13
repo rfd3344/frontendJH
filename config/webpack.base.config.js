@@ -4,7 +4,6 @@ const webpack = require('webpack');
 
 const entryConfig = {
 	main: path.resolve(__dirname, '../src/index.jsx'),
-	entry2: path.resolve(__dirname, '../src/entry2.js'),
 };
 
 const outputConfig = {
@@ -35,7 +34,6 @@ const moduleConfig = {
 			use: [
 				{ loader: 'style-loader' },
 				{ loader: 'css-loader' },
-				{ loader: 'less-loader' },
 			],
 		},
 		{
