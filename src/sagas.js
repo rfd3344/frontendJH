@@ -1,5 +1,5 @@
 import { fork, all } from 'redux-saga/effects';
-import watchGetPhotos from './saga/photosSearch';
+import watchGetPhotos from './saga/startWars';
 
 // root of saga
 export default function* root() {

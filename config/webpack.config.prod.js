@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackBaseConfig = require('./webpack.base.config.js');
@@ -7,7 +7,7 @@ const packageJson = require('../package.json');
 
 const pluginsConfig = [
 	new HtmlWebpackPlugin({
-		template: './public/entry.html',
+		template: './config/entry.html',
 		filename: './index.html',
 		inject: 'body',
 	}),

@@ -1,5 +1,5 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -10,6 +10,7 @@ const devServerConfig = {
 	port: ENV.PORT,
 	open: true,
 	hot: true,
+	inline: false,
 	historyApiFallback: true,
 	contentBase: path.join(__dirname, '../public'),
 	host: 'localhost',
@@ -25,7 +26,7 @@ const devServerConfig = {
 const pluginsConfig = [
 	new webpack.HotModuleReplacementPlugin(),
 	new HtmlWebpackPlugin({
-		template: './public/entry.html',
+		template: './config/entry.html',
 		filename: 'index.html',
 		inject: 'body',
 	}),

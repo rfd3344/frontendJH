@@ -1,8 +1,8 @@
 
 import { combineReducers } from 'redux';
 
-import photosSearch from '_reducers/photosSearch';
+import startWars from '_reducers/startWars';
 
 export default combineReducers({
-	photosSearch,
+	startWars,
 });

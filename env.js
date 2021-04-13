@@ -1,5 +1,4 @@
 module.exports = {
-	DEBUG: true,
 	PORT: 8888,
-	USERNAME: 'username',
+	STARWARS_API: 'https://swapi.dev/api/'
 };

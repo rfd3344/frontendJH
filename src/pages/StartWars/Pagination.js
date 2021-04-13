@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { changePage } from '../../actions/photosSearch';
+import { changePage } from '../../actions/startWars';
 
 function Pagination({ currentPage, totalPage, clickHandler }) {
 	const displayList = [];

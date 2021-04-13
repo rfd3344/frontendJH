@@ -1,14 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-// Auth Pages
-import MaterialUI from '_pages/MaterialUI';
+import StartWars from '_pages/StartWars';
 import NotFound from '_pages/NotFound';
 
 const Routers = () => (
 	<Switch>
-		<Route exact path="/" component={MaterialUI} />
-		<Route exact path="/material-ui" component={MaterialUI} />
+		<Route exact path="/" component={StartWars} />
+		<Route exact path="/star-wars" component={StartWars} />
 
 		<Route path="*" component={NotFound} />
 	</Switch>

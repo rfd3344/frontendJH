@@ -18,7 +18,7 @@ function PhotosList({ photos }) {
 }
 
 const mapStateToProps = (state) => ({
-	photos: state.photosSearch.shownPhotos,
+	photos: state.startWars.shownPhotos,
 });
 
 PhotosList.propTypes = {
