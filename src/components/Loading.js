@@ -17,7 +17,7 @@ function Loading({ open }) {
 	return (
 		<>
 			<StyledBackdrop open={open}>
-				<CircularProgress color="primi" />
+				<CircularProgress color="primary" />
 			</StyledBackdrop>
 		</>
 	);
