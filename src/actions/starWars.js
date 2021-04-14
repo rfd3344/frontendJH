@@ -6,13 +6,11 @@ import {
 	STARWARS_LOADED_FAIL,
 } from '_constants/actionTypes';
 
-// triggered by
 export const getPeopleList = (pageNumber) => ({
 	type: STARWARS_GET_PEOPLE,
 	pageNumber,
 });
 
-// triggered by searchText action when axios loads data successful
 export const loadedPeopleList = ({ count, peopleList, pageNumber }) => ({
 	type: STARWARS_LOADED_PEOPLE,
 	count,

@@ -12,7 +12,7 @@ import {
 	initialState,
 	loadedPeopleData,
 	personDetailsUrl,
-	personDetailsData
+	personDetailsData,
 } from '_tests/data/starWarsData';
 
 describe('todos reducer', function () {
@@ -44,12 +44,12 @@ describe('todos reducer', function () {
 		assert.strictEqual(res.pageNumber, 1);
 		assert.strictEqual(res.count, 82);
 		assert.strictEqual(res.peopleList.length, 1);
-		assert.deepEqual(res.peopleList[0],  {
-      name: 'Luke Skywalker',
-      height: '172',
-      mass: '77',
-      url: 'http://swapi.dev/api/people/1/'
-    });
+		assert.deepEqual(res.peopleList[0], {
+			name: 'Luke Skywalker',
+			height: '172',
+			mass: '77',
+			url: 'http://swapi.dev/api/people/1/',
+		});
 	});
 
 	test('getPersonDetails', () => {
@@ -61,15 +61,15 @@ describe('todos reducer', function () {
 		const res = reducer(initialState, loadedPersonDetails(personDetailsData));
 		assert.strictEqual(res.loading, false);
 		assert.deepEqual(res.personDetails, {
-	 		birth_year: '19BBY',
-	 		films:  [
-	 			{title: 'A New Hope'},
-	 			{title: 'The Empire Strikes Back'}
-	 		],
-	 		gender: 'female',
-	 		height: '150',
-	 		name: 'Leia Organa',
-	 	});
+			birth_year: '19BBY',
+			films: [
+				{ title: 'A New Hope' },
+				{ title: 'The Empire Strikes Back' },
+			],
+			gender: 'female',
+			height: '150',
+			name: 'Leia Organa',
+		});
 	});
 
 	test('loadedFail', () => {
@@ -77,21 +77,4 @@ describe('todos reducer', function () {
 		assert.strictEqual(res.loading, false);
 		assert.strictEqual(res.message, 'testFail');
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });

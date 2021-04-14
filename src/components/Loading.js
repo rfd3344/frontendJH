@@ -11,8 +11,6 @@ const StyledBackdrop = withStyles(() => ({
 	},
 }))(Backdrop);
 
-
-
 function Loading({ open }) {
 	return (
 		<>
@@ -22,7 +20,6 @@ function Loading({ open }) {
 		</>
 	);
 }
-
 
 Loading.propTypes = {
 	open: PropTypes.bool.isRequired,

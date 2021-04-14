@@ -1,6 +1,4 @@
 const path = require('path');
-// const webpack = require('webpack');
-
 
 const entryConfig = {
 	main: path.resolve(__dirname, '../src/index.jsx'),

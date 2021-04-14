@@ -21,7 +21,6 @@ export function pickPersonDetails(detail) {
 	return _.pick(detail, ['name', 'height', 'gender', 'birth_year']);
 }
 
-
 /**
  * pick the required data for get people list query
  * @param {Object} films

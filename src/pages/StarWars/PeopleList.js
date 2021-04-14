@@ -11,14 +11,13 @@ import TableRow from '@material-ui/core/TableRow';
 import { connect } from 'react-redux';
 
 import Loading from '_components/Loading';
-import Messages from '_components/Messages';
 
 import { getPeopleList } from '_actions/starWars';
 import PeopleListRow from './PeopleListRow';
 
 function PeopleList({ peopleList, initialPage, loading }) {
 	useEffect(() => {
-		if(peopleList.length === 0) {
+		if (peopleList.length === 0) {
 			initialPage(1);
 		}
 	}, []);
@@ -48,7 +47,6 @@ function PeopleList({ peopleList, initialPage, loading }) {
 				</Table>
 			</TableContainer>
 			<Loading open={loading} />
-			<Messages isError message="1111" />
 		</>
 	);
 }

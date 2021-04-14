@@ -6,22 +6,22 @@ import PeopleList from './PeopleList';
 import Pagination from './Pagination';
 import PersonDetails from './PersonDetails';
 
-const useStyles = makeStyles((theme) => ({
-  h1: {
-    textAlign: 'center',
-  },
+const useStyles = makeStyles(() => ({
+	h1: {
+		textAlign: 'center',
+	},
 }));
 
 export default function StarWars() {
 	const classes = useStyles();
 	return (
-    <section>
+		<section>
 			<h1 className={classes.h1}> StarWars People List </h1>
-  		<Paper>
-  			<PeopleList />
-  			<Pagination />
-  			<PersonDetails />
-      </Paper>
-    </section>
+			<Paper>
+				<PeopleList />
+				<Pagination />
+				<PersonDetails />
+			</Paper>
+		</section>
 	);
 }

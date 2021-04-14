@@ -21,7 +21,7 @@ export default function reducer(state = initialState, action) {
 		return {
 			...state,
 			loading: true,
-			pageNumber: action.pageNumber
+			pageNumber: action.pageNumber,
 		};
 	case STARWARS_LOADED_PEOPLE:
 		return {
@@ -43,6 +43,7 @@ export default function reducer(state = initialState, action) {
 			loading: false,
 		};
 	case STARWARS_LOADED_FAIL:
+		console.error('loaded fail', action.message); // eslint-disable-line no-console
 		return {
 			...state,
 			message: action.message,
