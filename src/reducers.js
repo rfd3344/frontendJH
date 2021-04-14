@@ -1,8 +1,8 @@
 
 import { combineReducers } from 'redux';
 
-import startWars from '_reducers/startWars';
+import starWars from '_reducers/starWars';
 
 export default combineReducers({
-	startWars,
+	starWars,
 });

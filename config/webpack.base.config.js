@@ -51,7 +51,7 @@ const resolveConfig = {
 		_utilis: path.resolve(__dirname, '../src/utilis'),
 		_helper: path.resolve(__dirname, '../src/helper'),
 		_static: path.resolve(__dirname, '../src/static'),
-		_enums: path.resolve(__dirname, '../src/enums'),
+		_constants: path.resolve(__dirname, '../src/constants'),
 		_actions: path.resolve(__dirname, '../src/actions'),
 		_reducers: path.resolve(__dirname, '../src/reducers'),
 		_layout: path.resolve(__dirname, '../src/layout'),

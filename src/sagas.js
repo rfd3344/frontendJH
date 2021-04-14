@@ -1,9 +1,9 @@
 import { fork, all } from 'redux-saga/effects';
-import watchGetPhotos from './saga/startWars';
+import watchGetStarWars from './saga/starWars';
 
 // root of saga
 export default function* root() {
 	yield all([
-		fork(watchGetPhotos),
+		fork(watchGetStarWars),
 	]);
 }
