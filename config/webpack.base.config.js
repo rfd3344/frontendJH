@@ -47,13 +47,11 @@ const resolveConfig = {
 	alias: {
 		// Define directory with alias name. usage:
 		_src: path.resolve(__dirname, '../src/'),
-		_utilis: path.resolve(__dirname, '../src/utilis'),
-		_helper: path.resolve(__dirname, '../src/helper'),
-		_static: path.resolve(__dirname, '../src/static'),
-		_constants: path.resolve(__dirname, '../src/constants'),
-		_components: path.resolve(__dirname, '../src/components'),
 		_actions: path.resolve(__dirname, '../src/actions'),
 		_reducers: path.resolve(__dirname, '../src/reducers'),
+		_helper: path.resolve(__dirname, '../src/helper'),
+		_constants: path.resolve(__dirname, '../src/constants'),
+		_components: path.resolve(__dirname, '../src/components'),
 		_pages: path.resolve(__dirname, '../src/pages'),
 	},
 };

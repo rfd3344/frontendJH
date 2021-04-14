@@ -5,7 +5,7 @@ import {
 	getPersonDetails,
 	loadedPersonDetails,
 	loadedFail,
-} from '_actions/startWars';
+} from '_actions/starWars';
 
 import reducer from '_reducers/starWarsData';
 import { initialState } from '_test/data/starWarsData';
