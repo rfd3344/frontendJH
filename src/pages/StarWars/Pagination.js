@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TablePagination from '@material-ui/core/TablePagination';
 import { connect } from 'react-redux';
-import { searchPeople } from '_actions/starWars';
+import { getPeopleList } from '_actions/starWars';
 
 function Pagination({ count, pageNumber, handleChangePage }) {
 	return (
@@ -26,7 +26,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
 	handleChangePage: (e, pageNumber) => {
-		dispatch(searchPeople(pageNumber + 1));
+		dispatch(getPeopleList(pageNumber + 1));
 	},
 });
 

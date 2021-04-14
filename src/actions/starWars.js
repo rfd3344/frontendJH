@@ -1,27 +1,39 @@
-import ActionTypes from '_constants/ActionTypes';
-
+import {
+	STARWARS_GET_PEOPLE,
+	STARWARS_LOADED_PEOPLE,
+	STARWARS_GET_DETAILS,
+	STARWARS_LOADED_DETAILS,
+	STARWARS_LOADED_FAIL,
+} from '_constants/actionTypes';
 
 // triggered by
-export const searchPeople = (pageNumber) => ({
-	type: ActionTypes.STARWARS_SEARCH_PEOPEL,
+export const getPeopleList = (pageNumber) => ({
+	type: STARWARS_GET_PEOPLE,
 	pageNumber,
 });
 
 // triggered by searchText action when axios loads data successful
-export const loadedSuccess = ({ count, peopleList, pageNumber }) => ({
-	type: ActionTypes.STARWARS_LOADED_SUCCESS,
+export const loadedPeopleList = ({ count, peopleList, pageNumber }) => ({
+	type: STARWARS_LOADED_PEOPLE,
 	count,
 	peopleList,
 	pageNumber,
 });
 
-// triggered by searchText action when axios is failed
-export const loadedFail = (message) => ({
-	type: ActionTypes.STARWARS_LOADED_FAIL,
-	message,
+
+export const getPersonDetails = (url) => ({
+	type: STARWARS_GET_DETAILS,
+	url,
 });
 
-export const showPersonDetails = (id) => ({
-	type: ActionTypes.STARWARS_PERSON_DETAILS,
-	id,
+export const loadedPersonDetails = (personDetails) => ({
+	type: STARWARS_LOADED_DETAILS,
+	personDetails,
+});
+
+
+// triggered when axios is failed
+export const loadedFail = (message) => ({
+	type: STARWARS_LOADED_FAIL,
+	message,
 });

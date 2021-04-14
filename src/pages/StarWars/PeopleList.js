@@ -10,50 +10,55 @@ import TableRow from '@material-ui/core/TableRow';
 
 import { connect } from 'react-redux';
 
-import { searchPeople } from '_actions/starWars';
+import Loading from '_components/Loading';
+import { getPeopleList } from '_actions/starWars';
 import PeopleListRow from './PeopleListRow';
 
-function PhotosList({ peopleList, initialPage }) {
+function PeopleList({ peopleList, initialPage, loading }) {
 	useEffect(() => {
 		initialPage(1);
 	}, []);
 
 	return (
-		<TableContainer>
-			<Table size="small" aria-label="a dense table">
-				<TableHead>
-					<TableRow>
-						<TableCell>Name</TableCell>
-						<TableCell align="center">Height</TableCell>
-						<TableCell align="right">Mass</TableCell>
-					</TableRow>
-				</TableHead>
-				<TableBody>
-					{peopleList.length > 0 && peopleList.map((person) => (
-						<PeopleListRow
-							key={person.name}
-							name={person.name}
-							height={person.height}
-							mass={person.mass}
-						/>
-					))}
-				</TableBody>
-			</Table>
-		</TableContainer>
-
+		<>
+			<TableContainer>
+				<Table size="small" aria-label="a dense table">
+					<TableHead>
+						<TableRow>
+							<TableCell>Name</TableCell>
+							<TableCell align="center">Height</TableCell>
+							<TableCell align="right">Mass</TableCell>
+						</TableRow>
+					</TableHead>
+					<TableBody>
+						{peopleList.length > 0 && peopleList.map((person) => (
+							<PeopleListRow
+								key={person.name}
+								name={person.name}
+								height={person.height}
+								mass={person.mass}
+								url={person.url}
+							/>
+						))}
+					</TableBody>
+				</Table>
+			</TableContainer>
+			<Loading open={loading} />
+		</>
 	);
 }
 
 
 const mapStateToProps = (state) => ({
 	peopleList: state.starWars.peopleList,
+	loading: state.starWars.loading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	initialPage: (pageNumber) => dispatch(searchPeople(pageNumber)),
+	initialPage: (pageNumber) => dispatch(getPeopleList(pageNumber)),
 });
 
-PhotosList.propTypes = {
+PeopleList.propTypes = {
 	peopleList: PropTypes.arrayOf(
 		PropTypes.shape({
 			name: PropTypes.string.isRequired,
@@ -62,6 +67,7 @@ PhotosList.propTypes = {
 		}),
 	).isRequired,
 	initialPage: PropTypes.func.isRequired,
+	loading: PropTypes.bool.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PhotosList);
+export default connect(mapStateToProps, mapDispatchToProps)(PeopleList);

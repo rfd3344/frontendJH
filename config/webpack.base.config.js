@@ -1,5 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 
 
 const entryConfig = {
@@ -46,20 +46,15 @@ const moduleConfig = {
 const resolveConfig = {
 	alias: {
 		// Define directory with alias name. usage:
-		// import AxiosMethod from 'utilis/AxiosMethod';
 		_src: path.resolve(__dirname, '../src/'),
 		_utilis: path.resolve(__dirname, '../src/utilis'),
 		_helper: path.resolve(__dirname, '../src/helper'),
 		_static: path.resolve(__dirname, '../src/static'),
 		_constants: path.resolve(__dirname, '../src/constants'),
+		_components: path.resolve(__dirname, '../src/components'),
 		_actions: path.resolve(__dirname, '../src/actions'),
 		_reducers: path.resolve(__dirname, '../src/reducers'),
-		_layout: path.resolve(__dirname, '../src/layout'),
 		_pages: path.resolve(__dirname, '../src/pages'),
-
-		_tests: path.resolve(__dirname, '../tests'),
-		_testData: path.resolve(__dirname, '../tests/testData'),
-		_testHelper: path.resolve(__dirname, '../tests/testHelper'),
 	},
 };
 
@@ -72,10 +67,7 @@ const performanceConfig = {
 const pluginsConfig = [
 	// new webpack.NamedModulesPlugin(),
 ];
-//
-// const nodeConfig = {
-// 	fs: 'empty',
-// };
+
 
 module.exports = {
 	entry: entryConfig,
@@ -84,5 +76,4 @@ module.exports = {
 	resolve: resolveConfig,
 	performance: performanceConfig,
 	plugins: pluginsConfig,
-	// node: nodeConfig,
 };

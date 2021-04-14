@@ -1,19 +1,32 @@
 import _ from 'lodash';
-/** TODOs do something
- * deeply go through all the props
- *
- * @param {Object} obj
- * @returns {Array} Returns the new mapped array.
- * @since 1.0.0
- * @example
- *
- * eg1:
- * let obj = { a:1, b:{ ba: 2, bb: { bba: 3, bbb: 4, bbc:{ bbca: 5}}}}
- * goThroughObj(obj) // 1 2 3 4 5
+
+/**
+ * pick the required data for get people list query
+ * @param {Object} data
+ * @returns {Object} Returns the formated.
  */
-export function formatQuaryData(data) {
+export function pickPeopleList(people) {
 	return {
-		count: data.count,
-		peopleList: data.results.map((item) => _.pick(item, ['name', 'height', 'mass'])),
+		count: people.count,
+		peopleList: people.results.map((item) => _.pick(item, ['name', 'height', 'mass', 'url'])),
 	};
+}
+
+/**
+ * pick the required data for get people list query
+ * @param {Object} detail
+ * @returns {Object} Returns the formated.
+ */
+export function pickPersonDetails(detail) {
+	return _.pick(detail, ['name', 'height', 'gender', 'birth_year']);
+}
+
+
+/**
+ * pick the required data for get people list query
+ * @param {Object} films
+ * @returns {Object} Returns the formated.
+ */
+export function pickFilmNames(films) {
+	return films.map((item) => _.pick(item, ['title']));
 }

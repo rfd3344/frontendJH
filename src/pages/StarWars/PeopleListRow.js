@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 
+import { getPersonDetails } from '_actions/starWars';
 
 const StyledTableRow = withStyles(() => ({
 	root: {
@@ -14,10 +15,12 @@ const StyledTableRow = withStyles(() => ({
 	},
 }))(TableRow);
 
-export default function PeopleListRow({ name, height, mass }) {
+function PeopleListRow({
+	name, height, mass, url, handleClick,
+}) {
 	return (
 		<>
-			<StyledTableRow hover>
+			<StyledTableRow hover onClick={() => handleClick(url)}>
 				<TableCell>
 					{name}
 				</TableCell>
@@ -36,4 +39,12 @@ PeopleListRow.propTypes = {
 	name: PropTypes.string.isRequired,
 	height: PropTypes.string.isRequired,
 	mass: PropTypes.string.isRequired,
+	url: PropTypes.string.isRequired,
+	handleClick: PropTypes.func.isRequired,
 };
+
+const mapDispatchToProps = (dispatch) => ({
+	handleClick: (url) => dispatch(getPersonDetails(url)),
+});
+
+export default connect(null, mapDispatchToProps)(PeopleListRow);

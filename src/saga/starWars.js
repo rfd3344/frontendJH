@@ -1,11 +1,11 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-import actionTypes from '_constants/actionTypes';
-
+import { STARWARS_GET_PEOPLE, STARWARS_GET_DETAILS } from '_constants/actionTypes';
 import { STARWARS_API } from '_constants/starWars';
-import { loadedSuccess, loadedFail } from '_actions/starWars';
-import { formatQuaryData } from '_helper/starWarsHelper';
+import { loadedPeopleList, loadedPersonDetails, loadedFail } from '_actions/starWars';
+import { pickPeopleList, pickPersonDetails, pickFilmNames } from '_helper/starWarsHelper';
+import { handleGetReponse } from '_helper/axiosHelper';
 
 
 function* getPeopleList(action) {
@@ -14,17 +14,11 @@ function* getPeopleList(action) {
 			page: action.pageNumber,
 		};
 		const url = `${STARWARS_API}/people`;
-		const queryData = yield axios(url, { params }).then((res) => {
-			if (res.status < 200 && res.status > 299) {
-				throw new Error(`status: ${res.status}`);
-			}
-			console.warn('rfd ',res)
-			return res.data;
-		});
+		const queryData = yield axios(url, { params }).then(handleGetReponse);
+		const res = pickPeopleList(queryData);
 
-		const formattedQueryData = formatQuaryData(queryData);
-		yield put(loadedSuccess({
-			...formattedQueryData,
+		yield put(loadedPeopleList({
+			...res,
 			pageNumber: action.pageNumber,
 		}));
 	} catch (e) {
@@ -32,6 +26,26 @@ function* getPeopleList(action) {
 	}
 }
 
+
+function* getPersonDetails(action) {
+	try {
+		const personDetailsInfo = yield axios(action.url).then(handleGetReponse);
+		const filmsUrl = personDetailsInfo.films || [];
+		const queryList = filmsUrl.map((url) => axios(url));
+		const filmsInfo = yield Promise.all(queryList).then((res) => res.map((film) => film.data));
+
+		const personDetails = pickPersonDetails(personDetailsInfo);
+		const filmNames = pickFilmNames(filmsInfo);
+		yield put(loadedPersonDetails({
+			...personDetails,
+			films: [...filmNames],
+		}));
+	} catch (e) {
+		yield put(loadedFail(e.message));
+	}
+}
+
 export default function* watchGetStarWars() {
-	yield takeLatest(actionTypes.STARWARS_SEARCH_PEOPEL, getPeopleList);
+	yield takeLatest(STARWARS_GET_PEOPLE, getPeopleList);
+	yield takeLatest(STARWARS_GET_DETAILS, getPersonDetails);
 }
