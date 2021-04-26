@@ -1,6 +1,6 @@
 {
   "name": "jh-frontend",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "UNLICENSED",
   "description": "here is for description",
   "author": "Eric Li <rfd3344@gmail.com>",
@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/rfd3344/jh-frontend.git"
   },
-  "main": "./dist/index.js",
+  "main": "./public/index.js",
   "scripts": {
     "dev": "npm run dev-webpack",
     "dev-webpack": "webpack serve --config config/webpack.dev.config.js",
