@@ -1,7 +1,9 @@
 const path = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
 
 const entryConfig = {
-	main: path.resolve(__dirname, '../src/index.jsx'),
+	main: path.resolve(__dirname, '../src/index.tsx'),
 };
 
 const outputConfig = {
@@ -12,6 +14,21 @@ const outputConfig = {
 
 const moduleConfig = {
 	rules: [
+		{
+			test: /\.tsx?$/,
+			exclude: /(node_modules|bower_components)/,
+			use: [
+				{  loader:'ts-loader' },
+				// {
+				// 	loader: 'babel-loader',
+				// 	options: {
+				// 		presets: ['@babel/preset-env', '@babel/preset-react'],
+				// 		plugins: ['@babel/plugin-transform-runtime'],
+				// 	},
+				// },
+			],
+			exclude: /node_modules/,
+		},
 		{
 			test: /\.(js|jsx)$/,
 			exclude: /(node_modules|bower_components)/,
@@ -44,14 +61,16 @@ const moduleConfig = {
 const resolveConfig = {
 	alias: {
 		// Define directory with alias name. usage:
-		_src: path.resolve(__dirname, '../src/'),
-		_actions: path.resolve(__dirname, '../src/actions'),
-		_reducers: path.resolve(__dirname, '../src/reducers'),
-		_helper: path.resolve(__dirname, '../src/helper'),
-		_constants: path.resolve(__dirname, '../src/constants'),
-		_components: path.resolve(__dirname, '../src/components'),
-		_pages: path.resolve(__dirname, '../src/pages'),
+		'@': path.resolve(__dirname, '../src/'),
+		// _actions: path.resolve(__dirname, '../src/actions'),
+		// _reducers: path.resolve(__dirname, '../src/reducers'),
+		// _helper: path.resolve(__dirname, '../src/helper'),
+		// _constants: path.resolve(__dirname, '../src/constants'),
+		// _components: path.resolve(__dirname, '../src/components'),
+		// _pages: path.resolve(__dirname, '../src/pages'),
 	},
+	plugins: [new TsconfigPathsPlugin()],
+	extensions: ['.tsx', '.ts', '.js'],
 };
 
 const performanceConfig = {

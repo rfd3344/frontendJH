@@ -1,7 +1,7 @@
 
 import { combineReducers } from 'redux';
 
-import starWars from '_reducers/starWars';
+import starWars from '@/reducers/starWars';
 
 export default combineReducers({
 	starWars,

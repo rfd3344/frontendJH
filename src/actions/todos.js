@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { ADD_TODO,
 	TOGGLE_TODO,
 	DELETE_TODO,
-} from '_constants/actionTypes';
+} from '@/constants/actionTypes';
 
 export const addTodo = (name, priority) => ({
 	type: ADD_TODO,

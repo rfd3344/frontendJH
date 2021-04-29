@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TablePagination from '@material-ui/core/TablePagination';
 import { connect } from 'react-redux';
-import { getPeopleList } from '_actions/starWars';
+import { getPeopleList } from '@/actions/starWars';
 
 function Pagination({ count, pageNumber, handleChangePage }) {
 	return (

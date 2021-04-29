@@ -1,11 +1,11 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-import { STARWARS_GET_PEOPLE, STARWARS_GET_DETAILS } from '_constants/actionTypes';
-import { STARWARS_API } from '_constants/starWars';
-import { loadedPeopleList, loadedPersonDetails, loadedFail } from '_actions/starWars';
-import { pickPeopleList, pickPersonDetails, pickFilmNames } from '_helper/starWarsHelper';
-import { handleGetReponse } from '_helper/axiosHelper';
+import { STARWARS_GET_PEOPLE, STARWARS_GET_DETAILS } from '@/constants/actionTypes';
+import { STARWARS_API } from '@/constants/starWars';
+import { loadedPeopleList, loadedPersonDetails, loadedFail } from '@/actions/starWars';
+import { pickPeopleList, pickPersonDetails, pickFilmNames } from '@/helper/starWarsHelper';
+import { handleGetReponse } from '@/helper/axiosHelper';
 
 
 function* getPeopleList(action) {

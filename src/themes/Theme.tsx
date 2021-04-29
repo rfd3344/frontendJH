@@ -4,7 +4,7 @@ import Routers from './Routers';
 // import Header from './PageHeader';
 // import Footer from './PageFooter';
 
-export default function PageTemplate() {
+export default function Theme() {
 	return (
 		<div id="page">
 			<main className="container">
@@ -12,4 +12,4 @@ export default function PageTemplate() {
 			</main>
 		</div>
 	);
-}
+};

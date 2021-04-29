@@ -4,7 +4,7 @@ import {
 	STARWARS_GET_DETAILS,
 	STARWARS_LOADED_DETAILS,
 	STARWARS_LOADED_FAIL,
-} from '_constants/actionTypes';
+} from '@/constants/actionTypes';
 
 export const getPeopleList = (pageNumber) => ({
 	type: STARWARS_GET_PEOPLE,

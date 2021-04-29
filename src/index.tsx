@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
-import Theme from '_src/themes/Theme';
+import Theme from '@/themes/Theme';
 import rootReducer from './reducers';
 import rootSaga from './sagas';
 
@@ -14,7 +14,7 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
 
-ReactDOM.render(
+export default ReactDOM.render(
 	<Provider store={store}>
 		<BrowserRouter>
 			<Theme />

@@ -1,4 +1,4 @@
-import { SVG_HEIGHT } from '_constants/histogram';
+import { SVG_HEIGHT } from '@/constants/histogram';
 
 /**
 * @used  get each y-axis level height

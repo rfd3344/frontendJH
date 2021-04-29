@@ -10,9 +10,9 @@ import TableRow from '@material-ui/core/TableRow';
 
 import { connect } from 'react-redux';
 
-import Loading from '_components/Loading';
+import Loading from '@/components/Loading';
 
-import { getPeopleList } from '_actions/starWars';
+import { getPeopleList } from '@/actions/starWars';
 import PeopleListRow from './PeopleListRow';
 
 function PeopleList({ peopleList, initialPage, loading }) {

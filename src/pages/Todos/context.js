@@ -86,5 +86,8 @@ export function todosReducer(state = {}, action = {}) {
 }
 
 
-const TodosContext = React.createContext('');
+const TodosContext = React.createContext({
+	state: {},
+	dispatch: React.DispatchWithoutAction
+});
 export default TodosContext;

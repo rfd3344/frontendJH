@@ -1,5 +1,5 @@
 import React from 'react';
-import { ACTIONS, MIN_YAXIS } from '_constants/histogram';
+import { ACTIONS, MIN_YAXIS } from '@/constants/histogram';
 
 // action for Y-Axis Maximun input change
 export const changeMaxYAxis = (value = 0) => ({

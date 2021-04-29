@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Home from '_pages/Home';
-import StarWars from '_pages/StarWars';
-import Histogram from '_pages/Histogram';
-import Todos from '_pages/Todos';
-import Test from '_pages/Test';
-import NotFound from '_pages/NotFound';
+import Home from '@/pages/Home';
+import StarWars from '@/pages/StarWars';
+import Histogram from '@/pages/Histogram';
+import Todos from '@/pages/Todos';
+import Test from '@/pages/Test';
+import NotFound from '@/pages/NotFound';
 
 const Routers = () => (
 	<Switch>

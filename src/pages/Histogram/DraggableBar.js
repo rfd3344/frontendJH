@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import HistogramContext, { changeBar } from './context';
-import { SVG_WIDTH, SVG_HEIGHT } from '_constants/histogram';
+import { SVG_WIDTH, SVG_HEIGHT } from '@/constants/histogram';
 import { getCursorPoint } from './utilis';
 
 function DraggableBar({barData, index, barTotal, svgInfo}) {

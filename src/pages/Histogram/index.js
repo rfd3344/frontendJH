@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import HistogramContext, { histogramReducer } from './context';
-import { INITIAL_STATE } from '_constants/histogram';
+import { INITIAL_STATE } from '@/constants/histogram';
 
 import Settings from './Settings';
 import Chart from './Chart';

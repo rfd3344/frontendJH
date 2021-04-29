@@ -1,7 +1,7 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
 import HistogramContext from './context';
 import DraggableBar from './DraggableBar';
-import { SVG_WIDTH, SVG_HEIGHT } from '_constants/histogram';
+import { SVG_WIDTH, SVG_HEIGHT } from '@/constants/histogram';
 import { getYAxisSizes } from './utilis';
 
 function Chart() {
