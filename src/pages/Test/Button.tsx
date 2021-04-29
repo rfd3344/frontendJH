@@ -5,12 +5,12 @@ type IProps = {
 }
 
 export default function Button({ name } : IProps) {
-	const [v, setV] = React.useState('');
-	const handleInput = (e: any) => {
+	const [v, setV] = React.useState<string>('');
+	const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
 		console.warn('input')
 		setV(e.target.value)
 	}
-	console.warn('Button')
+	console.warn('rfd v', v)
 	return (
 		<section>
 			<input value={v} onChange={handleInput} />

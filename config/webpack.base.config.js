@@ -59,19 +59,34 @@ const moduleConfig = {
 };
 
 const resolveConfig = {
-	alias: {
-		// Define directory with alias name. usage:
-		'@': path.resolve(__dirname, '../src/'),
-		// _actions: path.resolve(__dirname, '../src/actions'),
-		// _reducers: path.resolve(__dirname, '../src/reducers'),
-		// _helper: path.resolve(__dirname, '../src/helper'),
-		// _constants: path.resolve(__dirname, '../src/constants'),
-		// _components: path.resolve(__dirname, '../src/components'),
-		// _pages: path.resolve(__dirname, '../src/pages'),
-	},
-	plugins: [new TsconfigPathsPlugin()],
+	// alias: {
+	// 	// Define directory with alias name. usage:
+	// 	'@': path.resolve(__dirname, '../src/'),
+	// 	// _actions: path.resolve(__dirname, '../src/actions'),
+	// 	// _reducers: path.resolve(__dirname, '../src/reducers'),
+	// 	// _helper: path.resolve(__dirname, '../src/helper'),
+	// 	// _constants: path.resolve(__dirname, '../src/constants'),
+	// 	// _components: path.resolve(__dirname, '../src/components'),
+	// 	// _pages: path.resolve(__dirname, '../src/pages'),
+	// },
+	// plugins: [new TsconfigPathsPlugin({})],
+	alias: resolveTsconfigPathsToAlias(),
 	extensions: ['.tsx', '.ts', '.js'],
 };
+
+
+function resolveTsconfigPathsToAlias() {
+    const { paths } = require('../tsconfig.json').compilerOptions;
+    const aliases = {};
+
+    Object.keys(paths).forEach((item) => {
+        const key = item.replace('/*', '');
+        const value = path.resolve(__dirname, '../' + paths[item][0].replace('/*', '').replace('*', ''));
+        aliases[key] = value;
+    });
+    return aliases;
+}
+
 
 const performanceConfig = {
 	hints: 'warning',

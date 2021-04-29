@@ -8,6 +8,8 @@ import { pickPeopleList, pickPersonDetails, pickFilmNames } from '@/helper/starW
 import { handleGetReponse } from '@/helper/axiosHelper';
 
 
+
+
 function* getPeopleList(action) {
 	try {
 		const params = {
