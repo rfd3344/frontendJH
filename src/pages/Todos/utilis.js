@@ -1,4 +1,4 @@
-import TodosColumn from '../constants/TodosColumn';
+import {TodosColumn} from './constants';
 
 function getPriorityNum(priority) {
 	switch (priority) {

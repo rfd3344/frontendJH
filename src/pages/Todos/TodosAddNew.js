@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { addTodo } from '_actions/todos';
-import PriorityOptions from '_constants/PriorityOptions';
+import React, { useState, useContext } from 'react';
+import TodosContent, { addTodo } from './context';
+import { PriorityOptions } from './constants';
 
-const TodosAddNew = ({ triggerAdd }) => {
+export default function TodosAddNew() {
 	const [name, setName] = useState('');
 	const [priority, setPriority] = useState('low');
+	const { dispatch } = useContext(TodosContent);
+
 
 	const handleNameChange = (e) => {
 		setName(e.target.value);
@@ -18,8 +18,9 @@ const TodosAddNew = ({ triggerAdd }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		triggerAdd(name, priority);
+		dispatch(addTodo(name, priority));
 	};
+	console.warn('render TodosAddNew')
 	return (
 		<div className="TodosAddNew">
 			<form onSubmit={handleSubmit}>
@@ -42,14 +43,3 @@ const TodosAddNew = ({ triggerAdd }) => {
 		</div>
 	);
 };
-
-TodosAddNew.propTypes = {
-	triggerAdd: PropTypes.func.isRequired,
-};
-
-const mapDispatchToProps = (dispatch) => ({
-	triggerAdd: (name, priority) => dispatch(addTodo(name, priority)),
-});
-
-
-export default connect(null, mapDispatchToProps)(TodosAddNew);

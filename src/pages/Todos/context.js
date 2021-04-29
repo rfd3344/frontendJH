@@ -1,34 +1,23 @@
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from './constants';
 
-const initialState = {
-	list: [
-		{
-			id: '1',
-			name: 'item1',
-			priority: 'low',
-			completed: false,
-		},
-		{
-			id: '2',
-			name: 'item2',
-			priority: 'high',
-			completed: true,
-		},
-		{
-			id: '3',
-			name: 'item3',
-			priority: 'low',
-			completed: false,
-		},
-		{
-			id: '4',
-			name: 'item4',
-			priority: 'medium',
-			completed: false,
-		},
-	],
-	totalNum: 4,
-	completedNum: 1,
-};
+export const addTodo = (name, priority) => ({
+	type: ADD_TODO,
+	id: uuidv4(),
+	name,
+	priority,
+});
+export const toggleTodo = (id) => ({
+	type: TOGGLE_TODO,
+	id,
+});
+export const deleteTodo = (id) => ({
+	type: DELETE_TODO,
+	id,
+});
+
+
 
 // handle ADD_TODO action
 const handleAddTodo = (state, action) => {
@@ -84,14 +73,18 @@ const handleDeleteTodo = (state, action) => {
 	};
 };
 
-export default function todos(state = initialState, action) {
+export function todosReducer(state = {}, action = {}) {
 	switch (action.type) {
-	case 'ADD_TODO':
+	case ADD_TODO:
 		return handleAddTodo(state, action);
-	case 'TOGGLE_TODO':
+	case TOGGLE_TODO:
 		return handleToggleTodo(state, action);
-	case 'DELETE_TODO':
+	case DELETE_TODO:
 		return handleDeleteTodo(state, action);
 	default: return state;
 	}
 }
+
+
+const TodosContext = React.createContext('');
+export default TodosContext;

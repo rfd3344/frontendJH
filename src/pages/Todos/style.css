@@ -1,0 +1,70 @@
+.Todos .TodosAddNew input[type=submit]{
+	width: 100%;
+}
+.Todos .TodosBadges {
+	display:flex;
+	justify-content: space-between;
+	margin-bottom:5px;
+	font-size: 1.2em;
+}
+
+.Todos .TodosList {
+	background: white;
+}
+
+.Todos .TodosList li {
+	display: flex;
+}
+.Todos .TodosList .header .name:hover,
+.Todos .TodosList .header .priority:hover {
+	cursor: pointer;
+}
+
+.Todos .TodosList 	.name {
+	flex-grow: 1;
+}
+.Todos .TodosList 	.priority {
+	flex-basis: 100px;
+}
+.Todos .TodosList .actions {
+	flex-basis: 50px;
+}
+
+.Todos .TodosList .actions input[type=checkbox] {
+	/* Double-sized Checkboxes */
+	-ms-transform: scale(2); /* IE */
+	-moz-transform: scale(2); /* FF */
+	-webkit-transform: scale(2); /* Safari and Chrome */
+	-o-transform: scale(2); /* Opera */
+	transform: scale(2);
+	padding: 10px;
+	margin-right: 10px;
+}
+.Todos .TodosList .actions .material-icons {
+	font-size: 26px;
+	transform: translateY(5px);
+}
+.Todos .TodosList .actions .material-icons:hover {
+	cursor: pointer;
+}
+
+
+.Todos .TodosList 	.TodosItem.completed {
+	opacity: 0.4;
+}
+.Todos .TodosList .TodosItem .priority:before {
+	content:'circle';
+	font-family: 'Material Icons';
+	padding-right: 2px;
+	display: inline-block;
+	transform: translateY(3px);
+}
+.Todos .TodosList .TodosItem .priority.high:before {
+	color:rgb(245, 54, 92);
+}
+.Todos .TodosList .TodosItem .priority.medium:before {
+	color:rgb(255, 187, 51);
+}
+.Todos .TodosList .TodosItem .priority.low:before {
+	color:rgb(17, 205, 239);
+}

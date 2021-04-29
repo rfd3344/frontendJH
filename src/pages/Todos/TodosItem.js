@@ -1,14 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { toggleTodo, deleteTodo } from '_actions/todos';
+import React, { useContext } from 'react';
 
-function TodosItem({
-	itemId, name, priority, completed,
-	handleComplete, handleDelete,
-}) {
+import TodosContent, { toggleTodo, deleteTodo } from './context';
+
+export default function TodosItem({ itemId, name, priority, completed }) {
+	const {dispatch} = useContext(TodosContent);
 	let itemClassName = completed ? 'completed ' : 'pending ';
 	itemClassName += 'list-group-item TodosItem';
+
+	const handleComplete = (e) => {
+		dispatch(toggleTodo(itemId));
+	}
+
+	const handleDelete = (e) => {
+		dispatch(deleteTodo(itemId));
+	}
 
 	return (
 		<li className={itemClassName}>
@@ -19,25 +24,9 @@ function TodosItem({
 				{priority}
 			</span>
 			<span className="actions">
-				<input type="checkbox" checked={completed} onChange={handleComplete.bind(null, itemId)} />
-				<i className="material-icons" onClick={handleDelete.bind(null, itemId)}>delete</i>
+				<input type="checkbox" checked={completed} onChange={handleComplete} />
+				<i className="material-icons" onClick={handleDelete}>delete</i>
 			</span>
 		</li>
 	);
 }
-
-const mapDispatchToProps = (dispatch) => ({
-	handleComplete: (id) => dispatch(toggleTodo(id)),
-	handleDelete: (id) => dispatch(deleteTodo(id)),
-});
-
-TodosItem.propTypes = {
-	itemId: PropTypes.string.isRequired,
-	name: PropTypes.string.isRequired,
-	priority: PropTypes.string.isRequired,
-	completed: PropTypes.bool.isRequired,
-	handleComplete: PropTypes.func.isRequired,
-	handleDelete: PropTypes.func.isRequired,
-};
-
-export default connect(null, mapDispatchToProps)(TodosItem);

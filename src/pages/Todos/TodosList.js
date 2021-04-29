@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { sortTodosList } from '_helper/todosHelper';
-import TodosColumn from '_constants/TodosColumn';
+import React, { useContext, useState } from 'react';
+import TodosContext from './context';
+import { sortTodosList } from './utilis';
+import { TodosColumn } from './constants';
 import TodosItem from './TodosItem';
 
-function TodosList({ todosData }) {
+export default function TodosList() {
 	const [sortBy, setSortBy] = useState(TodosColumn.NAME);
-
+	const { state } = useContext(TodosContext);
+	const todosData = state.list;
 	const handleNameClick = () => {
 		setSortBy(TodosColumn.NAME);
 	};
@@ -41,19 +41,3 @@ function TodosList({ todosData }) {
 		</ul>
 	);
 }
-
-TodosList.propTypes = {
-	todosData: PropTypes.arrayOf(
-		PropTypes.shape({
-			id: PropTypes.string.isRequired,
-			name: PropTypes.string.isRequired,
-			priority: PropTypes.string.isRequired,
-			completed: PropTypes.bool.isRequired,
-		}),
-	).isRequired,
-};
-
-const mapStateToProps = (state) => ({
-	todosData: state.todos.list,
-});
-export default connect(mapStateToProps)(TodosList);
