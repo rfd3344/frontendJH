@@ -8,15 +8,15 @@ export default function TodosAddNew() {
 	const { dispatch } = useContext(TodosContent);
 
 
-	const handleNameChange = (e) => {
+	const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setName(e.target.value);
 	};
 
-	const handlePriorityChange = (e) => {
+	const handlePriorityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setPriority(e.target.value);
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		dispatch(addTodo(name, priority));
 	};

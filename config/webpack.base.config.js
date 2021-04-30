@@ -1,6 +1,4 @@
 const path = require('path');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-
 
 const entryConfig = {
 	main: path.resolve(__dirname, '../src/index.tsx'),

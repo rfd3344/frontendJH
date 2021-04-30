@@ -3,18 +3,20 @@ import TodosContext from './context';
 import { sortTodosList } from './utilis';
 import { TodosColumn } from './constants';
 import TodosItem from './TodosItem';
+import { TodosItem as ItemType } from './schemas';
+
 
 export default function TodosList() {
 	const [sortBy, setSortBy] = useState(TodosColumn.NAME);
 	const { state } = useContext(TodosContext);
-	const todosData = state.list;
+	const todosData: ItemType[] = state.list;
 	const handleNameClick = () => {
 		setSortBy(TodosColumn.NAME);
 	};
 	const handlePriorityClick = () => {
 		setSortBy(TodosColumn.PRIORITY);
 	};
-	const sortedList = sortTodosList(todosData, sortBy);
+	const sortedList: ItemType[] = sortTodosList(todosData, sortBy);
 
 	return (
 		<ul className="TodosList list-group">
@@ -32,7 +34,7 @@ export default function TodosList() {
 			{sortedList.map((item) => (
 				<TodosItem
 					key={item.id}
-					itemId={item.id}
+					id={item.id}
 					priority={item.priority}
 					completed={item.completed}
 					name={item.name}

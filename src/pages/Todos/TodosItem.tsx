@@ -1,18 +1,18 @@
 import React, { useContext } from 'react';
-
+import { TodosItem } from './schemas';
 import TodosContent, { toggleTodo, deleteTodo } from './context';
 
-export default function TodosItem({ itemId, name, priority, completed }) {
+export default function TodosItem({ id, name, priority, completed }: TodosItem) {
 	const {dispatch} = useContext(TodosContent);
 	let itemClassName = completed ? 'completed ' : 'pending ';
 	itemClassName += 'list-group-item TodosItem';
 
-	const handleComplete = (e) => {
-		dispatch(toggleTodo(itemId));
+	const handleComplete = (e: React.ChangeEvent<HTMLInputElement>) => {
+		dispatch(toggleTodo(id));
 	}
 
-	const handleDelete = (e) => {
-		dispatch(deleteTodo(itemId));
+	const handleDelete = () => {
+		dispatch(deleteTodo(id));
 	}
 
 	return (
