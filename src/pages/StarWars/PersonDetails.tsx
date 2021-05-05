@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import { MapState, PersonDetailsComp } from '@/schemas/starWars';
 
-function PersonDetails({ personDetails }) {
+function PersonDetails({ personDetails }: PersonDetailsComp) {
 	if (Object.keys(personDetails).length === 0) return null;
 
 	return (
@@ -35,24 +35,8 @@ function PersonDetails({ personDetails }) {
 	);
 }
 
-PersonDetails.propTypes = {
-	personDetails: PropTypes.shape({
-		name: PropTypes.string,
-		height: PropTypes.string,
-		birth_year: PropTypes.string,
-		gender: PropTypes.string,
-		films: PropTypes.arrayOf(
-			PropTypes.shape({
-				title: PropTypes.string,
-			}),
-		),
-	}).isRequired,
-};
-
-const mapStateToProps = (state) => ({
-	personDetails: state.starWars.personDetails,
+const mapStateToProps = ({ starWars }: MapState) => ({
+	personDetails: starWars.personDetails,
 });
-
-
 
 export default connect(mapStateToProps)(PersonDetails);

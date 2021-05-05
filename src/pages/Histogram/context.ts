@@ -1,6 +1,6 @@
 import React from 'react';
 import { ACTIONS, MIN_YAXIS, INITIAL_STATE } from './constants';
-import { Bar, State, Action } from './schemas';
+import { Bar, State, Action } from '@/schemas/histogram';
 
 // action for Y-Axis Maximun input change
 export const changeMaxYAxis = (value = 0) => ({

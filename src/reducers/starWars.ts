@@ -6,16 +6,18 @@ import {
 	STARWARS_LOADED_FAIL,
 } from '@/constants/actionTypes';
 
-const initialState = {
+import { State, Action } from '@/schemas/starWars';
+
+const initialState : State = {
 	peopleList: [],
 	pageNumber: 1,
 	count: 0,
 	personDetails: {},
-	message: [],
+	message: '',
 	loading: false,
 };
 
-export default function reducer(state = initialState, action) {
+export default function reducer(state = initialState, action: Action) {
 	switch (action.type) {
 	case STARWARS_GET_PEOPLE:
 		return {

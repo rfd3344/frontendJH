@@ -11,7 +11,7 @@ const StyledBackdrop = withStyles(() => ({
 	},
 }))(Backdrop);
 
-function Loading({ open}) {
+function Loading({ open }) {
 	return (
 		<>
 			<StyledBackdrop open={open}>

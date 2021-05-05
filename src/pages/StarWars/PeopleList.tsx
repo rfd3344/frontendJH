@@ -14,8 +14,10 @@ import Loading from '@/components/Loading';
 
 import { getPeopleList } from '@/actions/starWars';
 import PeopleListRow from './PeopleListRow';
+import { MapState, PeopleList } from '@/schemas/starWars';
 
-function PeopleList({ peopleList, initialPage, loading }) {
+
+function PeopleList({ peopleList, initialPage, loading }: PeopleList) {
 	useEffect(() => {
 		if (peopleList.length === 0) {
 			initialPage(1);
@@ -52,25 +54,13 @@ function PeopleList({ peopleList, initialPage, loading }) {
 }
 
 
-const mapStateToProps = (state) => ({
-	peopleList: state.starWars.peopleList,
-	loading: state.starWars.loading,
+const mapStateToProps = ({ starWars }: MapState) => ({
+	peopleList: starWars.peopleList,
+	loading: starWars.loading,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-	initialPage: (pageNumber) => dispatch(getPeopleList(pageNumber)),
+const mapDispatchToProps = (dispatch: any) => ({
+	initialPage: (pageNumber: number) => dispatch(getPeopleList(pageNumber)),
 });
-
-PeopleList.propTypes = {
-	peopleList: PropTypes.arrayOf(
-		PropTypes.shape({
-			name: PropTypes.string.isRequired,
-			height: PropTypes.string.isRequired,
-			mass: PropTypes.string.isRequired,
-		}),
-	).isRequired,
-	initialPage: PropTypes.func.isRequired,
-	loading: PropTypes.bool.isRequired,
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PeopleList);

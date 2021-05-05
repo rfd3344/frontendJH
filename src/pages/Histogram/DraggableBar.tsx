@@ -3,12 +3,12 @@ import React, { useState, useContext } from 'react';
 import HistogramContext, { changeBar } from './context';
 import { SVG_WIDTH, SVG_HEIGHT } from '@/constants/histogram';
 import { getCursorPoint } from './utilis';
-import { DraggableBar } from './schemas';
+import { DraggableBar } from '@/schemas/histogram';
 
 function DraggableBar({barData, index, barTotal, svgInfo}: DraggableBar) {
-	const [isDragging, setIsDragging] = useState(false);
-	const [startYAxis, setStartYAxis] = useState(0);
-	const [yValue, setYValue] = useState(barData.value);
+	const [isDragging, setIsDragging] = useState<boolean>(false);
+	const [startYAxis, setStartYAxis] = useState<number>(0);
+	const [yValue, setYValue] = useState<number>(barData.value);
 	const { state, dispatch } = useContext(HistogramContext);
 
 	const maxYAxis = state.maxYAxis;
@@ -25,12 +25,13 @@ function DraggableBar({barData, index, barTotal, svgInfo}: DraggableBar) {
 
 	const handleDrag = (e: React.MouseEvent<SVGElement>) => {
 		e.preventDefault();
-		if(isDragging === true) {
-			const cursorPoint = getCursorPoint(e, svgInfo);
-			const diff = startYAxis - cursorPoint.y;
-			const newValue = Math.round(diff / heightUnit) + barData.value;
-			setYValue(newValue);
-		}
+		if(!isDragging) return;
+
+		const cursorPoint = getCursorPoint(e, svgInfo);
+		const diff = startYAxis - cursorPoint.y;
+		const newValue = Math.round(diff / heightUnit) + barData.value;
+		setYValue(newValue);
+
 	};
 
 	const endDrag = (e: React.MouseEvent<SVGElement>) => {
@@ -48,7 +49,6 @@ function DraggableBar({barData, index, barTotal, svgInfo}: DraggableBar) {
 		)}
 		<g transform={`translate(${index * width}, 0)`}
 			onMouseMove={handleDrag}
-			onMouseLeave={endDrag}
 			onMouseUp={endDrag}>
 			<rect
 				fill="transparent"

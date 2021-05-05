@@ -6,6 +6,7 @@ import TableCell from '@material-ui/core/TableCell';
 import { withStyles } from '@material-ui/core/styles';
 
 import { getPersonDetails } from '@/actions/starWars';
+import { PeopleListRow } from '@/schemas/starWars';
 
 const StyledTableRow = withStyles(() => ({
 	root: {
@@ -15,9 +16,9 @@ const StyledTableRow = withStyles(() => ({
 	},
 }))(TableRow);
 
-function PeopleListRow({
-	name, height, mass, url, handleClick,
-}) {
+function PeopleListRow(
+	{ name, height, mass, url, handleClick,
+}: PeopleListRow) {
 	return (
 		<>
 			<StyledTableRow hover onClick={() => handleClick(url)}>
@@ -35,16 +36,9 @@ function PeopleListRow({
 	);
 }
 
-PeopleListRow.propTypes = {
-	name: PropTypes.string.isRequired,
-	height: PropTypes.string.isRequired,
-	mass: PropTypes.string.isRequired,
-	url: PropTypes.string.isRequired,
-	handleClick: PropTypes.func.isRequired,
-};
 
-const mapDispatchToProps = (dispatch) => ({
-	handleClick: (url) => dispatch(getPersonDetails(url)),
+const mapDispatchToProps = (dispatch: any) => ({
+	handleClick: (url: string) => dispatch(getPersonDetails(url)),
 });
 
 export default connect(null, mapDispatchToProps)(PeopleListRow);

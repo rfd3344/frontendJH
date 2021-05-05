@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { TodosItem } from './schemas';
+import { TodosItem } from '@/schemas/todos';
 import TodosContent, { toggleTodo, deleteTodo } from './context';
 
 export default function TodosItem({ id, name, priority, completed }: TodosItem) {

@@ -3,7 +3,7 @@ import TodosContext from './context';
 import { sortTodosList } from './utilis';
 import { TodosColumn } from './constants';
 import TodosItem from './TodosItem';
-import { TodosItem as ItemType } from './schemas';
+import { TodosItem as ItemType } from '@/schemas/todos';
 
 
 export default function TodosList() {

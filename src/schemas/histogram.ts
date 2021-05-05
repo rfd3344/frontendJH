@@ -1,19 +1,14 @@
-import { number } from "prop-types"
-
 
 export interface Bar {
 	color: string,
 	value: number,
 }
 
-
-
 export interface State {
 	maxYAxis: number,
 	readOnly: boolean,
 	bars: Bar[],
 }
-
 
 export interface Action {
 	type: string,
@@ -22,8 +17,6 @@ export interface Action {
 	value ?: number,
 	maxYAxis ?: number,
 }
-
-
 
 export interface DraggableBar {
 	barData: Bar,
