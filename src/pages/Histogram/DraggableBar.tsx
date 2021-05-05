@@ -1,10 +1,11 @@
 import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import HistogramContext, { changeBar } from './context';
 import { SVG_WIDTH, SVG_HEIGHT } from '@/constants/histogram';
 import { getCursorPoint } from './utilis';
+import { DraggableBar } from './schemas';
 
-function DraggableBar({barData, index, barTotal, svgInfo}) {
+function DraggableBar({barData, index, barTotal, svgInfo}: DraggableBar) {
 	const [isDragging, setIsDragging] = useState(false);
 	const [startYAxis, setStartYAxis] = useState(0);
 	const [yValue, setYValue] = useState(barData.value);
@@ -15,14 +16,14 @@ function DraggableBar({barData, index, barTotal, svgInfo}) {
 	const heightUnit = SVG_HEIGHT / maxYAxis;
 	const height = yValue < maxYAxis ? heightUnit * yValue : SVG_HEIGHT;
 
-	const startDrag = (e) => {
+	const startDrag = (e: React.MouseEvent<SVGElement>) => {
 		e.preventDefault();
 		const cursorPoint = getCursorPoint(e, svgInfo);
 		setIsDragging(true);
 		setStartYAxis(cursorPoint.y);
 	};
 
-	const handleDrag = (e) => {
+	const handleDrag = (e: React.MouseEvent<SVGElement>) => {
 		e.preventDefault();
 		if(isDragging === true) {
 			const cursorPoint = getCursorPoint(e, svgInfo);
@@ -32,7 +33,7 @@ function DraggableBar({barData, index, barTotal, svgInfo}) {
 		}
 	};
 
-	const endDrag = (e) => {
+	const endDrag = (e: React.MouseEvent<SVGElement>) => {
 		e.preventDefault();
 		setIsDragging(false);
 		dispatch(changeBar(index, yValue));
@@ -78,17 +79,17 @@ function DraggableBar({barData, index, barTotal, svgInfo}) {
 	</>)
 }
 
-DraggableBar.propTypes = {
-	barData: PropTypes.shape({
-		color: PropTypes.string,
-		value: PropTypes.number,
-	}),
-	index: PropTypes.number.isRequired,
-	barTotal: PropTypes.number.isRequired,
-	svgInfo: PropTypes.shape({
-		svgPoint: PropTypes.objectOf(PropTypes.number),
-		screenCTM: PropTypes.objectOf(PropTypes.number),
-	}),
-};
+// DraggableBar.propTypes = {
+// 	barData: PropTypes.shape({
+// 		color: PropTypes.string,
+// 		value: PropTypes.number,
+// 	}),
+// 	index: PropTypes.number.isRequired,
+// 	barTotal: PropTypes.number.isRequired,
+// 	svgInfo: PropTypes.shape({
+// 		svgPoint: PropTypes.objectOf(PropTypes.number),
+// 		screenCTM: PropTypes.objectOf(PropTypes.number),
+// 	}),
+// };
 
 export default DraggableBar;

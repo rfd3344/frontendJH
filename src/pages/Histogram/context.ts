@@ -1,5 +1,6 @@
 import React from 'react';
-import { ACTIONS, MIN_YAXIS } from '@/constants/histogram';
+import { ACTIONS, MIN_YAXIS, INITIAL_STATE } from './constants';
+import { Bar, State, Action } from './schemas';
 
 // action for Y-Axis Maximun input change
 export const changeMaxYAxis = (value = 0) => ({
@@ -8,7 +9,7 @@ export const changeMaxYAxis = (value = 0) => ({
 });
 
 // action for toggle read-only mode
-export const changeReadOnly = (value = 0) => ({
+export const changeReadOnly = (value = false) => ({
 	type: ACTIONS.CHANGE_READONLY,
 	readOnly: !!value,
 });
@@ -22,8 +23,8 @@ export const changeBar = (index = 0, value = 0) => ({
 
 
 // handle CHANGE_YAXIS action
-function doChangeYAxis(state, action) {
-	const maxValue = state.bars.reduce((acc, current) => {
+function doChangeYAxis(state: State, action: Action) {
+	const maxValue = state.bars.reduce((acc: number, current: Bar) => {
 		return current.value > acc ? current.value : acc;
 	}, 0);
 	const maxYAxis = Math.max(maxValue, action.maxYAxis, MIN_YAXIS);
@@ -34,7 +35,7 @@ function doChangeYAxis(state, action) {
 }
 
 // handle CHANGE_BAR action
-function doChangeBar(state, action) {
+function doChangeBar(state: State, action: Action) {
 	return {
 		...state,
 		bars: state.bars.map((item, index) => {
@@ -46,7 +47,7 @@ function doChangeBar(state, action) {
 	}
 }
 
-export function histogramReducer(state, action) {
+export function histogramReducer(state: State, action: Action) {
 	switch(action.type) {
 		case ACTIONS.CHANGE_YAXIS:
 			return doChangeYAxis(state, action);
@@ -62,5 +63,12 @@ export function histogramReducer(state, action) {
 	}
 }
 
-const HistogramContext = React.createContext('');
+const HistogramContext = React.createContext<{
+	state: State;
+	dispatch: React.Dispatch<any>;
+}>({
+	state: INITIAL_STATE,
+	dispatch: () => null
+});
+
 export default HistogramContext;

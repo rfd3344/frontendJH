@@ -5,7 +5,7 @@ import { SVG_HEIGHT } from '@/constants/histogram';
 * @param {number} maxYAxis
 * @return {array}
 */
-export const getYAxisSizes = (maxYAxis) => {
+export const getYAxisSizes = (maxYAxis: number) => {
 	const size = SVG_HEIGHT / maxYAxis;
 	return Array.from(Array(maxYAxis)).map((item, index) => {
 		return -(index + 1) * size;
@@ -19,7 +19,7 @@ export const getYAxisSizes = (maxYAxis) => {
 * @param {object} svgInfo
 * @return {object}
 */
-export const getCursorPoint = (e, svgInfo) => {
+export const getCursorPoint = (e: any, svgInfo: any) => {
 	if(!svgInfo) return {};
 
 	const svgPoint = svgInfo.svgPoint;
