@@ -1,23 +1,23 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-
+import React, { useEffect, useCallback } from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-
 import { connect } from 'react-redux';
 
-import Loading from '@/components/Loading';
-
-import { getPeopleList } from '@/actions/starWars';
-import PeopleListRow from './PeopleListRow';
 import { MapState, PeopleList } from '@/schemas/starWars';
+import { getPeopleList } from '@/actions/starWars';
+import Loading from '@/components/Loading';
+import PeopleListRow from './PeopleListRow';
 
 
-function PeopleList({ peopleList, initialPage, loading }: PeopleList) {
+function PeopleList({ peopleList, loading, dispatch }: PeopleList) {
+	const initialPage = useCallback((pageNumber: number) => {
+		dispatch(getPeopleList(pageNumber));
+	}, []);
+
 	useEffect(() => {
 		if (peopleList.length === 0) {
 			initialPage(1);
@@ -59,8 +59,4 @@ const mapStateToProps = ({ starWars }: MapState) => ({
 	loading: starWars.loading,
 });
 
-const mapDispatchToProps = (dispatch: any) => ({
-	initialPage: (pageNumber: number) => dispatch(getPeopleList(pageNumber)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(PeopleList);
+export default connect(mapStateToProps)(PeopleList);

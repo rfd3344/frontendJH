@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import TodosContext, { todosReducer } from './context';
-import { INITIAL_STATE} from './constants';
+import { INITIAL_STATE} from '@/constants/todos';
 import TodosBadges from './TodosBadges';
 import TodosAddNew from './TodosAddNew';
 import TodosList from './TodosList';

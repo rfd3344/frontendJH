@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import TodosContent, { addTodo } from './context';
-import { PriorityOptions } from './constants';
+import { PriorityOptions } from '@/constants/todos';
 
 export default function TodosAddNew() {
 	const [name, setName] = useState('');

@@ -2,7 +2,7 @@ import React, { useState, useContext, useRef, useEffect } from 'react';
 import HistogramContext from './context';
 import DraggableBar from './DraggableBar';
 import { SVG_WIDTH, SVG_HEIGHT } from '@/constants/histogram';
-import { getYAxisSizes } from './utilis';
+import { getYAxisSizes } from '@/helper/histogram';
 
 function Chart() {
 	const [svgInfo, setSvgInfo] = useState({svgPoint: null, screenCTM: null});

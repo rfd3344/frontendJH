@@ -1,8 +1,7 @@
-import { Interface } from 'node:readline';
 import React from 'react';
 import { State, Action } from '@/schemas/todos';
 import { v4 as uuidv4 } from 'uuid';
-import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from './constants';
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '@/constants/todos';
 
 export const addTodo = (name: string, priority: string) => ({
 	type: ADD_TODO,

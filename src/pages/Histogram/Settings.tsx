@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import HistogramContext, { changeMaxYAxis, changeReadOnly } from './context';
 
-
 function Settings() {
 	 const {state, dispatch}= useContext(HistogramContext);
 	 const handleMaxYAxisChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -16,12 +16,12 @@ const StyledTableRow = withStyles(() => ({
 	},
 }))(TableRow);
 
-function PeopleListRow(
-	{ name, height, mass, url, handleClick,
+function PeopleListRow({
+	name, height, mass, url, dispatch,
 }: PeopleListRow) {
 	return (
 		<>
-			<StyledTableRow hover onClick={() => handleClick(url)}>
+			<StyledTableRow hover onClick={()=> dispatch(getPersonDetails(url))}>
 				<TableCell>
 					{name}
 				</TableCell>
@@ -37,8 +37,4 @@ function PeopleListRow(
 }
 
 
-const mapDispatchToProps = (dispatch: any) => ({
-	handleClick: (url: string) => dispatch(getPersonDetails(url)),
-});
-
-export default connect(null, mapDispatchToProps)(PeopleListRow);
+export default connect()(PeopleListRow);

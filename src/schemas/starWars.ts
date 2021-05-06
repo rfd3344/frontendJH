@@ -47,17 +47,18 @@ export interface MapState {
 export type Pagination = {
 	count: number,
 	pageNumber: number,
-	handleChangePage: (e:React.MouseEvent<HTMLButtonElement, MouseEvent>, pageNumber:number) => void
+	dispatch: any,
+	// handleChangePage: (e:React.MouseEvent<HTMLButtonElement, MouseEvent>, pageNumber:number) => void
 }
 
 export type PeopleList = {
 	peopleList: Person[],
-	initialPage: (pageNumber: number) => void,
 	loading: boolean,
+	dispatch: any,
 }
 
 export type PeopleListRow = Person & {
-	handleClick: (url: string) => void,
+	dispatch: any,
 }
 
 
