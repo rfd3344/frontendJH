@@ -47,7 +47,7 @@ function* getPersonDetails(action) {
 	}
 }
 
-export default function* watchGetStarWars() {
+export default function* watchStarWars() {
 	yield takeLatest(STARWARS_GET_PEOPLE, getPeopleList);
 	yield takeLatest(STARWARS_GET_DETAILS, getPersonDetails);
 }

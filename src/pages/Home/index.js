@@ -9,6 +9,7 @@ export default function Home() {
 			<NavLink to="/starwars">Starwars</NavLink><br/>
 			<NavLink to="/histogram">Histogram</NavLink><br/>
 			<NavLink to="/todos">todos</NavLink><br/>
+			<NavLink to="/websocket-echo">Websocket Echo</NavLink><br/>
 			<NavLink to="/test">test</NavLink><br/>
 		</section>
 	);
