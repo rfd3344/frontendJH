@@ -14,9 +14,9 @@ function* createEventChannel(mySocket) {
 			});
 		});
 
-		mySocket.onmessage = (resp => emit({
+		mySocket.onmessage = (res => emit({
 			type: 'getMessage',
-			message: resp.data,
+			data: res.data,
 		}));
 
 		return () => {
@@ -33,7 +33,7 @@ function* initializeWebSocketsChannel(action) {
 		if(payload.type === 'initial') {
 			mySocket.send(action.message);
 		} else if(payload.type === 'getMessage') {
-			yield put(getResponse(payload.message));
+			yield put(getResponse(payload.data));
 		}
 
 	}
