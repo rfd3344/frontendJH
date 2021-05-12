@@ -11,11 +11,13 @@ export default function YourAnimal() {
     const { name, value } = e.target;
     dispatch(changeField(name, value));
   };
+
   const handleAnimalsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target;
+    const { name, checked} = e.target;
     const selectedAnimals = updateSelectedAnimals(name, checked, animals);
     dispatch(changeField('animals', selectedAnimals));
   };
+
   const handleTypeOfTigerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     dispatch(changeField(name, value));
@@ -25,11 +27,11 @@ export default function YourAnimal() {
     <section>
       <h3>Your animal</h3>
       <p>
-        <select name="colour" id="colour" value={animalColour} onChange={handleColorChange} >
+        <select name="animalColour" required value={animalColour} onChange={handleColorChange} >
           <option value=""> Choose colour</option>
           {
             Object.keys(ColourOptions).map(item => (
-              <option value={item}>
+              <option value={item} key={item}>
                 {item.toLowerCase()}
               </option>
             ))
@@ -37,17 +39,17 @@ export default function YourAnimal() {
         </select>
       </p>
       <p>
-        <span class="label"> Animal </span>
+        <span className="label"> Animal </span>
         {
           Object.keys(AnimalOptions).map(item => (
-            <label>
+            <label key={item}>
               <input
                 type="checkbox"
                 name={item}
                 checked={isAnimalSelected(item, animals)}
                 onChange={handleAnimalsChange}
               />
-              { item.toLowerCase() }
+              {item.toLowerCase()}
             </label>
           ))
         }

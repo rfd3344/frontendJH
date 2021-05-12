@@ -1,15 +1,13 @@
 import React from 'react';
 import { CHANGE_FIELD, CREATED_ACCOUNT, INITIAL_STATE } from '@/constants/animalForm';
-import { IState, IAction, AnimalOptions } from '@/schemas/animalForm';
+import { IState, IAction, AnimalOptions, ColourOptions } from '@/schemas/animalForm';
 
 
-export const changeField = (field = '', value: string | AnimalOptions[]) => ({
+export const changeField = (field = '', value: string | string[]) => ({
   type: CHANGE_FIELD,
   field,
   value,
 });
-
-
 
 
 export const createdAccount = ({ isFailed = false, message = '' }) => ({
@@ -26,7 +24,6 @@ function doChangeField(state: IState, action: IAction) {
     ...state,
   };
 }
-
 
 function doCreateAccount(state: IState, action: IAction) {
   return {

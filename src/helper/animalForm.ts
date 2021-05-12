@@ -1,12 +1,12 @@
 import { AnimalOptions } from '@/schemas/animalForm';
 
-export const isAnimalSelected = (animal: AnimalOptions, animals: AnimalOptions[]) => (
+export const isAnimalSelected = (animal: string, animals: string[]) => (
   animals.includes(animal)
 );
 
 
 
-export const updateSelectedAnimals = (animal: AnimalOptions, selected: boolean, animals: AnimalOptions[]) => {
+export const updateSelectedAnimals = (animal: string, selected: boolean, animals: string[]) => {
   let res = [...animals];
   if (selected === true) {
     res = [...animals, animal];

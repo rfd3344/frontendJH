@@ -17,10 +17,10 @@ export enum AnimalOptions {
 export interface IFormDetails {
 	email: string,
 	password: string,
-	animalColour: '' | ColourOptions,
-	animals: AnimalOptions[],
+	animalColour: string,
+	animals: string[],
 	typeOfTiger: string,
-	[key: string]: string | ColourOptions | AnimalOptions[],
+	[key: string]: string | string[],
 }
 
 export interface IServerResponse {
@@ -36,7 +36,7 @@ export interface IState {
 export interface IAction {
 	type: string,
 	field?: string,
-	value?: string | AnimalOptions[],
+	value?: string,
 	isFailed?: boolean,
 	message?: string,
 }

@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
-import { INITIAL_STATE } from '@/constants/histogram';
+import { INITIAL_STATE } from '@/constants/animalForm';
 import AnimalFormContext, { animalFormReducer } from './context';
-
+import './style.css';
 import Form from './Form';
 
 export default function AnimalForm() {
