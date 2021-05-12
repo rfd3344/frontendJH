@@ -8,7 +8,7 @@ export const INITIAL_STATE = {
 		email: '',
 		password: '',
 		animalColour: '',
-		animal: [],
+		animals: [],
 		typeOfTiger: '',
 	},
 	serverResponse: {

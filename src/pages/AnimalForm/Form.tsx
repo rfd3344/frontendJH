@@ -5,8 +5,9 @@ import YourAnimal from './YourAnimal';
 export default function Home() {
 	return (
 		<section>
-
-			<form >
+			<form>
+				<YourDetails />
+				<YourAnimal />
 				<input type="submit" value="Create Account" />
 			</form>
 		</section>
