@@ -19,34 +19,32 @@ export default function YourDetails() {
   };
 
   return (
-    <>
+    <div className="YourDetails">
       <h3>Your details</h3>
       <p>
         <label>
-          Email
+          <span>Email</span>
           <input
             type="email"
             name="email"
             value={email}
-            required
             onChange={handleEmailChange}
           />
         </label>
       </p>
       <p>
         <label>
-          Password
+          <span>Password</span>
           <input
             type="password"
             name="password"
             pattern=".{8,}"
-            required
             title="Password must be longer than 8 characters"
             value={password}
             onChange={handlePasswordChange}
           />
         </label>
       </p>
-    </>
+    </div>
   );
 }

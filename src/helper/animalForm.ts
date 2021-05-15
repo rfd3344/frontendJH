@@ -4,6 +4,9 @@ export const isAnimalSelected = (animal: string, animals: string[]) => (
   animals.includes(animal)
 );
 
+export const isTigerSelected = (animals: string[]) => (
+  animals.includes(AnimalOptions.TIGER)
+);
 
 
 export const updateSelectedAnimals = (animal: string, selected: boolean, animals: string[]) => {

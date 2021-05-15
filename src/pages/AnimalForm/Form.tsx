@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AnimalFormContext, { addErrorMessage, createdAccount } from './context';
 import YourDetails from './YourDetails';
 import YourAnimal from './YourAnimal';
+import ErrorMessage from './ErrorMessage';
 
-export default function Home() {
+export default function Form() {
+  const { state, dispatch } = useContext(AnimalFormContext);
+
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { formDetails } = state;
+    console.warn(state)
+    if(formDetails.animals.length < 2) {
+      dispatch(addErrorMessage('At least two Animals must be chosen'));
+      return;
+    } else {
+      setTimeout(()=> {
+        dispatch(createdAccount(false, 'Account created success'));
+      });
+    }
+  };
+
   return (
-    <section>
-      <form>
-        <YourDetails />
-        <YourAnimal />
-        <p className="error">
-          <label>
-            <input id="field" type="text" value="foo" />
-          </label>
-        </p>
-        <input type="submit" value="Create Account" />
-      </form>
-    </section>
+    <form className="Form" onSubmit={handleSubmit}>
+      <YourDetails />
+      <YourAnimal />
+      <ErrorMessage />
+      <input type="submit" value="Create Account" />
+    </form>
   );
 }

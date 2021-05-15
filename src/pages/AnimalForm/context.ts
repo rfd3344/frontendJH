@@ -1,5 +1,5 @@
 import React from 'react';
-import { CHANGE_FIELD, CREATED_ACCOUNT, INITIAL_STATE } from '@/constants/animalForm';
+import { CHANGE_FIELD, CREATED_ACCOUNT, ADD_ERROR, INITIAL_STATE } from '@/constants/animalForm';
 import { IState, IAction, AnimalOptions, ColourOptions } from '@/schemas/animalForm';
 
 
@@ -10,11 +10,18 @@ export const changeField = (field = '', value: string | string[]) => ({
 });
 
 
-export const createdAccount = ({ isFailed = false, message = '' }) => ({
-  type: CREATED_ACCOUNT,
-  isFailed,
-  message,
+export const addErrorMessage = (text = '') => ({
+  type: ADD_ERROR,
+  text,
 });
+
+export const createdAccount = (isError = false, text = '') => ({
+  type: CREATED_ACCOUNT,
+  isError,
+  text,
+});
+
+
 
 
 function doChangeField(state: IState, action: IAction) {
@@ -28,17 +35,26 @@ function doChangeField(state: IState, action: IAction) {
 function doCreateAccount(state: IState, action: IAction) {
   return {
     ...INITIAL_STATE,
-    serverResponse: {
-      isFailed: action.isFailed,
-      message: action.message,
+    message: {
+      isError: action.isError,
+      text: action.text,
     },
   };
 }
 
 export function animalFormReducer(state: IState, action: IAction) {
+  console.warn(state, action)
   switch (action.type) {
   case CHANGE_FIELD:
     return doChangeField(state, action);
+  case ADD_ERROR:
+    return {
+      ...state,
+      message: {
+        isError: true,
+        text: action.text,
+      }
+    };
   case CREATED_ACCOUNT:
     return doCreateAccount(state, action);
   default:

@@ -8,7 +8,7 @@ export default function AnimalForm() {
 	const [state, dispatch] = useReducer(animalFormReducer, INITIAL_STATE );
 
 	return (
-		<section>
+		<section className="AnimalForm">
 			<AnimalFormContext.Provider value={{ state, dispatch }}>
 				<h1> Fill out this awesome form </h1>
 				<Form />

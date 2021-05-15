@@ -4,7 +4,7 @@ module.exports = {
 		'^.+\\.(js|jsx)$': 'babel-jest',
 	},
 	moduleNameMapper: {
-		'^_src(.*)$': '<rootDir>/src$1',
+		'^@/(.*)$': '<rootDir>/src/$1',
 		'^_actions(.*)$': '<rootDir>/src/actions$1',
 		'^_helper(.*)$': '<rootDir>/src/helper$1',
 		'^_reducers(.*)$': '<rootDir>/src/reducers$1',

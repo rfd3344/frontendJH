@@ -23,20 +23,20 @@ export interface IFormDetails {
 	[key: string]: string | string[],
 }
 
-export interface IServerResponse {
-	isFailed: boolean,
-	message: string,
+export interface Message {
+	isError: boolean,
+	text: string,
 }
 
 export interface IState {
 	formDetails: IFormDetails,
-	serverResponse: IServerResponse,
+	message: Message,
 }
 
 export interface IAction {
 	type: string,
 	field?: string,
 	value?: string,
-	isFailed?: boolean,
-	message?: string,
+	isError?: boolean,
+	text?: string,
 }
