@@ -2,23 +2,22 @@
 
 
 module.exports = {
-	transform: {
-		'^.+\\.(js|jsx)$': 'babel-jest',
-	},
+	// preset: 'ts-jest',
+  transform: {
+    '^.+\\.(ts|tsx)?$': 'ts-jest',
+    "^.+\\.(js|jsx)$": "babel-jest",
+  },
+	// transform: {
+	// 	'^.+\\.(js|jsx)$': 'babel-jest',
+	// },
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/src/$1',
-		'^_actions(.*)$': '<rootDir>/src/actions$1',
-		'^_helper(.*)$': '<rootDir>/src/helper$1',
-		'^_reducers(.*)$': '<rootDir>/src/reducers$1',
-		'^_constants(.*)$': '<rootDir>/src/constants$1',
-		'^_components(.*)$': '<rootDir>/src/components$1',
-		'^_pages(.*)$': '<rootDir>/src/pages$1',
-		'^_tests(.*)$': '<rootDir>/tests$1',
+		'^_test(.*)$': '<rootDir>/test$1',
 	},
-	"setupFilesAfterEnv": [
-		"<rootDir>/tests/setupTests.js"
+	setupFilesAfterEnv: [
+		"<rootDir>/test/setupTests.js"
 	],
-	"unmockedModulePathPatterns": [
+	unmockedModulePathPatterns: [
 		"node_modules/react/",
 		"node_modules/enzyme/",
 	]

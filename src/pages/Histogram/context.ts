@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { ACTIONS, MIN_YAXIS, INITIAL_STATE } from '@/constants/histogram';
 import { Bar, State, Action } from '@/schemas/histogram';
 
@@ -63,7 +63,7 @@ export function histogramReducer(state: State, action: Action) {
 	}
 }
 
-const HistogramContext = React.createContext<{
+const HistogramContext = createContext<{
 	state: State;
 	dispatch: React.Dispatch<any>;
 }>({

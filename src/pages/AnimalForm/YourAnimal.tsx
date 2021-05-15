@@ -22,7 +22,7 @@ export default function YourAnimal() {
     const { name, value } = e.target;
     dispatch(changeField(name, value));
   };
-  console.warn('isTigerSelected(animals)', isTigerSelected(animals))
+
   return (
     <div className="YourAnimal">
       <h3>Your animal</h3>

@@ -17,7 +17,7 @@ export default function Form() {
     } else {
       setTimeout(()=> {
         dispatch(createdAccount(false, 'Account created success'));
-      });
+      }, 1000);
     }
   };
 

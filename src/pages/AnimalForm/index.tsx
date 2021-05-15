@@ -1,11 +1,12 @@
 import React, { useReducer } from 'react';
+import _ from 'lodash';
 import { INITIAL_STATE } from '@/constants/animalForm';
 import AnimalFormContext, { animalFormReducer } from './context';
 import './style.css';
 import Form from './Form';
 
 export default function AnimalForm() {
-	const [state, dispatch] = useReducer(animalFormReducer, INITIAL_STATE );
+	const [state, dispatch] = useReducer(animalFormReducer, _.cloneDeep(INITIAL_STATE) );
 
 	return (
 		<section className="AnimalForm">

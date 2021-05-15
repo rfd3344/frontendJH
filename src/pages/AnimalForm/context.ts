@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { createContext } from 'react';
+import _ from 'lodash';
 import { CHANGE_FIELD, CREATED_ACCOUNT, ADD_ERROR, INITIAL_STATE } from '@/constants/animalForm';
-import { IState, IAction, AnimalOptions, ColourOptions } from '@/schemas/animalForm';
+import { IState, IAction } from '@/schemas/animalForm';
 
 
 export const changeField = (field = '', value: string | string[]) => ({
@@ -34,7 +35,7 @@ function doChangeField(state: IState, action: IAction) {
 
 function doCreateAccount(state: IState, action: IAction) {
   return {
-    ...INITIAL_STATE,
+    ..._.cloneDeep(INITIAL_STATE),
     message: {
       isError: action.isError,
       text: action.text,
@@ -43,7 +44,6 @@ function doCreateAccount(state: IState, action: IAction) {
 }
 
 export function animalFormReducer(state: IState, action: IAction) {
-  console.warn(state, action)
   switch (action.type) {
   case CHANGE_FIELD:
     return doChangeField(state, action);
@@ -62,11 +62,11 @@ export function animalFormReducer(state: IState, action: IAction) {
   }
 }
 
-const AnimalFormContext = React.createContext<{
+const AnimalFormContext = createContext<{
   state: IState;
   dispatch: React.Dispatch<any>;
 }>({
-  state: INITIAL_STATE,
+  state: _.cloneDeep(INITIAL_STATE),
   dispatch: () => null,
 });
 
