@@ -1,4 +1,6 @@
 
+
+
 module.exports = {
 	transform: {
 		'^.+\\.(js|jsx)$': 'babel-jest',
@@ -13,4 +15,11 @@ module.exports = {
 		'^_pages(.*)$': '<rootDir>/src/pages$1',
 		'^_tests(.*)$': '<rootDir>/tests$1',
 	},
+	"setupFilesAfterEnv": [
+		"<rootDir>/tests/setupTests.js"
+	],
+	"unmockedModulePathPatterns": [
+		"node_modules/react/",
+		"node_modules/enzyme/",
+	]
 };

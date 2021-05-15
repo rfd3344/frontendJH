@@ -27,6 +27,7 @@ export default function YourDetails() {
           <input
             type="email"
             name="email"
+            required
             value={email}
             onChange={handleEmailChange}
           />
@@ -38,6 +39,7 @@ export default function YourDetails() {
           <input
             type="password"
             name="password"
+            required
             pattern=".{8,}"
             title="Password must be longer than 8 characters"
             value={password}

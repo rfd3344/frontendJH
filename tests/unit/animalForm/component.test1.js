@@ -1,13 +1,17 @@
 import { assert } from 'chai';
 import React, { useContext } from 'react';
-import { INITIAL_STATE, updatedState } from '_tests/data/animalForm';
-import AnimalFormContext, { animalFormReducer } from '@/pages/AnimalForm/context';
-import Form from '@/pages/AnimalForm/Form';
-import YourAnimal from '@/pages/AnimalForm/YourAnimal';
-import YourDetails from '@/pages/AnimalForm/YourDetails';
-import ErrorMessage from '@/pages/AnimalForm/ErrorMessage';
+// import { INITIAL_STATE, updatedState } from '_tests/data/animalForm';
+// import AnimalFormContext, { animalFormReducer } from '@/pages/AnimalForm/context';
+// import Form from '@/pages/AnimalForm/Form';
+// import YourAnimal from '@/pages/AnimalForm/YourAnimal';
+// import YourDetails from '@/pages/AnimalForm/YourDetails';
+// import ErrorMessage from '@/pages/AnimalForm/ErrorMessage';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-import { cleanup, render } from '@testing-library/react';
+Enzyme.configure({ adapter: new Adapter() });
+
+
 
 describe('StarWars component', function () {
 	let context = null;
