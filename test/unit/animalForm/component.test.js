@@ -30,8 +30,6 @@ describe('animalForm component', function () {
     );
     // const wrapper = shallow(<Form />)
 
-    console.log(wrapper.debug());
-
 
   });
 
