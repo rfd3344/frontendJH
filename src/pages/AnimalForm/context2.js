@@ -1,10 +1,10 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import _ from 'lodash';
 import { CHANGE_FIELD, CREATED_ACCOUNT, ADD_ERROR, INITIAL_STATE } from '@/constants/animalForm';
-import { IState, IAction } from '@/schemas/animalForm';
+// import { IState, IAction } from '@/schemas/animalForm';
 
 
-export const changeField = (field = '', value: string | string[]) => ({
+export const changeField = (field = '', value) => ({
   type: CHANGE_FIELD,
   field,
   value,
@@ -25,7 +25,7 @@ export const createdAccount = (isError = false, text = '') => ({
 
 
 
-function doChangeField(state: IState, action: IAction) {
+function doChangeField(state, action) {
   const { formDetails } = state;
   formDetails[action.field] = action.value;
   return {
@@ -33,7 +33,7 @@ function doChangeField(state: IState, action: IAction) {
   };
 }
 
-function doCreateAccount(state: IState, action: IAction) {
+function doCreateAccount(state, action) {
   return {
     ..._.cloneDeep(INITIAL_STATE),
     message: {
@@ -43,7 +43,7 @@ function doCreateAccount(state: IState, action: IAction) {
   };
 }
 
-export function animalFormReducer(state: IState, action: IAction) {
+export function animalFormReducer(state, action) {
   switch (action.type) {
   case CHANGE_FIELD:
     return doChangeField(state, action);
@@ -62,10 +62,7 @@ export function animalFormReducer(state: IState, action: IAction) {
   }
 }
 
-const AnimalFormContext = createContext<{
-  state: IState;
-  dispatch: React.Dispatch<any>;
-}>({
+const AnimalFormContext = React.createContext({
   state: _.cloneDeep(INITIAL_STATE),
   dispatch: () => null,
 });

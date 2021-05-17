@@ -2,7 +2,7 @@
 
 
 module.exports = {
-	// preset: 'ts-jest',
+	preset: 'ts-jest',
   transform: {
     '^.+\\.(ts|tsx)?$': 'ts-jest',
     "^.+\\.(js|jsx)$": "babel-jest",
@@ -12,7 +12,7 @@ module.exports = {
 	// },
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/src/$1',
-		'^_test(.*)$': '<rootDir>/test$1',
+		'^_test(.*)$': '<rootDir>/test$1'
 	},
 	setupFilesAfterEnv: [
 		"<rootDir>/test/setupTests.js"
