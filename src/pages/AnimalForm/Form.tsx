@@ -10,15 +10,14 @@ export default function Form() {
   const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { formDetails } = state;
-    console.warn(state)
     if(formDetails.animals.length < 2) {
       dispatch(addErrorMessage('At least two Animals must be chosen'));
-      return;
     } else {
       setTimeout(()=> {
         dispatch(createdAccount(false, 'Account created success'));
       }, 1000);
     }
+
   };
 
   return (

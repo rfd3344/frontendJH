@@ -3,7 +3,6 @@ import AnimalFormContext from './context';
 
 export default function ErrorMessage() {
   const { state } = useContext(AnimalFormContext);
-
   if(!state.message.text) return null;
 
   return (
