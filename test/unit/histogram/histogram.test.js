@@ -1,34 +1,39 @@
 import { assert } from 'chai';
+import { shallow, render } from 'enzyme';
 // import React, { useReducer, useContext } from 'react';
 // import { INITIAL_STATE, updatedState } from '_test/data/animalForm';
-// import AnimalFormContext, { animalFormReducer } from '@/pages/AnimalForm/context';
-// import Form from '@/pages/AnimalForm/Form';
-// import YourAnimal from '@/pages/AnimalForm/YourAnimal';
-// import YourDetails from '@/pages/AnimalForm/YourDetails';
+
 import DraggableBar from '@/pages/Histogram/DraggableBar';
 
 
-describe('StarWars component', function () {
-	// let context = null;
-	// beforeEach(function () {
-	// 	const [state, dispatch] = useReducer(animalFormReducer, INITIAL_STATE);
-	// 	context = { state, dispatch };
-	// });
 
-	// afterEach(function () {
-	// 	mockStore = null;
-	// 	cleanup();
-	// });
+describe('animalForm component', function () {
+  let mockedEvent = null;
+  beforeEach(function () {
+    mockedEvent = {
+      preventDefault: () => {},
+      target: {},
+    };
+  });
 
-	test('create Form', () => {
-		// const { container } = render(
-		// 	<AnimalFormContext.Provider value={context}>
-		// 		<Form />
-		// 	</AnimalFormContext.Provider>
 
-		// );
-		// const activeNode = container.querySelector('.MuiTablePagination-root .MuiTablePagination-caption');
-		// assert.strictEqual(activeNode.innerHTML, '1-10 of 82');
-	});
+  afterEach(function () {
+    mockedEvent = null;
+  });
+
+  test('create DraggableBar', () => {
+    // const { result } = renderHook(() => useReducer(animalFormReducer, INITIAL_STATE));
+    // const [state, dispatch] = result.current;
+    // const wrapper = mount(
+    //   <AnimalFormContext.Provider value={{ state, dispatch }}>
+    //     <Form />
+    //   </AnimalFormContext.Provider>
+    // );
+    // const wrapper = shallow(<DraggableBar barData, index, barTotal, svgInfo />);
+    const form = wrapper.find('form');
+    form.simulate('submit', mockedEvent);
+    assert.strictEqual(wrapper.find('.Form').length, 1);
+  });
+
 
 });

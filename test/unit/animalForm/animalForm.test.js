@@ -11,18 +11,18 @@ import ErrorMessage from '@/pages/AnimalForm/ErrorMessage';
 
 
 describe('animalForm component', function () {
-	let mockedEvent = null;
-	beforeEach(function () {
+  let mockedEvent = null;
+  beforeEach(function () {
     mockedEvent = {
       preventDefault: () => {},
-      target: {}
+      target: {},
     };
-	});
+  });
 
 
-	afterEach(function () {
-		mockedEvent = null;
-	});
+  afterEach(function () {
+    mockedEvent = null;
+  });
 
   test('create Form', () => {
     // const { result } = renderHook(() => useReducer(animalFormReducer, INITIAL_STATE));
@@ -32,7 +32,7 @@ describe('animalForm component', function () {
     //     <Form />
     //   </AnimalFormContext.Provider>
     // );
-    const wrapper = shallow(<Form />)
+    const wrapper = shallow(<Form />);
     const form = wrapper.find('form');
     form.simulate('submit', mockedEvent);
     assert.strictEqual(wrapper.find('.Form').length, 1);
@@ -55,14 +55,12 @@ describe('animalForm component', function () {
     passwordElm.simulate('change', mockedEvent);
     assert.strictEqual(emailElm.length, 1);
     assert.strictEqual(passwordElm.length, 1);
-
   });
 
 
   test('create ErrorMessage', () => {
     const wrapper = shallow(<ErrorMessage />);
     assert.isNull(wrapper.html());
-
   });
 
   test('static render Form', () => {
@@ -76,9 +74,5 @@ describe('animalForm component', function () {
     assert.strictEqual(wrapper.find('select[name="animalColour"] option').length, 6);
     assert.strictEqual(wrapper.find('.animalSelector input').length, 4);
     assert.strictEqual(wrapper.find('input[name="typeOfTiger"]').length, 0);
-
   });
-
-
-
 });

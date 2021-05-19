@@ -79,17 +79,5 @@ function DraggableBar({barData, index, barTotal, svgInfo}: DraggableBar) {
 	</>)
 }
 
-// DraggableBar.propTypes = {
-// 	barData: PropTypes.shape({
-// 		color: PropTypes.string,
-// 		value: PropTypes.number,
-// 	}),
-// 	index: PropTypes.number.isRequired,
-// 	barTotal: PropTypes.number.isRequired,
-// 	svgInfo: PropTypes.shape({
-// 		svgPoint: PropTypes.objectOf(PropTypes.number),
-// 		screenCTM: PropTypes.objectOf(PropTypes.number),
-// 	}),
-// };
 
 export default DraggableBar;

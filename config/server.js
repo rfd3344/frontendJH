@@ -11,9 +11,9 @@ app.use(express.static(PUBLIC_DIR));
 
 // Send index.html when the user access the web
 app.get('*', function (req, res) {
-	res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
+  res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
 app.listen(ENV.PORT, function () {
-	console.log('Server is listening http://localhost:' + ENV.PORT); // eslint-disable-line
+  console.log('Server is listening http://localhost:' + ENV.PORT); // eslint-disable-line
 });
