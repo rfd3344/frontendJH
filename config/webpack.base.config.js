@@ -1,22 +1,25 @@
 const path = require('path');
 
-const entryConfig = {
+// webpack config for entry
+const entry = {
   main: path.resolve(__dirname, '../src/index.tsx'),
 };
 
-const outputConfig = {
+// webpack config for output
+const output = {
   filename: './dist/[name].bundle.js',
   path: path.resolve(__dirname, '../public/'),
   publicPath: '/',
 };
 
+// webpack config for module
 const moduleConfig = {
   rules: [
     {
       test: /\.tsx?$/,
       exclude: /(node_modules|bower_components)/,
       use: [
-        {  loader:'ts-loader' },
+        { loader: 'ts-loader' },
         // {
         // 	loader: 'babel-loader',
         // 	options: {
@@ -25,7 +28,6 @@ const moduleConfig = {
         // 	},
         // },
       ],
-      exclude: /node_modules/,
     },
     {
       test: /\.(js|jsx)$/,
@@ -56,6 +58,18 @@ const moduleConfig = {
   ],
 };
 
+function resolveTsconfigPathsToAlias() {
+  const { paths } = require('../tsconfig.json').compilerOptions;
+  const aliases = {};
+
+  Object.keys(paths).forEach((item) => {
+    const key = item.replace('/*', '');
+    const value = path.resolve(__dirname, '../' + paths[item][0].replace('/*', '').replace('*', ''));
+    aliases[key] = value;
+  });
+  return aliases;
+}
+
 const resolveConfig = {
   // alias: {
   // 	// Define directory with alias name. usage:
@@ -73,17 +87,6 @@ const resolveConfig = {
 };
 
 
-function resolveTsconfigPathsToAlias() {
-    const { paths } = require('../tsconfig.json').compilerOptions;
-    const aliases = {};
-
-    Object.keys(paths).forEach((item) => {
-        const key = item.replace('/*', '');
-        const value = path.resolve(__dirname, '../' + paths[item][0].replace('/*', '').replace('*', ''));
-        aliases[key] = value;
-    });
-    return aliases;
-}
 
 
 const performanceConfig = {
@@ -98,8 +101,8 @@ const pluginsConfig = [
 
 
 module.exports = {
-  entry: entryConfig,
-  output: outputConfig,
+  entry,
+  output,
   module: moduleConfig,
   resolve: resolveConfig,
   performance: performanceConfig,
