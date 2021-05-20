@@ -8,8 +8,10 @@ const entry = {
 
 // webpack config for output
 const output = {
-  filename: './dist/[name].bundle.js',
+  // the target directory for all output files
   path: path.resolve(__dirname, '../public/'),
+  filename: './dist/[name].bundle.js',
+
   publicPath: '/',
 };
 
