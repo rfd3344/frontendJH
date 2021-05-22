@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const tsConfig = require('../tsconfig.json');
 
 // webpack config for entry
@@ -11,7 +12,6 @@ const output = {
   // the target directory for all output files
   path: path.resolve(__dirname, '../public/'),
   filename: './dist/[name].bundle.js',
-
   publicPath: '/',
 };
 
@@ -50,19 +50,36 @@ const moduleConfig = {
     {
       test: /\.(less|css)$/,
       use: [
-        { loader: 'style-loader' },
+        { loader: MiniCssExtractPlugin.loader },
         { loader: 'css-loader' },
       ],
     },
+    // process small image
+    // for image less than "limit", transfer to base64
     {
       test: /\.(png|jpg|gif)$/,
-      use: [{ loader: 'file-loader' }],
+      use: {
+        loader: 'url-loader',
+        options: {
+          limit: 10240,
+        },
+      },
+    },
+    // process big image
+    {
+      test: /\.(png|jpg|gif)$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: 'img/[name].[hash:8].[ext]',
+        },
+      }],
     },
   ],
 };
 
-function resolveTsconfigPathsToAlias() {
-  const { paths } = tsConfig.compilerOptions;
+
+function resolveTsconfigPathsToAlias(paths) {
   const processPath = (dirs) => dirs[0].replace('/*', '').replace('*', '');
 
   const aliases = Object.keys(paths).reduce((acc, key) => {
@@ -77,12 +94,10 @@ function resolveTsconfigPathsToAlias() {
 const resolveConfig = {
   // alias define directory with alias name. usage:
   // '@': path.resolve(__dirname, '../src/'),
-  alias: resolveTsconfigPathsToAlias(),
+  alias: resolveTsconfigPathsToAlias(tsConfig.compilerOptions.paths),
   // add file extension in following sequence
   extensions: ['.tsx', '.ts', '.jsx', '.js'],
 };
-
-
 
 
 const performanceConfig = {
@@ -93,6 +108,10 @@ const performanceConfig = {
 
 const pluginsConfig = [
   // new webpack.NamedModulesPlugin(),
+  new MiniCssExtractPlugin({
+    filename: '[name].css',
+    chunkFilename: '[id].css',
+  }),
 ];
 
 
