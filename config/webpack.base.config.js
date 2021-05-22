@@ -78,7 +78,8 @@ const resolveConfig = {
   // alias define directory with alias name. usage:
   // '@': path.resolve(__dirname, '../src/'),
   alias: resolveTsconfigPathsToAlias(),
-  extensions: ['.tsx', '.ts', '.js'],
+  // add file extension in following sequence
+  extensions: ['.tsx', '.ts', '.jsx', '.js'],
 };
 
 

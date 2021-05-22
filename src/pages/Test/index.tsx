@@ -1,19 +1,23 @@
 import React from 'react';
-import Button from './Button';
-
-let a: number = 10;
 
 
 export default function Test() {
-	const [v, setV] = React.useState<string>('');
-	const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-		console.warn('input')
-		setV(e.target.value)
-	}
-	return (
-		<section>
-			<Button  name ="aa" />
-			<input value={v} onChange={handleInput} />
-		</section>
-	);
+  const [v, setV] = React.useState<string>('');
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+    setV(e.target.value);
+  };
+  if (v === '1') {
+    console.warn('input', v)
+    // Simulate a JS error
+    setV('');
+    throw new Error('I crashed!');
+  }
+  return (
+    <section>
+
+        <input value={v} onChange={handleInput} />
+      11111
+    </section>
+  );
 }
