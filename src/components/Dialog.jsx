@@ -49,7 +49,7 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-export default function CustomizedDialogs() {
+export default function CustomizedDialogs(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -60,7 +60,12 @@ export default function CustomizedDialogs() {
   };
 
   return (
-    <div>
+    <>
+      {
+        props.children({
+          ControlPanel: DialogTitle,
+        })
+      }
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Open dialog
       </Button>
@@ -89,6 +94,6 @@ export default function CustomizedDialogs() {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   );
 }
