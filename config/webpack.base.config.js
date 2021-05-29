@@ -56,15 +56,15 @@ const moduleConfig = {
     },
     // process small image
     // for image less than "limit", transfer to base64
-    {
-      test: /\.(png|jpg|gif)$/,
-      use: {
-        loader: 'url-loader',
-        options: {
-          limit: 10240,
-        },
-      },
-    },
+    // {
+    //   test: /\.(png|jpg|gif)$/,
+    //   use: {
+    //     loader: 'url-loader',
+    //     options: {
+    //       limit: 10240,
+    //     },
+    //   },
+    // },
     // process big image
     {
       test: /\.(png|jpg|gif)$/,

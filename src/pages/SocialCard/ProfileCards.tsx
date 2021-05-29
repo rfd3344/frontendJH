@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import useFetch from '@/hooks/useFetch';
 import ProfileCard from './ProfileCard';
 
