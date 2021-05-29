@@ -37,38 +37,39 @@ export default function ProfileCard({ userInfo } : any) {
         <AvatorGrid container justify="center" alignItems="center">
           <StyledAvator alt={userInfo.name} src={userIcon} />
         </AvatorGrid>
-        <CardActionArea>
-          <CardContent>
-            <Grid container justify="space-between" alignItems="center">
+        <CardContent>
+          <Grid container justify="space-between" alignItems="center">
 
-              <Grid item><h1>{userInfo.name}</h1> </Grid>
-              <Grid item> <Edit /> </Grid>
+            <Grid item><h1>{userInfo.name}</h1> </Grid>
+            <Grid item>
+              <CardActionArea>
+                <Edit />
+              </CardActionArea>
             </Grid>
-            <Typography variant="body2" color="textSecondary" component="div">
-              <p>
-                <MailOutline fontSize="small" />
-                { userInfo.email }
-              </p>
-              <p>
-                <Contacts fontSize="small" />
-                { userInfo?.address.suite }, { userInfo?.address.street }, <br/>
-                { userInfo?.address.city }, { userInfo?.address.zipcode }
-              </p>
-              <p>
-                <PhoneEnabled fontSize="small" />
-                { userInfo.phone }
-              </p>
-              <p>
-                <Language fontSize="small" />
-                { userInfo.website }
-              </p>
+          </Grid>
+          <Typography variant="body2" color="textSecondary" component="div">
+            <p>
+              <MailOutline fontSize="small" />
+              { userInfo.email }
+            </p>
+            <p>
+              <Contacts fontSize="small" />
+              { userInfo?.address.suite }, { userInfo?.address.street }, <br/>
+              { userInfo?.address.city }, { userInfo?.address.zipcode }
+            </p>
+            <p>
+              <PhoneEnabled fontSize="small" />
+              { userInfo.phone }
+            </p>
+            <p>
+              <Language fontSize="small" />
+              { userInfo.website }
+            </p>
 
 
 
-
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+          </Typography>
+        </CardContent>
       </Card>
     </Grid>
   );
