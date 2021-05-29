@@ -9,7 +9,6 @@ import {
   Typography,
 } from '@material-ui/core';
 import {
-  Edit,
   MailOutline,
   Contacts,
   PhoneEnabled,
@@ -29,7 +28,6 @@ const StyledAvator = styled(Avatar)({
 });
 
 
-
 export default function ProfileCard({ userInfo } : any) {
   console.warn(userInfo)
   return (
@@ -40,11 +38,12 @@ export default function ProfileCard({ userInfo } : any) {
         </AvatorGrid>
         <CardContent>
           <Grid container justify="space-between" alignItems="center">
-
-            <Grid item><h1>{userInfo.name}</h1> </Grid>
+            <Grid item>
+              <h1>{userInfo.name}</h1>
+            </Grid>
             <Grid item>
               <CardActionArea>
-                <Edit />
+                <EditProfile />
               </CardActionArea>
             </Grid>
           </Grid>
@@ -55,8 +54,14 @@ export default function ProfileCard({ userInfo } : any) {
             </p>
             <p>
               <Contacts fontSize="small" />
-              { userInfo?.address.suite }, { userInfo?.address.street }, <br/>
-              { userInfo?.address.city }, { userInfo?.address.zipcode }
+              { userInfo?.address.suite }
+              ,
+              { userInfo?.address.street }
+              ,
+              <br />
+              { userInfo?.address.city }
+              ,
+              { userInfo?.address.zipcode }
             </p>
             <p>
               <PhoneEnabled fontSize="small" />
@@ -66,9 +71,6 @@ export default function ProfileCard({ userInfo } : any) {
               <Language fontSize="small" />
               { userInfo.website }
             </p>
-
-
-
           </Typography>
         </CardContent>
       </Card>
