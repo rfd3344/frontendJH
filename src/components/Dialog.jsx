@@ -6,7 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-export default function CustomDialog({ title = '' }) {
+export default function CustomDialog({ title = '', children }) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -17,30 +17,34 @@ export default function CustomDialog({ title = '' }) {
     setOpen(false);
   };
 
-  return (
-    <>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open
-      </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending anonymous location data to
-            Google, even when no apps are running.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary" autoFocus>
-            Agree
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </>
+  const Control = ({ children, ...rest }) => (
+    <span onClick={handleClickOpen} {...rest} >
+      { children }
+    </span>
   );
+
+
+  const Modal = ({ children, ...rest }) => (
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+      {...rest}
+    >
+      <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
+      <DialogContent> {children} </DialogContent>
+      <DialogActions>
+        <Button onClick={handleClose} color="primary" autoFocus>
+          Submit
+        </Button>
+      </DialogActions>
+    </Dialog>
+
+  );
+
+  return children({
+    Control,
+    Modal,
+  });
 }
