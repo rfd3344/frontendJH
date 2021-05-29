@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 /**
  * this is used for update the document title
  *
@@ -26,10 +25,10 @@ const useFetch = (url = '', config = null) => {
     let isMounted = true;
     setLoading(true);
     axios.get(url, config)
-      .then(res => res.json())
+      // .then(res => res.json())
       .then(res => {
         if (isMounted) {
-          setData(res);
+          setData(res.data);
           setError(null);
         }
       })
