@@ -16,6 +16,7 @@ import {
   Language,
 } from '@material-ui/icons';
 import userIcon from '@/static/userIcon.png';
+import EditProfile from './EditProfile';
 
 const AvatorGrid = styled(Grid)({
   background: 'linear-gradient(to right bottom,#f398b7,#fecf84)',
