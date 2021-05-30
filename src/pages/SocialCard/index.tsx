@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, Button } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import ProfileCards from './ProfileCards';
+import EditProfile from './EditProfile';
 
 
 export default function SocialCard() {
@@ -9,9 +10,7 @@ export default function SocialCard() {
       <Grid container justify="space-between" alignItems="center">
         <h1> Social Card</h1>
         <div>
-          <Button variant="contained" color="primary" size="medium">
-            Add New
-          </Button>
+          <EditProfile isCreateNew title="Create New" />
         </div>
 
       </Grid>

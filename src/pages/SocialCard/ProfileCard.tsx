@@ -27,11 +27,9 @@ const StyledAvator = styled(Avatar)({
   height: '80px',
 });
 
-
 export default function ProfileCard({ userInfo } : any) {
-  console.warn(userInfo)
   return (
-    <Grid item xs={4}>
+    <Grid item xs={12} sm={4}>
       <Card>
         <AvatorGrid container justify="center" alignItems="center">
           <StyledAvator alt={userInfo.name} src={userIcon} />
@@ -43,7 +41,7 @@ export default function ProfileCard({ userInfo } : any) {
             </Grid>
             <Grid item>
               <CardActionArea>
-                <EditProfile />
+                <EditProfile title="Edit Profile" userInfo={userInfo} />
               </CardActionArea>
             </Grid>
           </Grid>
@@ -54,14 +52,14 @@ export default function ProfileCard({ userInfo } : any) {
             </p>
             <p>
               <Contacts fontSize="small" />
-              { userInfo?.address.suite }
+              { userInfo?.suite }
               ,
-              { userInfo?.address.street }
+              { userInfo?.street }
               ,
               <br />
-              { userInfo?.address.city }
+              { userInfo?.city }
               ,
-              { userInfo?.address.zipcode }
+              { userInfo?.zipcode }
             </p>
             <p>
               <PhoneEnabled fontSize="small" />

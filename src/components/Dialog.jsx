@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -17,31 +17,25 @@ export default function CustomDialog({ title = '', children }) {
     setOpen(false);
   };
 
-  const Control = ({ children, ...rest }) => (
-    <span onClick={handleClickOpen} {...rest} >
+  const Control = useCallback(({ children, ...rest }) => (
+    <span onClick={handleClickOpen} {...rest}>
       { children }
     </span>
-  );
+  ), [children]);
 
-
-  const Modal = ({ children, ...rest }) => (
+  const Modal = useCallback(({ children, ...rest }) => (
     <Dialog
       open={open}
       onClose={handleClose}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
-      {...rest}
+      { ...rest }
     >
       <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
       <DialogContent> {children} </DialogContent>
-      <DialogActions>
-        <Button onClick={handleClose} color="primary" autoFocus>
-          Submit
-        </Button>
-      </DialogActions>
     </Dialog>
 
-  );
+  ), [children]);
 
   return children({
     Control,
