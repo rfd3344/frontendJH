@@ -1,6 +1,6 @@
 
 import React, { memo, useState, useEffect, useCallback, useMemo } from 'react'
-import Dialog from '@/components/Dialog';
+import Dialog from '@/components/CustomDialog';
 
 const Test = () => {
   const handleSave = (e) => {
