@@ -1,6 +1,14 @@
 import React, { useState, useCallback } from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@material-ui/core';
-
+import {
+  Grid,
+  Icon,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  IconButton,
+} from '@material-ui/core';
 
 export default function CustomDialog({ title = '', children }) {
   const [open, setOpen] = useState(false);
@@ -27,7 +35,19 @@ export default function CustomDialog({ title = '', children }) {
       aria-describedby="alert-dialog-description"
       {...rest}
     >
-      <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
+      <DialogTitle id="alert-dialog-title">
+        <Grid container justify="space-between">
+          <Grid item>
+            {title}
+          </Grid>
+          <Grid item>
+            <IconButton aria-label="close" onClick={handleClose}>
+              <Icon>close</Icon>
+            </IconButton>
+          </Grid>
+        </Grid>
+
+      </DialogTitle>
       <DialogContent>
         {children}
       </DialogContent>

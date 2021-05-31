@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import {
+  Icon,
   Button,
   TextField,
   FormControl,
 } from '@material-ui/core';
-import { Edit } from '@material-ui/icons';
 import { connect } from 'react-redux';
 import CustomDialog from '@/components/CustomDialog';
 import { editUser, addNewUser } from '@/actions/socialCard';
@@ -45,7 +45,7 @@ function EditProfile({
                   <Button variant="contained" color="primary" size="medium">
                     Add New
                   </Button>
-                ) : <Edit />
+                ) : <Icon>edit</Icon>
               }
             </Control>
             <Modal onOK={handleSubmit}>

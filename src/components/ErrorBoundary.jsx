@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Alert } from '@material-ui/lab';
 
 class ErrorBoundary extends React.Component {

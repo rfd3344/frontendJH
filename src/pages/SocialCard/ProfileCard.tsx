@@ -2,18 +2,13 @@ import React from 'react';
 import {
   styled,
   Grid,
+  Icon,
   Card,
   Avatar,
   CardActionArea,
   CardContent,
   Typography,
 } from '@material-ui/core';
-import {
-  MailOutline,
-  Contacts,
-  PhoneEnabled,
-  Language,
-} from '@material-ui/icons';
 import userIcon from '@/static/userIcon.png';
 import EditProfile from './EditProfile';
 
@@ -47,11 +42,11 @@ export default function ProfileCard({ userInfo } : any) {
           </Grid>
           <Typography variant="body2" color="textSecondary" component="div">
             <p>
-              <MailOutline fontSize="small" />
+              <Icon>mail_outline</Icon>
               { userInfo.email }
             </p>
             <p>
-              <Contacts fontSize="small" />
+              <Icon>contacts</Icon>
               { userInfo?.suite }
               ,
               { userInfo?.street }
@@ -62,11 +57,11 @@ export default function ProfileCard({ userInfo } : any) {
               { userInfo?.zipcode }
             </p>
             <p>
-              <PhoneEnabled fontSize="small" />
+              <Icon>phone_enabled</Icon>
               { userInfo.phone }
             </p>
             <p>
-              <Language fontSize="small" />
+              <Icon>language</Icon>
               { userInfo.website }
             </p>
           </Typography>

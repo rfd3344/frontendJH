@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
-import { ADD_TODO,
+import {
+  ADD_TODO,
   TOGGLE_TODO,
   DELETE_TODO,
 } from '@/constants/actionTypes';
