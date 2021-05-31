@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 import Home from '@/pages/Home';
 import StarWars from '@/pages/StarWars';
@@ -13,7 +14,7 @@ import NotFound from '@/pages/NotFound';
 
 const Routers = () => (
   <Switch>
-    <Route exact path="/" component={SocialCard} />
+    <Route exact path="/" component={Home} />
     <Route exact path="/starwars" component={StarWars} />
     <Route exact path="/histogram" component={Histogram} />
     <Route exact path="/todos" component={Todos} />
@@ -27,4 +28,20 @@ const Routers = () => (
   </Switch>
 );
 
-export default Routers;
+
+
+
+
+
+
+export default function Main() {
+  return (
+    <div id="page">
+      <main className="container">
+        <ErrorBoundary>
+          <Routers />
+        </ErrorBoundary>
+      </main>
+    </div>
+  );
+}

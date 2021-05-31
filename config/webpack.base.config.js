@@ -43,7 +43,7 @@ const moduleConfig = {
             plugins: ['@babel/plugin-transform-runtime'],
           },
         },
-        // closed eslint check, reduce info generate in Terminal
+        // closed eslint check
         // { loader: 'eslint-loader' },
       ],
     },
@@ -57,11 +57,13 @@ const moduleConfig = {
     // process small image
     // for image less than "limit", transfer to base64
     // {
-    //   test: /\.(png|jpg|gif)$/,
+    //   test: /\.(png|jpg|gif)$/i,
     //   use: {
     //     loader: 'url-loader',
     //     options: {
-    //       limit: 10240,
+    //       limit: 8192,
+    //       mimetype: 'image/png',
+    //       encoding: 'utf8',
     //     },
     //   },
     // },
