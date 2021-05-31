@@ -73,7 +73,7 @@ const moduleConfig = {
       use: [{
         loader: 'file-loader',
         options: {
-          name: 'img/[name].[hash:8].[ext]',
+          name: 'dist/img/[name].[hash:8].[ext]',
         },
       }],
     },
@@ -111,7 +111,7 @@ const performanceConfig = {
 const pluginsConfig = [
   // new webpack.NamedModulesPlugin(),
   new MiniCssExtractPlugin({
-    filename: '[name].css',
+    filename: 'dist/css/[name].css',
     chunkFilename: '[id].css',
   }),
 ];

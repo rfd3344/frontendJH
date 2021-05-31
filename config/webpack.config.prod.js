@@ -16,7 +16,9 @@ const pluginsConfig = [
 ];
 
 const optimizationConfig = {
-  runtimeChunk: true,
+  runtimeChunk: {
+    name: 'runtimeChunk',
+  },
   // splitChunks: {
   //   // chunks: 3 mode
   //   chunks: 'async',
@@ -39,14 +41,29 @@ const optimizationConfig = {
   //     },
   //   },
   // },
-  splitChunks: {
+  splitChunks: { // split commom chunks
+    chunks: 'async',
+    minSize: 20000,
+    minRemainingSize: 0,
+    minChunks: 1,
+    maxAsyncRequests: 30,
+    maxInitialRequests: 30,
+    enforceSizeThreshold: 50000,
     cacheGroups: {
-      default: false,
-      commons: {
-        test: /[\\/]node_modules[\\/]/,
-        name: 'vendor_app',
-        chunks: 'all',
-        minChunks: 2,
+      vendor: {
+        priority: 1,
+        name: 'vendorChunk',
+        test: /node_modules/,
+        chunks: 'initial',
+        minSize: 0,
+        minChunks: 1,
+      },
+      common: {
+        // common module
+        chunks: 'initial',
+        name: 'commonChunk',
+        minSize: 100,
+        minChunks: 3,
       },
     },
   },
