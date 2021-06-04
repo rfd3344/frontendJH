@@ -10,7 +10,7 @@ const devServerConfig = {
   port: ENV.PORT,
   open: true,
   hot: true,
-  inline: false,
+  // inline: false,   // this will disable Hot Module
   historyApiFallback: true,
   contentBase: path.join(__dirname, '../public'),
   host: 'localhost',
